@@ -1,0 +1,9 @@
+.icon {
+    & {
+        font-size: $icon__font-size-m;
+    }
+
+    &.-small {
+        font-size: $icon__font-size-s;
+    }
+}

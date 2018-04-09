@@ -1,0 +1,39 @@
+$link-primary__color: $c-black;
+$link-primary_hover__color: lighten($c-black,60%);
+$link-secondary__color: lighten($c-black,60%);
+$link-secondary_hover__color: $c-black;
+$link-active__color: $theme-c-red;
+
+
+.link {
+    & {
+        color: $link-primary__color;
+        text-decoration: none;
+        transition: color .3s ease-in;
+        cursor: pointer;
+    }
+
+    &:hover {
+        color: $link-primary_hover__color;
+    }
+
+
+    &.-secondary:focus,
+    &:focus {
+        color: $link-active__color;
+    }
+
+    &.-secondary {
+        color: $link-secondary__color;
+    }
+
+    &.-secondary:hover {
+        color: $link-secondary_hover__color;
+    }
+
+    &.-no-hover:hover {
+        transition: none;
+        color: inherit;
+    }
+}
+

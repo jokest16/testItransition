@@ -1,0 +1,113 @@
+//
+//  Buttons
+//  _____________________________________
+//
+//  Variables
+//  _____________________________________________
+
+$button__height: auto;
+$button__padding-left: $button__height + 5px;
+
+@mixin button-variant (
+$_color: $c-white,
+$_border-color: $theme-c-green,
+$_background-color: $theme-c-green,
+$_button-size: $button__height,
+$_button-icon-size: $button__padding-left,
+$_background-color_hover: lighten($_background-color, 60%),
+$_text-upper-transform: false
+) {
+    & {
+        position: relative;
+        color: $_color;
+        border-color: $_border-color;
+        background-color: $_background-color;
+        height: $_button-size;
+        user-select: none;
+        border: 1px solid;
+        transition: color .3s ease-in,border-color .3s ease-in,background-color .3s ease-in;
+    }
+
+    & {
+        @if ($_text-upper-transform == true) {
+            text-transform: uppercase;
+        } @else {
+            text-transform: none;
+        }
+    }
+
+
+    &:visited {
+        color: $_color;
+    }
+
+    &:active,
+    &.active {
+        color: $_background-color;
+        border-color: $_background-color;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    &:hover {
+        border-color: lighten($_border-color,10%);
+        color: lighten($_color,10%);
+        background-color: lighten($_background-color,10%);
+    }
+}
+
+//
+//  Common
+//  --------------------------------------
+
+button,
+.button {
+    & {
+        text-align: center;
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    /*&.-large {
+        .lib-button-l();
+    }
+    &.-small {
+        .lib-button-s();
+    }*/
+    /*&.-as-link {
+        .lib-button-as-link();
+        text-decoration: underline;
+        text-transform: none;
+    }*/
+
+    &.-primary {
+        @include button-variant (
+        $_color: $c-white,
+        $_text-upper-transform: true
+        );
+    }
+
+    &.-inverted {
+       @include button-variant (
+        $_color: $theme-c-green,
+        $_border-color: $theme-c-green,
+        $_background-color: transparent
+        );
+    }
+
+    &.-secondary {
+        @include button-variant (
+        $_color: $theme-c-gray,
+        $_border-color: $theme-c-gray,
+        $_background-color: transparent
+        );
+    }
+
+    &.-expanded {
+        width: 100%;
+    }
+}
+

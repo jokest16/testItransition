@@ -1,0 +1,43 @@
+version: "2"
+
+services:
+    web:
+        build: nginx
+        restart: always
+        links:
+            - db:db
+            - php-fpm
+        ports:
+            - 80:80
+        volumes:
+            - .:/var/www/magento
+        depends_on:
+            - db
+
+    db:
+        image: mysql
+        restart: always
+        volumes:
+          - /data/mysql:/var/lib/mysql
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: magento
+            MYSQL_USER: magento
+            MYSQL_PASSWORD: root
+
+    php-fpm:
+        build: php-fpm
+        restart: always
+        volumes:
+            - .:/var/www/magento
+            - ./php-fpm/php.ini:/usr/local/etc/php/php.ini
+        ports:
+            - 9000:9000
+
+    mailcatcher:
+        image: yappabe/mailcatcher
+        ports:
+            - 1025:1025
+            - 1080:1080

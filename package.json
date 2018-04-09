@@ -1,0 +1,27 @@
+{
+  "name": "magento-test",
+  "version": "1.0.0",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3",
+    "gulp-bless": "~1.0",
+    "gulp-cache": "^0.2.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-compass": "^1.3.2",
+    "gulp-concat": "^2.3.3",
+    "gulp-debug": "^3.2.0",
+    "gulp-jshint": "^1.7.1",
+    "gulp-livereload": "^2.1.0",
+    "gulp-minify-css": "^0.3.6",
+    "gulp-notify": "^1.4.0",
+    "gulp-plumber": "latest",
+    "gulp-rename": "^1.2.2",
+    "gulp-rimraf": "^0.1.0",
+    "gulp-sass": "^3.2.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^0.3.1",
+    "node-bourbon": "^4.2.8",
+    "yargs": "^11.0.0",
+    "gulp-autoprefixer": "^5.0.0"
+  }
+}
