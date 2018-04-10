@@ -35,7 +35,12 @@
         </div>
         <?php endif; ?>
         <div class="add-to-cart-buttons">
-            <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><?php echo $buttonTitle ?></span></span></button>
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button -primary -medium btn-cart" onclick="productAddToCartForm.submit(this)">
+                <span><?php echo $buttonTitle ?></span>
+            </button>
+            <button type="button" title="<?php echo $this->__('Customizes') ?>" class="button -primary -medium -third">
+                <span><?php echo $this->__('Customizes') ?></span>
+            </button>
             <?php echo $this->getChildHtml('', true, true) ?>
         </div>
     </div>

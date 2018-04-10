@@ -57,9 +57,9 @@ input,
 select,
 table,
 textarea {
-    font-family: $f-stack-sans;
+    font-family: $f-stack-special;
     color: $c-text;
-    font-size: $f-size;
+    font-size: $f-size-s;
     line-height: $b-line-height;
 }
 
@@ -374,11 +374,6 @@ a.button:hover {
     background: #C8C8C8;
     opacity: 0.6;
     cursor: not-allowed;
-}
-
-/* Adjacent buttons */
-.button + .button {
-    margin-left: 5px;
 }
 
 // This mixin gets applied to elements that are only buttons on smartphones (or sometimes tablets), such as layered
@@ -1173,7 +1168,7 @@ a.button:hover {
 
 .price-box {
     margin: $element-spacing 0;
-    font-family: $f-stack-sans;
+    font-weight: $font-weight__bold;
 }
 
 .price-box p {
@@ -1187,11 +1182,6 @@ a.button:hover {
 .price-box .price {
     color: $c-text-primary;
     font-size: $f-size-xl;
-}
-
-.price-box .price,
-.price {
-    font-family: $f-stack-sans;
 }
 
 .price-box .price-label {
