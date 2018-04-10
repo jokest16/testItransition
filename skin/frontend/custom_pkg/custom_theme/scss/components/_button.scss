@@ -63,25 +63,27 @@ $_text-upper-transform: false
 button,
 .button {
     & {
+        font-size: $f-size-s;
         text-align: center;
         text-decoration: none;
+        display: block;
     }
 
     &:hover {
         text-decoration: none;
     }
 
-    /*&.-large {
-        .lib-button-l();
+    &.-expanded {
+        width: 100%;
     }
+
+    &.-medium {
+        width: 65%;
+    }
+
     &.-small {
-        .lib-button-s();
-    }*/
-    /*&.-as-link {
-        .lib-button-as-link();
-        text-decoration: underline;
-        text-transform: none;
-    }*/
+        width: 30%;
+    }
 
     &.-primary {
         @include button-variant (
@@ -106,8 +108,13 @@ button,
         );
     }
 
-    &.-expanded {
-        width: 100%;
+    &.-third {
+        @include button-variant (
+            $_color: $c-white,
+            $_border-color: darken($theme-c-gray,40%),
+            $_background-color: darken($theme-c-gray,40%),
+            $_text-upper-transform: true
+        );
     }
 }
 

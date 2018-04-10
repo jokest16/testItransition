@@ -24,6 +24,12 @@
 //
 
 /* ============================================ *
+ * Catalog - Product Variables
+ * ============================================ */
+
+$price__color: $theme-c-red;
+
+/* ============================================ *
  * Catalog - Product
  * ============================================ */
 
@@ -66,7 +72,7 @@
         }
 
         .product-name {
-            padding-top: 30px;
+            padding-top: 35px;
             display: none;
             float: left;
         }
@@ -76,15 +82,13 @@
         }
 
         .extra-info {
-            float: left;
             padding-right: $trim/2;
             clear: left;
             width: 70%;
         }
 
         .price-info {
-            float: right;
-            padding-left: $trim/2;
+            float: left;
             text-align: right;
         }
 
@@ -120,7 +124,7 @@
             .regular-price .price,
             .special-price .price,
             .full-product-price .price {
-                color: $c-action;
+                color: $price__color;
                 font-size: 24px;
             }
 
@@ -291,12 +295,10 @@
 }
 
 .product-image-thumbs {
-    li {
-        display: inline-block;
-    }
     li:first-child {
         margin-left: -1px;
     }
+
     a {
         display: inline-block;
         border: 1px solid transparent;
@@ -327,6 +329,17 @@
     margin-bottom: $box-spacing;
 }
 
+.product-img-box {
+    & {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .more-views {
+        margin-right: 10px;
+    }
+}
+
 .product-view {
 
     .add-to-box:after,
@@ -337,7 +350,6 @@
     .add-to-cart {
         padding-bottom: 3px;
         margin-bottom: 10px;
-        border-bottom: 1px solid $c-module-border;
     }
 
     /* Set a min-height so that the floated elements break appropriately */
@@ -357,22 +369,24 @@
     .add-to-cart .qty-wrapper,
     .add-to-cart .qty-wrapper label {
         margin-right: 7px;
-        float: left;
     }
 
     .add-to-cart .qty-wrapper label {
         line-height: 40px;
+        text-transform: uppercase;
     }
 
     .add-to-cart .qty-wrapper .qty {
-        float: left;
+        border: none;
+        font-weight: $font-weight__semibold;
         height: 40px;
     }
 
     .add-to-cart-buttons {
-        float: left;
-        margin-right: 10px;
-        max-width: 100%; // Constrain width in Firefox
+        & {
+            margin-right: 10px;
+            max-width: 100%; // Constrain width in Firefox
+        }
 
         .paypal-logo {
             clear: left;
@@ -408,11 +422,8 @@
     .add-to-cart-buttons .button {
         min-height: 40px;
         line-height: 40px;
-        font-size: $f-size-xl;
         padding: 0px 30px;
-        float: left;
         min-width: 160px;
-        width: 100%;
         white-space: normal;
     }
 

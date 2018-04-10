@@ -92,7 +92,7 @@ label {
     display: inline-block;
     font-size: $f-size-s;
     font-family: $f-stack-special;
-    font-weight: 600;
+    font-weight: $font-weight__semibold;
     @include not-selectable;
 }
 

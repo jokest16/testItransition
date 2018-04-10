@@ -92,6 +92,10 @@ $header-search--input-text__border-bottom-color: $theme-c-gray;
     padding-top: 0;
 }
 
+#search_mini_form .input-box .button {
+    display: inline-block;
+}
+
 #search_mini_form label {
     display: none;
 }
