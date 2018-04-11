@@ -20,11 +20,10 @@ $_text-upper-transform: false
     & {
         position: relative;
         color: $_color;
-        border-color: $_border-color;
+        border:1px solid $_border-color;
         background-color: $_background-color;
         height: $_button-size;
         user-select: none;
-        border: 1px solid;
         transition: color .3s ease-in,border-color .3s ease-in,background-color .3s ease-in;
     }
 
@@ -111,10 +110,16 @@ button,
     &.-third {
         @include button-variant (
             $_color: $c-white,
-            $_border-color: darken($theme-c-gray,40%),
-            $_background-color: darken($theme-c-gray,40%),
+            $_border-color: $theme-c-dark-gray,
+            $_background-color: $theme-c-dark-gray,
             $_text-upper-transform: true
         );
+    }
+
+    &.-svg-icon {
+        background: none;
+        border: none;
+        outline: none;
     }
 }
 

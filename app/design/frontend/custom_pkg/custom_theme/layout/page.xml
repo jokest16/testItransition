@@ -86,6 +86,7 @@
 
             <block type="core/text_list" name="after_body_start" as="after_body_start" translate="label">
                 <label>Page Top</label>
+                <block type="core/template" name="svg-sprite" template="page/template/svg-sprite.phtml"/>
             </block>
 
             <block type="page/html_notices" name="global_notices" as="global_notices" template="page/html/notices.phtml" />
@@ -138,11 +139,15 @@
                     <action method="setElementClass"><value>bottom-container</value></action>
                 </block>
                 <block type="page/switch" name="store_switcher" as="store_switcher" after="*" template="page/switch/stores.phtml"/>
-                <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml">
-                    <action method="setTitle"><title>Quick Links</title></action>
+                <block type="core/template" name="footer-newsletter-social" template="page/template/block-wrapper.phtml">
+                    <action method="setAdditionalClass"><value>newsletter-social</value></action>
+                    <block type="core/template" name="social_links" after="social_links" template="page/template/social-links.phtml"/>
                 </block>
-                <block type="page/template_links" name="footer_links2" as="footer_links2" template="page/template/links.phtml">
-                    <action method="setTitle"><title>Account</title></action>
+
+                <block type="core/template" name="footer-customer-links" template="page/template/block-wrapper.phtml">
+                    <action method="setAdditionalClass"><value>customer-links</value></action>
+                    <block type="page/template_links" name="footer_links" as="footer_links" template="page/template/links.phtml"/>
+                    <block type="page/template_links" name="footer_links2" as="footer_links2" template="page/template/links.phtml"/>
                 </block>
                 <!-- This static block can be created and populated in admin. The footer_links cms block can be used as a starting point. -->
                 <!--<block type="cms/block" name="footer_social_links">

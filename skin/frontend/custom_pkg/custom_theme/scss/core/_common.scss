@@ -142,28 +142,6 @@ h6, .h6 { @include h6; }
     margin-bottom: 0;
 }
 
-.block-title {
-    position: relative;
-    padding: 10px 0 0;
-    margin-bottom: 5px;
-    border-top: 1px solid $c-module-border;
-
-    h2,
-    h3,
-    strong {
-        @include h4;
-        color: $c-text-primary;
-        margin-bottom: 0;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-    small {
-        font-size: 100%;
-        font-weight: normal;
-        color: $c-text-gray;
-    }
-}
-
 // On account pages, don't remove the top border in order to create separation between block and .block-account
 body:not(.customer-account) .block:first-child .block-title {
     border-top: none;
@@ -327,10 +305,8 @@ body:not(.customer-account) .block:first-child .block-title {
 
 /* Primary Buttons */
 
-.button,
 .cart-table .product-cart-actions .button,
-#co-shipping-method-form .buttons-set .button,
-.footer .button {
+#co-shipping-method-form .buttons-set .button {
     background: $c-button;
     display: inline-block;
     padding: 7px 15px;
@@ -712,14 +688,9 @@ a.button:hover {
     padding: 165px $trim-small $trim-small;
 }
 
-.footer-container {
-    padding: $trim-small;
-}
-
 .main-container,
 .footer-container {
     position: relative;
-    max-width: $max-container-width;
     margin: 0 auto;
 
     &:after {
@@ -731,10 +702,6 @@ a.button:hover {
 
     .main-container {
         padding: 165px $trim $trim;
-    }
-
-    .footer-container {
-        padding: $trim;
     }
 }
 

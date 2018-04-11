@@ -31,7 +31,7 @@ Default layout, loads most of the pages
 -->
 
     <default>
-        <reference name="footer">
+        <reference name="footer-customer-links">
             <block type="cms/block" name="cms_footer_links" before="footer_links">
                 <!--
                     The content of this block is taken from the database by its block_id.

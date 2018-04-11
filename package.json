@@ -22,6 +22,13 @@
     "gulp-uglify": "^0.3.1",
     "node-bourbon": "^4.2.8",
     "yargs": "^11.0.0",
-    "gulp-autoprefixer": "^5.0.0"
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-svgstore": "^6.1.1",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-file-include": "^2.0.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-replace": "^0.6.1",
+    "path": "^0.12.7",
+    "fs": "^0.0.1-security"
   }
 }

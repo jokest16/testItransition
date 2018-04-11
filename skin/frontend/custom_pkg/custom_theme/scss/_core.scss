@@ -51,11 +51,12 @@
 @import "components/link";
 @import "components/icons";
 @import "components/button";
+@import "components/newsletter-social";
+@import "components/form-components";
 
 // ----------------------------------------------
 // Layout
 
-@import "layout/global";
 @import "layout/header";
 @import "layout/header-nav";
 @import "layout/header-search";

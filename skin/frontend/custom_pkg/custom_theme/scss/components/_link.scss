@@ -17,7 +17,7 @@ $link-active__color: $theme-c-red;
         color: $link-primary_hover__color;
     }
 
-
+    &.-secondary.-red:hover,
     &.-secondary:focus,
     &:focus {
         color: $link-active__color;

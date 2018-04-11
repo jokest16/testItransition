@@ -1,0 +1,189 @@
+/* ============================================ *
+ * Newsletter-social - Variables
+ * ============================================ */
+
+$newsletter-social--block-subscribe__background-color: $theme-c-dark-gray;
+$newsletter-social--block-subscribe__color: $c-white;
+$newsletter-social--social-links__background-color: $theme-c-red;
+$newsletter-social--title__font-size: 24px;
+$newsletter-social--block-subscribe--message__font-weight: $font-weight__bold;
+$newsletter-social--social-link__color: $c-white;
+$social-links--social-link--icon_hover__color: $theme-c-dark-gray;
+
+
+/* ============================================ *
+ * Newsletter-social - COMMON
+ * ============================================ */
+
+
+.newsletter-social {
+    & {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .social-links > .wrapper,
+    .block-subscribe > .wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        min-height: 250px;
+    }
+
+    .block-subscribe {
+        background-color: $newsletter-social--block-subscribe__background-color;
+        color: $newsletter-social--block-subscribe__color;
+        text-align: right;
+    }
+
+    .block-subscribe .form {
+        padding: 0 90px;
+        width: 100%;
+    }
+
+    .block-subscribe .input-box {
+        display: inline-block;
+        margin-top: 20px;
+        position: relative;
+        width: 100%;
+    }
+
+    .block-subscribe .input-text {
+        width: 100%;
+        height: 45px;
+        font-weight: $font-weight__bold;
+    }
+
+    .block-subscribe .button.-svg-icon {
+        & {
+            @include centred-content($vertical:true,$horizontal: false);
+            color: $newsletter-social--block-subscribe__background-color;
+            right: 10px;
+            height: 15px;
+            transition: color .3s ease-in-out;
+        }
+
+        &:hover {
+            color: lighten($newsletter-social--block-subscribe__background-color, 40%);
+        }
+    }
+
+    .block-subscribe .arrow-right {
+        width: 11px;
+        height: 11px;
+    }
+
+    .block-subscribe > .wrapper > .message {
+        max-width: 380px;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: $newsletter-social--block-subscribe--message__font-weight;
+    }
+
+    .block-subscribe .checkbox-wrapper {
+        margin: 10px auto 0 auto;
+        text-align: left;
+        width: 100%;
+    }
+
+    .block-subscribe .checkbox-wrapper > .label {
+        display: inline-block;
+        vertical-align: middle;
+        padding-bottom: 10px;
+    }
+
+    .social-links {
+        background-color: $newsletter-social--social-links__background-color;
+    }
+
+    .block-subscribe > .wrapper,
+    .social-links > .wrapper {
+        text-align: center;
+        width: 100%;
+    }
+
+    .block-subscribe > .wrapper > .title,
+    .social-links > .wrapper > .title {
+        font-size: $newsletter-social--title__font-size;
+        text-transform: uppercase;
+    }
+
+    .social-links > .wrapper > .list {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .social-links > .wrapper > .list > .item {
+        display: inline-block;
+        color: $newsletter-social--social-link__color;
+    }
+
+    .social-links > .wrapper > .list > .item:not(:last-of-type) {
+        margin-right: 25px;
+    }
+
+    .social-link .svg-icon {
+        width: 25px;
+    }
+
+    .social-links .social-link:hover {
+        color: $social-links--social-link--icon_hover__color;
+    }
+
+    .social-links > .wrapper > .title,
+    .social-links .social-link {
+        color: $newsletter-social--social-link__color;
+    }
+
+    ::placeholder {
+        font-weight: $font-weight__bold;
+        color: $c-black;
+    }
+
+    ::-moz-placeholder {
+        font-weight: $font-weight__bold;
+        color: $c-black;
+    }
+
+    :-moz-placeholder {
+        font-weight: $font-weight__bold;
+        color: $c-black;
+    }
+
+    :-ms-input-placeholder {
+        font-weight: $font-weight__bold;
+        color: $c-black;
+    }
+
+    ::-webkit-input-placeholder {
+        font-weight: $font-weight__bold;
+        color: $c-black;
+    }
+}
+
+@include bp(min-width, $bp-medium) {
+    .newsletter-social {
+        & {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .block-subscribe,
+        .social-links {
+            width: 50%;
+        }
+
+        .block-subscribe > .wrapper,
+        .social-links > .wrapper {
+            width: 83%;
+        }
+
+        .block-subscribe .input-box,
+        .block-subscribe .checkbox-wrapper {
+            width: 90%;
+        }
+    }
+}
