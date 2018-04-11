@@ -104,6 +104,8 @@ $theme-c-green: #42a62a;
 $theme-c-bege: #f5f6f6;
 $theme-c-red: #ed1c24;
 $theme-c-gray: #b3b1b3;
+$theme-c-dark-gray: darken($theme-c-gray,45%);
+$theme-c-light-gray: #9a9588;
 
 // =============================================
 // Base Colors

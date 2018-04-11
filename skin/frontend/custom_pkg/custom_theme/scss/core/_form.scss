@@ -155,14 +155,8 @@ textarea {
 
 .input-text {
     @include appearance(none);
-    @include border-radius(2px);
-    border: 1px solid $c-input-border;
     background: #FFFFFF;
     font-size: $f-size-l;
-
-    &:focus {
-        border: 1px solid $c-input-border-focus;
-    }
 }
 
 .input-text.validation-failed {

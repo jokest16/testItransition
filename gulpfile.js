@@ -12,16 +12,16 @@
 
  **************************************************/
 
-var keepDebug     = true;         // If true keeps console.log and debugger statements in the distribution files
-var consoleOption = {theme: ''};
-var theme 		  =  consoleOption.theme ? consoleOption.theme :'custom_pkg';  // Skin name
-var js 			  = {};
-var framework	  = {};
-var css 		  = {};
-var magento 	  = {};
-var external 	  = {};
-var xml           = {};
+let theme 		  =  'custom_pkg',  // Skin name
+    keepDebug     = true;         // If true keeps console.log and debugger statements in the distribution files
 
+const js 		  = {},
+      framework	  = {},
+      css 		  = {},
+      magento 	  = {},
+      external 	  = {},
+      xml         = {},
+      svg         = {};
 
 /* Magento core */
 magento.source  = [
@@ -104,6 +104,13 @@ css.folder       = 'skin/frontend/'+ theme +'/custom_theme/';
 css.source       = '';
 css.dest         = 'css/';
 
+/* SVG */
+svg.templateName        = 'svg-sprite.phtml';
+svg.fileName            = 'sprite.svg';
+svg.templateFolder      = 'app/design/frontend/'+ theme +'/custom_theme/template/page/template/';
+svg.folder              = 'skin/frontend/'+ theme +'/custom_theme/images/svg_icon/';
+svg.spriteFolder        = 'skin/frontend/'+ theme +'/custom_theme/images/';
+
 /* Externals */
 external.folder  = 'js/tbuy/';
 external.source  = 'dev/';
@@ -116,7 +123,7 @@ xml.watcher      = [
 ];
 
 /* Load modules */
-var
+const
     gulp 		 = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     sass 		 = require('gulp-sass'),
@@ -127,11 +134,16 @@ var
     livereload 	 = require('gulp-livereload'),
     plumber      = require('gulp-plumber'),
     debug        = require('gulp-debug'),
+    svgStore    = require('gulp-svgstore'),
+    svgMin      = require('gulp-svgmin'),
+    csscomb     = require('gulp-csscomb'),
+    path        = require('path'),
+    fs          = require('fs');
     clean        = require('gulp-clean');
 
 // Application CSS builder
 // For unminified CSS files use: outputStyle: 'expanded'
-gulp.task('appCSS', function() {
+gulp.task('appCSS', () =>  {
 
     return gulp
         .src( css.folder + 'scss/*.scss' )
@@ -145,7 +157,7 @@ gulp.task('appCSS', function() {
 });
 
 // Frameworks builder
-gulp.task('appFramework', function() {
+gulp.task('appFramework', () =>  {
 
     return gulp
         .src( framework.source )
@@ -156,8 +168,48 @@ gulp.task('appFramework', function() {
 
 });
 
+gulp.task('svgstore',() => {
+    return gulp.src(`${svg.folder}*.svg`)
+        .pipe(svgMin((file) => {
+            let prefix = path.basename(file.relative, path.extname(file.relative));
+            return {
+                plugins: [{
+                    cleanupIDs: {
+                        prefix: `${prefix}-`,
+                        minify: true
+                    }
+                }],
+            }
+        }))
+        .pipe(svgStore({
+            mode: {
+                symbol: {
+                    inline: true,
+                    example: true
+                }
+            },
+            inlineSvg: true}))
+        .pipe(rename({basename: 'sprite'}))
+        .pipe(gulp.dest(svg.spriteFolder));
+});
+
+gulp.task('fsWrite',() => {
+    fs.writeFileSync(svg.templateFolder + svg.templateName,`<div style="display: none;width: 0;height: 0;">${fs.readFileSync(svg.spriteFolder + svg.fileName,'utf8')}</div>`,'utf8');
+});
+
+gulp.task('svg',['svgstore'],() => {
+    return gulp.start('fsWrite');
+});
+
+gulp.task('cssComb', () =>  {
+    return gulp.src(css.folder + 'scss/*.scss' )
+        .pipe(csscomb())
+        .pipe(gulp.dest(css.folder + 'scss'));
+});
+
+
 // Application builder
-gulp.task('appJS', function() {
+gulp.task('appJS', () =>  {
 
     return gulp
         .src( js.source )
@@ -168,19 +220,18 @@ gulp.task('appJS', function() {
 });
 
 // Magento's core builder
-gulp.task('magentoJS', function() {
+gulp.task('magentoJS', () =>  {
 
     return gulp
         .src( magento.source )
         .pipe( plumber() )
-
         .pipe( concat('magento-core.min.js') )
         .pipe( gulp.dest( js.folder + js.dest ) );
 
 });
 
 // Tbuy externals builder
-gulp.task('externalJS', function() {
+gulp.task('externalJS', () =>  {
 
     return gulp
         .src( external.folder + external.source + '**/*.js' )
@@ -191,7 +242,7 @@ gulp.task('externalJS', function() {
 });
 
 // Clean the cache
-gulp.task('cleanCache', function() {
+gulp.task('cleanCache', () =>  {
 
     return gulp
         .src( [ 'var/cache' ] )
@@ -201,7 +252,7 @@ gulp.task('cleanCache', function() {
 });
 
 // Execute a watch on those files, then start the related task
-gulp.task('watch',['magentoJS', 'externalJS', 'appFramework', 'appJS', 'appCSS'], function() {
+gulp.task('watch',['magentoJS', 'externalJS', 'appFramework', 'appJS', 'appCSS'], () =>  {
 
     // Watch .scss files
     gulp.watch( css.folder + css.source + 'scss/**/*.scss', [ 'appCSS' ] );
