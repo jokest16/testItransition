@@ -32,5 +32,5 @@
 }
 
 @function black-fallback ($opacity) {
-    @return lighten(#000000, (1 - $opacity));
+    @return lighten(#000, (1 - $opacity));
 }

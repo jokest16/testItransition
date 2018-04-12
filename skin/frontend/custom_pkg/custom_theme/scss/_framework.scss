@@ -30,30 +30,30 @@
 // ----------------------------------------------
 // Compass
 
-@import "compass-mixins/compass";
-@import "compass-mixins/compass/css3";
+@import 'compass-mixins/compass';
+@import 'compass-mixins/compass/css3';
 
 // ----------------------------------------------
 // Vars
 
-@import "var";
+@import 'var';
 
 // ----------------------------------------------
 // Functions
 
-@import "function/black";
-@import "function/white";
+@import 'function/black';
+@import 'function/white';
 
 // ----------------------------------------------
 // Mixins
 
-@import "mixin/breakpoint";
-@import "mixin/clearfix";
-@import "mixin/custom";
-@import "mixin/image-replacement";
-@import "mixin/not-selectable";
-@import "mixin/if-resolution";
-@import "mixin/toggle-content";
-@import "mixin/triangle";
-@import "mixin/typography";
-@import "mixin/loading-overlay";
+@import 'mixin/breakpoint';
+@import 'mixin/clearfix';
+@import 'mixin/custom';
+@import 'mixin/image-replacement';
+@import 'mixin/not-selectable';
+@import 'mixin/if-resolution';
+@import 'mixin/toggle-content';
+@import 'mixin/triangle';
+@import 'mixin/typography';
+@import 'mixin/loading-overlay';

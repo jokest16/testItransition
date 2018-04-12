@@ -32,24 +32,24 @@
 }
 
 .categorylandingMainblock {
-    border: 1px solid #E2E2E2;
     padding: 7px;
+    border: 1px solid #e2e2e2;
 }
 
 .catblocks {
     float: left;
-    padding: 0 0 20px 0;
     width: 100%;
+    padding: 0 0 20px 0;
 }
 
 .catblocks li {
-    position: relative;
     float: left !important;
+    position: relative;
     width: 23% !important;
     margin-right: percentage(8/300) !important;
     margin-bottom: $box-spacing;
-    border: 1px solid $c-module-border;
     padding: 10px;
+    border: 1px solid $c-module-border;
 }
 
 .catblocks li:hover {
@@ -69,9 +69,9 @@
 
 @include bp(max-width, $bp-xsmall) {
     .catblocks li {
+        float: none;
         width: 100% !important;
         margin-right: 0 !important;
-        float: none;
     }
 }
 
@@ -85,93 +85,93 @@
 }
 
 .catblocks li a span {
-    color: #FFFFFF;
     position: absolute;
-    background-color: #7B7C7B;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-right: 10px;
+    padding: 5px 10px;
     font-family: raleway;
     font-size: 17px;
     font-weight: bold;
-    text-transform: uppercase;
     text-align: center;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    padding: 5px 10px;
-    margin-right: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #7b7c7b;
 }
 
 .catblocklinks a {
-    color: #FFFFFF;
-    text-decoration: none
+    text-decoration: none;
+    color: #fff;
 }
 
 .catlandingbottomPromoblock {
     float: left;
     width: 100%;
-    border: 1px solid #E2E2E2;
     margin-bottom: 100px;
+    border: 1px solid #e2e2e2;
 }
 
 .catalog-category-view div.categoryland-caption {
     display: block;
-    margin: 0;
     position: absolute;
-    color: #000000;
+    margin: 0;
     font-size: 30px;
     font-weight: 500;
     line-height: 36px;
     text-align: center;
+    color: #000;
 }
 
 .catalog-category-view div.categoryland-caption span.blue-big-text {
-    color: #3399CC;
+    padding: 0 0 0 8px;
     font-size: 50px;
     font-weight: 800;
-    padding: 0 0 0 8px;
+    color: #39c;
 }
 
 .catalog-category-view div.categoryland-caption span.blue-big-text {
-    padding: 0 !important
+    padding: 0 !important;
 }
 
 .catalog-category-view div.categoryland-caption span.three-dots {
-    background: url(../images/bg_threeDots.png) no-repeat center center;
     display: block;
     height: 20px;
+    background: url(../images/bg_threeDots.png) no-repeat center center;
 }
 
 .catalog-category-view div.categoryland-caption p.desc {
-    font: italic 18px/28px Georgia, "Times New Roman", Times, serif;
+    font: italic 18px/28px Georgia, 'Times New Roman', Times, serif;
     color: #656565;
 }
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption a.link:hover,
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption span.link:hover {
     text-decoration: underline;
-    color: #1189C5;
+    color: #1189c5;
 }
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption span.blue-big-text,
 .catalog-category-view div.categoryland-caption span.blue-big-text {
-    color: #3399CC;
+    padding: 0 0 0 8px;
     font-size: 50px;
     font-weight: 800;
-    padding: 0 0 0 8px;
+    color: #39c;
 }
 
 .catalog-category-view div.categoryland-caption span.blue-big-text {
-    padding: 0 !important
+    padding: 0 !important;
 }
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption span.three-dots,
 .catalog-category-view div.categoryland-caption span.three-dots {
-    background: url(../images/bg_threeDots.png) no-repeat center center;
     display: block;
     height: 20px;
+    background: url(../images/bg_threeDots.png) no-repeat center center;
 }
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption p.desc,
 .catalog-category-view div.categoryland-caption p.desc {
-    font: italic 18px/28px Georgia, "Times New Roman", Times, serif;
+    font: italic 18px/28px Georgia, 'Times New Roman', Times, serif;
     color: #656565;
 }

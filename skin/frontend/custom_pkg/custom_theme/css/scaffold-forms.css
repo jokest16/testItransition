@@ -40,9 +40,9 @@ $mq-fixed-value: 1024;
 }
 
 .scaffold-form .form-list > li:after {
-  content: '';
   display: table;
   clear: both;
+  content: '';
 }
 
 .scaffold-form .fields {
@@ -51,9 +51,9 @@ $mq-fixed-value: 1024;
 }
 
 .scaffold-form .fields:after {
-  content: '';
   display: table;
   clear: both;
+  content: '';
 }
 
 .scaffold-form .fields > .fields,
@@ -67,9 +67,9 @@ $mq-fixed-value: 1024;
 .scaffold-form .field:after,
 .scaffold-form .wide:after,
 .scaffold-form .control:after {
-  content: '';
   display: table;
   clear: both;
+  content: '';
 }
 
 .scaffold-form label:first-child {
@@ -110,9 +110,9 @@ $mq-fixed-value: 1024;
     max-width: 100%;
   }
   .scaffold-form .control .input-box {
-    clear: none;
-    float: left;
     display: inline;
+    float: left;
+    clear: none;
     width: auto;
   }
   .scaffold-form .control label:first-child {

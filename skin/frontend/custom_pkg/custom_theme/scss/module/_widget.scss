@@ -35,12 +35,12 @@
     .widget-addbysku {
         .sku-table {
             .input-text:not(.qty) {
-                width: 100%;
-
                 @include bp(min-width, $bp-medium+1) {
                     //prevent widget in left/right column from exceeding column width
                     max-width: 100px;
                 }
+
+                width: 100%;
             }
         }
     }
@@ -59,11 +59,10 @@
 @include bp(min-width, $bp-xlarge) {
     .col2-left-layout,
     .col2-right-layout,
-    .col3-layout
-    {
+    .col3-layout {
         .col-main .widget {
-            @include product-grid(4, 960, "widget");
-            @include product-grid(5, 960, "widget");
+            @include product-grid(4, 960, 'widget');
+            @include product-grid(5, 960, 'widget');
         }
     }
 }
@@ -71,8 +70,8 @@
 @include bp(min-width, $bp-medium) {
     .col1-layout {
         .col-main .widget {
-            @include product-grid(4, 960, "widget");
-            @include product-grid(5, 960, "widget");
+            @include product-grid(4, 960, 'widget');
+            @include product-grid(5, 960, 'widget');
         }
     }
 }

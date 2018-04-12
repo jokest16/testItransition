@@ -7,10 +7,10 @@ $link-active__color: $theme-c-red;
 
 .link {
     & {
-        color: $link-primary__color;
-        text-decoration: none;
-        transition: color .3s ease-in;
         cursor: pointer;
+        transition: color .3s ease-in;
+        text-decoration: none;
+        color: $link-primary__color;
     }
 
     &:hover {
@@ -36,4 +36,3 @@ $link-active__color: $theme-c-red;
         color: inherit;
     }
 }
-

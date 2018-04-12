@@ -32,16 +32,15 @@
  */
 
 .fieldset {
-
     p {
         margin-bottom: $element-spacing;
     }
 
     p.required {
-        margin-bottom: 5px;
         float: right;
+        margin-top: 0;
+        margin-bottom: 5px;
         font-size: $f-size-xs;
-        margin-top: 0px;
     }
 }
 
@@ -51,6 +50,7 @@
 
 form .legend {
     @include h3;
+
     margin-bottom: 15px;
     padding-bottom: 7px;
     border-bottom: 1px solid $c-module-border-light;
@@ -68,7 +68,7 @@ form .legend {
     }
 }
 
-li.centinel-logos div.input-box  {
+li.centinel-logos div.input-box {
     img {
         display: inline;
         vertical-align: middle;
@@ -80,8 +80,8 @@ li.centinel-logos div.input-box  {
 /* Example: credit card expiration month and year. */
 .input-box .v-fix {
     float: left;
-    margin-right: 5px;
     max-width: 100%;
+    margin-right: 5px;
 }
 
 /* -------------------------------------------- *
@@ -89,20 +89,21 @@ li.centinel-logos div.input-box  {
  */
 
 label {
-    display: inline-block;
-    font-size: $f-size-s;
-    font-family: $f-stack-special;
-    font-weight: $font-weight__semibold;
     @include not-selectable;
+
+    display: inline-block;
+    font-family: $f-stack-special;
+    font-size: $f-size-s;
+    font-weight: $font-weight__semibold;
 }
 
 label.required:after,
 span.required:after {
-    content: ' *';
-    color: $c-danger;
-    font-weight: normal;
     font-family: $f-stack-sans;
     font-size: $f-size-xs;
+    font-weight: normal;
+    content: ' *';
+    color: $c-danger;
 }
 
 label.required em,
@@ -115,8 +116,8 @@ span.required em {
  */
 
 .input-hint {
-    color: $c-text-gray;
     font-size: $f-size-xs;
+    color: $c-text-gray;
 }
 
 /* -------------------------------------------- *
@@ -133,9 +134,9 @@ select + select {
 
 select[multiple] {
     width: 270px;
-    border: 1px solid $c-input-border;
-    font-size: $f-size-l;
     padding: 5px;
+    font-size: $f-size-l;
+    border: 1px solid $c-input-border;
 }
 
 /* -------------------------------------------- *
@@ -144,6 +145,7 @@ select[multiple] {
 
 textarea {
     @include box-sizing(border-box);
+
     width: 100%;
     max-width: 450px;
     padding: 5px;
@@ -155,8 +157,9 @@ textarea {
 
 .input-text {
     @include appearance(none);
-    background: #FFFFFF;
+
     font-size: $f-size-l;
+    background: #fff;
 }
 
 .input-text.validation-failed {
@@ -233,9 +236,9 @@ input:-moz-placeholder {
 
 .checkbox,
 .radio {
+    display: inline-block;
     position: relative;
     top: -1px;
-    display: inline-block;
 }
 
 .checkbox + label,
@@ -255,8 +258,8 @@ input:-moz-placeholder {
 p.required,
 .validation-advice {
     margin: 5px 0 0;
-    color: $c-danger;
     font-size: $f-size-s;
+    color: $c-danger;
 }
 
 /* ============================================ *
@@ -264,14 +267,13 @@ p.required,
  * ============================================ */
 
 .form-list {
-
     & > li {
         margin-bottom: $box-spacing;
     }
     select {
-        margin-top: 4px;
         width: (230px + 135px);
         max-width: 100%;
+        margin-top: 4px;
     }
 
     .input-range .input-text {
@@ -291,7 +293,6 @@ p.required,
 #checkout-shipping-method-load .sp-methods dd,
 #co-shipping-method-form .sp-methods dd,
 .product-options ul.options-list {
-
     div.input-box {
         display: inline;
         float: left;
@@ -304,18 +305,19 @@ p.required,
     input.radio,
     input.checkbox {
         float: left;
-        margin-right: -40px;
         margin-top: 10px;
+        margin-right: -40px;
         margin-left: 15px;
     }
 
     label {
         @include touch-button;
+
         display: inline-block;
-        width: auto;
-        max-width: none;
-        min-width: 250px;
         float: none;
+        width: auto;
+        min-width: 250px;
+        max-width: none;
         padding: 6px 10px 6px 40px;
 
         &:hover {
@@ -332,21 +334,20 @@ p.required,
             background-color: transparent;
         }
     }
-
 }
 
 .product-options ul.options-list label,
 .col2-set .form-list .control label {
-    min-width: inherit;
     width: 250px;
+    min-width: inherit;
     max-width: 100%;
 }
 
 .form-list .control.remember-me-box {
     label {
         width: auto;
-        max-width: none;
         min-width: inherit;
+        max-width: none;
     }
 }
 
@@ -361,8 +362,8 @@ p.required,
         margin-right: 6px;
     }
     .input-box {
-        clear: none;
         display: inline-block;
+        clear: none;
         width: auto;
         padding: 0;
     }
@@ -370,9 +371,9 @@ p.required,
 
 form {
     .form-instructions {
-        font-style: italic;
         font-family: $f-stack-serif;
         font-size: $f-size-s;
+        font-style: italic;
         color: $c-text-gray;
     }
 }

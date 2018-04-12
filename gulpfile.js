@@ -202,7 +202,7 @@ gulp.task('svg',['svgstore'],() => {
 });
 
 gulp.task('cssComb', () =>  {
-    return gulp.src(css.folder + 'scss/*.scss' )
+    return gulp.src(css.folder + 'scss/**/*.scss' )
         .pipe(csscomb())
         .pipe(gulp.dest(css.folder + 'scss'));
 });

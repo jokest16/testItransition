@@ -33,10 +33,10 @@
     }
 
     &.clean-table {
+        width: 100%;
         font-family: $f-stack-special;
         font-size: $f-size-xs;
         text-transform: uppercase;
-        width: 100%;
 
         th {
             border-bottom: 1px solid $c-table-border;
@@ -55,9 +55,9 @@
     }
 
     .product-name {
-        font-size: $f-size-xl;
-        font-family: $f-stack-special;
         margin-bottom: 0;
+        font-family: $f-stack-special;
+        font-size: $f-size-xl;
         text-transform: uppercase;
 
         a {
@@ -66,17 +66,17 @@
     }
 
     .wishlist-sku {
-        font-size: $f-size-xxs;
-        font-family: $f-stack-special;
         margin: 5px 0;
+        font-family: $f-stack-special;
+        font-size: $f-size-xxs;
     }
 
     textarea {
-        border: 1px solid $c-input-border;
         width: 100%;
         height: 45px;
-        font-size: $f-size-xxs;
         font-family: $f-stack-special;
+        font-size: $f-size-xxs;
+        border: 1px solid $c-input-border;
 
         &::-webkit-input-placeholder {
             text-transform: uppercase;
@@ -97,13 +97,13 @@
     }
 
     .item-manage {
-        text-align: right;
         max-width: 450px;
         padding-top: 5px;
+        text-align: right;
 
         .button {
-            font-size: $f-size-xxs;
             padding: 3px 5px;
+            font-size: $f-size-xxs;
         }
     }
 
@@ -129,10 +129,10 @@
             width: 150px;
 
             .button {
-                font-size: $f-size-xs;
+                width: 100%;
                 margin-bottom: $gap;
                 padding: 3px 5px;
-                width: 100%;
+                font-size: $f-size-xs;
             }
 
             .truncated {
@@ -160,7 +160,6 @@
         button {
             white-space: normal;
         }
-
     }
 
     .price-box {
@@ -180,16 +179,16 @@
         }
 
         li {
+            margin-bottom: 3px;
             cursor: pointer;
             color: $c-action;
-            margin-bottom: 3px;
         }
     }
 
     .truncated {
         .details {
-            background: none;
             color: $c-action;
+            background: none;
         }
     }
 
@@ -204,8 +203,8 @@
     #wishlist-table {
         &.clean-table {
             td {
-                padding-left: $box-spacing;
                 padding-right: $box-spacing;
+                padding-left: $box-spacing;
             }
         }
     }
@@ -216,8 +215,8 @@
 @include bp(max-width, $bp-large) {
     #wishlist-table {
         &.clean-table td {
-            padding-left: 5px;
             padding-right: 5px;
+            padding-left: 5px;
 
             textarea {
                 height: 100px;
@@ -247,8 +246,8 @@
         }
 
         textarea {
-            height: 68px;
             max-width: 100%;
+            height: 68px;
         }
 
         .item-manage {
@@ -323,8 +322,8 @@
             &.customer-wishlist-item-price,
             &.customer-wishlist-item-cart {
                 width: 100%;
-                padding-left: 0;
                 padding-right: 0;
+                padding-left: 0;
                 empty-cells: hide;
             }
 
@@ -373,12 +372,12 @@
             }
 
             &.customer-wishlist-item-remove {
+                display: block;
                 position: absolute;
                 top: 15px;
-                right: 0px;
-                display: block;
-                padding: 0px;
+                right: 0;
                 height: 20px;
+                padding: 0;
             }
         }
 
@@ -395,14 +394,13 @@
  * ============================================ */
 
 .block-wishlist {
-
     .mini-products-list > li:not(:last-child) {
         padding-bottom: 5px;
     }
 
     .product-details .product-name {
-        padding-top: 0;
         margin-bottom: 5px;
+        padding-top: 0;
     }
 
     .price-box {
@@ -418,10 +416,9 @@
 
     .link-cart {
         float: left;
-        text-transform: uppercase;
         margin-right: 7px;
         padding-right: 7px;
+        text-transform: uppercase;
         border-right: 1px solid $c-module-border-light;
     }
-
 }

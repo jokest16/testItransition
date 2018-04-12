@@ -30,9 +30,9 @@
 $mq-support: false;
 $mq-fixed-value: 1024px;
 
-@import "framework";
+@import 'framework';
 
 // ----------------------------------------------
 // Content
 
-@import "content/home";
+@import 'content/home';

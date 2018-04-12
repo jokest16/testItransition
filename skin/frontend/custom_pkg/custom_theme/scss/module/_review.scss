@@ -28,26 +28,26 @@
  * ============================================ */
 
 #customer-reviews {
-    width: auto;
     float: none;
+    width: auto;
 
     .review-heading {
+        padding: $gap 0 5px;
         border-top: 1px solid $c-module-border;
         border-bottom: 1px solid $c-module-border;
-        padding: $gap 0 5px;
 
         &:after {
             @include clearfix;
         }
 
         h2 {
-            float: left;
             display: block;
+            float: left;
         }
 
         .pager {
-            clear: none;
             float: right;
+            clear: none;
             width: auto;
 
             .count-container {
@@ -69,9 +69,9 @@
     }
 
     h2 {
-        color: $c-blue;
         font-size: $f-size-xs;
         text-transform: uppercase;
+        color: $c-blue;
 
         span {
             color: $c-text;
@@ -90,16 +90,16 @@
     }
 
     .fieldset {
-        padding-top: 25px;
         width: 470px;
+        padding-top: 25px;
 
         h4 {
-            border-bottom: 1px solid $c-module-border;
+            padding-bottom: 5px;
             font-family: $f-stack-special;
             font-size: $f-size-xs;
             font-weight: normal;
-            padding-bottom: 5px;
             text-transform: uppercase;
+            border-bottom: 1px solid $c-module-border;
 
             em {
                 display: none;
@@ -107,20 +107,14 @@
         }
 
         .form-list {
+            width: 470px;
+            margin: $gap 0;
             font-family: $f-stack-special;
             font-size: $f-size-xs;
             font-weight: normal;
-            margin: $gap 0;
             text-transform: uppercase;
-            width: 470px;
 
             .inline-label {
-                label {
-                }
-
-                .input-box {
-                }
-
                 &:after {
                     @include clearfix;
                 }
@@ -132,9 +126,9 @@
             }
 
             textarea {
+                min-width: 100%;
                 border: 1px solid $c-module-border;
                 border-radius: 0;
-                min-width: 100%;
                 -webkit-appearance: none;
             }
 
@@ -142,7 +136,7 @@
                 border: 1px solid $c-module-border;
                 border-radius: 0;
 
-                &[type="text"] {
+                &[type='text'] {
                     width: 100%;
                 }
             }
@@ -150,16 +144,16 @@
     }
 
     .buttons-set {
-        border: none;
-        margin: 0;
         width: 470px;
+        margin: 0;
+        border: none;
     }
 
     dl {
+        margin-bottom: $gap;
         font-family: $f-stack-special;
         font-size: $f-size-xs;
         font-weight: normal;
-        margin-bottom: $gap;
 
         dt {
             margin: $gap 0;
@@ -167,14 +161,14 @@
         }
 
         dd {
+            margin: $gap 0;
             font-family: $f-stack-serif;
             font-size: $f-size;
-            margin: $gap 0;
 
             .ratings-table {
+                width: 100%;
                 font-family: $f-stack-special;
                 font-size: $f-size-xs;
-                width: 100%;
 
                 tr {
                     margin-right: 15px;
@@ -191,43 +185,43 @@
             }
 
             .review-meta {
-                color: $c-blue;
                 font-family: $f-stack-special;
                 font-size: 10px;
                 font-weight: normal;
                 text-transform: uppercase;
+                color: $c-blue;
             }
         }
     }
 }
 
 .review-summary-table {
-    border-bottom: 1px solid $c-module-border;
     margin: 0 0 $gap;
+    border-bottom: 1px solid $c-module-border;
 
     thead {
         background: transparent;
 
         th {
-            background: transparent;
-            border: none;
             padding: 15px 7px 10px 8px;
+            border: none;
+            background: transparent;
         }
     }
 
     tbody {
         th {
-            background: #FFFFFF;
             font-size: $f-size-xs;
+            background: #fff;
         }
         td {
-            border: none;
-            text-align: center;
             padding: 0;
+            text-align: center;
+            border: none;
 
             label {
-                width: 100%;
                 display: block;
+                width: 100%;
                 padding: 11px 0;
             }
         }
@@ -238,19 +232,19 @@
             display: none;
 
             &:after {
-                content: "";
-                display: inline-block;
                 @extend .icon-sprite;
-                background-position: 0px -599px;
+
+                display: inline-block;
+                position: relative;
+                top: 2px;
                 width: 13px;
                 height: $f-size;
                 margin-left: 5px;
-                position: relative;
-                top: 2px;
+                content: '';
+                background-position: 0 -599px;
             }
         }
     }
-
 }
 
 /* ============================================ *
@@ -268,20 +262,22 @@
 
     .rating-box {
         @extend .icon-sprite;
-        background-position: 0 -615px;
-        background-repeat: repeat-x;
-        height: 13px;
+
         overflow: hidden;
-        text-indent: -9999px;
         width: 65px;
+        height: 13px;
+        text-indent: -9999px;
+        background-repeat: repeat-x;
+        background-position: 0 -615px;
 
         .rating {
             @extend .icon-sprite;
-            background-position: 0 -600px;
-            background-repeat: repeat-x;
+
             float: left;
             height: 13px;
             text-indent: -9999px;
+            background-repeat: repeat-x;
+            background-position: 0 -600px;
         }
     }
 }
@@ -297,12 +293,12 @@
                 }
 
                 .extra-info {
-                    padding: 0;
                     min-width: 84%;
+                    padding: 0;
 
                     .ratings-table {
-                        margin: $gap 0;
                         width: 100%;
+                        margin: $gap 0;
 
                         tr {
                             margin-right: 15px;
@@ -359,32 +355,31 @@
         }
 
         .review-summary-table {
-
             thead {
                 th {
-                    padding-left: 0px;
-                    padding-right: 0px;
+                    padding-right: 0;
+                    padding-left: 0;
                 }
             }
 
             tbody {
                 th {
-                    padding-left: 0px;
-                    padding-right: 0px;
+                    padding-right: 0;
+                    padding-left: 0;
                 }
 
                 td {
                     width: 20%;
-                    padding: 0px;
+                    padding: 0;
                 }
             }
 
             .rating-box {
-                text-indent: 0px;
-                text-align: center;
-                background: none;
-                height: $f-size * 1.4;
                 width: 100%;
+                height: $f-size * 1.4;
+                text-align: center;
+                text-indent: 0;
+                background: none;
 
                 .rating {
                     display: none;
@@ -394,7 +389,6 @@
                 }
             }
         }
-
     }
 }
 

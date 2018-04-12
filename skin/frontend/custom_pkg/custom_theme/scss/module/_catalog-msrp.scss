@@ -28,94 +28,113 @@
  * ============================================ */
 
 .cart-msrp-totals {
-    color: red;
-    font-size: 12px !important;
-    font-weight: bold;
     margin: 10px 10px 0;
     padding: 10px;
+    font-size: 12px !important;
+    font-weight: bold;
     text-align: right;
     text-transform: uppercase;
+    color: red;
 }
 
 .map-cart-sidebar-total {
-    color: red;
     display: block;
+    padding: 2px 5px;
     font-size: 10px;
     font-weight: bold;
     text-align: left;
-    padding: 2px 5px;
+    color: red;
 }
 
 .map-popup {
-    background: #FFFFFF;
-    border: 5px solid $c-module-border;
-    margin: 12px 0 0;
-    position: absolute;
-    text-align: left;
-    width: 450px;
-    z-index: 100;
-
     @include bp(min-width, $bp-medium + 1) {
         &.map-popup-right {
             left: $gap !important;
         }
 
         &.map-popup-left {
-            left: auto !important;
             right: $gap !important;
+            left: auto !important;
         }
     }
-
     @include bp(max-width, $bp-medium) {
+        left: 0 !important;
         width: 100%;
-        left: 0px !important;
     }
 
+    position: absolute;
+    z-index: 100;
+    width: 450px;
+    margin: 12px 0 0;
+    text-align: left;
+    border: 5px solid $c-module-border;
+    background: #fff;
+
     .map-popup-heading {
-        padding: 8px 10px;
-        margin-right: 40px;
         width: auto;
+        margin-right: 40px;
+        padding: 8px 10px;
 
         h3 {
-            font-size: $f-size;
-            margin: 0;
-            overflow: hidden;
-            white-space: nowrap;
-            word-wrap: break-word;
-            text-align: left;
-            text-overflow: ellipsis;
-
             @include bp(max-width, $bp-xsmall) {
                 text-align: center;
             }
+
+            overflow: hidden;
+            margin: 0;
+            font-size: $f-size;
+            text-align: left;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
         }
     }
 
     .map-popup-close {
         display: block;
         position: absolute;
-        top: 0px;
-        right: 0px;
-        height: 36px;
+        top: 0;
+        right: 0;
         width: 36px;
+        height: 36px;
         font-size: 20px;
         line-height: 32px;
         text-align: center;
     }
 
     .map-popup-content {
-        border-top: 1px solid $c-module-border-light;
-        padding: 10px;
-        margin: 0 10px;
-        overflow: hidden;
-        text-align: left;
-
         @include bp(max-width, $bp-xsmall) {
             text-align: center;
         }
+
+        overflow: hidden;
+        margin: 0 10px;
+        padding: 10px;
+        text-align: left;
+        border-top: 1px solid $c-module-border-light;
     }
 
     .map-popup-checkout {
+        @include bp(max-width, $bp-xsmall) {
+            text-align: center;
+
+            .button,
+            .additional-addtocart-box,
+            .paypal-logo a,
+            .paypal-logo .paypal-or {
+                float: none;
+            }
+
+            .additional-addtocart-box {
+                min-width: 0;
+            }
+
+            .paypal-logo .paypal-or {
+                margin: 0;
+                margin-bottom: 10px;
+            }
+        }
+
         padding: $gap 0;
 
         form:after {
@@ -128,8 +147,8 @@
 
         .button {
             float: left;
-            margin: 0 2px;
             clear: left;
+            margin: 0 2px;
         }
 
         .additional-addtocart-box {
@@ -152,9 +171,9 @@
 
             .paypal-or {
                 float: left;
-                text-align: center;
-                padding: 5px 15px;
                 clear: left;
+                padding: 5px 15px;
+                text-align: center;
             }
 
             &:after {
@@ -168,37 +187,18 @@
             }
         }
 
-        @include bp(max-width, $bp-xsmall) {
-            text-align: center;
-
-            .button,
-            .additional-addtocart-box,
-            .paypal-logo a,
-            .paypal-logo .paypal-or {
-                float: none;
-            }
-
-            .additional-addtocart-box {
-                min-width: 0px;
-            }
-
-            .paypal-logo .paypal-or {
-                margin: 0px;
-                margin-bottom: 10px;
-            }
-        }
-
         &:after {
             @include clearfix;
         }
     }
 
     .map-popup-price {
-        padding: $gap 0;
         @include bp(max-width, $bp-xsmall) {
+            padding-top: 0;
             text-align: center;
-            padding-top: 0px;
         }
+
+        padding: $gap 0;
 
         .price-box,
         .price-box .special-price {
@@ -213,8 +213,8 @@
     }
 
     .map-popup-text {
-        padding: 10px 0;
         margin: 0 10px;
+        padding: 10px 0;
         word-wrap: break-word;
     }
 

@@ -36,14 +36,12 @@ $mq-fixed-value: 1024px !default;
 
     // Media queries supported
     @if $mq-support == true {
-
         @media #{$media} and ($feature: $value) {
             @content;
         }
 
         // Media queries not supported
     } @else {
-
         @if $feature == 'min-width' {
             @if $value <= $mq-fixed-value {
                 @content;
@@ -53,7 +51,6 @@ $mq-fixed-value: 1024px !default;
                 @content;
             }
         }
-
     }
 }
 
@@ -90,4 +87,3 @@ $mq-fixed-value: 1024;
 
 // ----------------------------------------------
 */
-

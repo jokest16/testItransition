@@ -47,12 +47,13 @@ $nav-primary-height: 30px;
 
 .skip-nav .icon {
     @extend .icon-sprite;
+
     background-position: 0+4px ($toolbar-icon-padding-offset/2);
 }
 
 .nav-primary li.menu-active > ul {
-    opacity: 1;
     top: 60px;
+    opacity: 1;
 }
 
 /* ============================================ *
@@ -61,12 +62,12 @@ $nav-primary-height: 30px;
 
 .nav-primary {
     a {
-        text-decoration: none;
-        position: relative;
         display: block;
-        color: $c-text;
-        line-height: $nav-primary-height;
+        position: relative;
         font-family: $f-stack-special;
+        line-height: $nav-primary-height;
+        text-decoration: none;
+        color: $c-text;
     }
 
     li {
@@ -91,21 +92,17 @@ $nav-primary-height: 30px;
 // ---------------------------------------------
 
 @include bp(min-width, 500px) {
-
     .skip-nav {
         width: 25%;
     }
-
 }
 
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
-
     .skip-nav {
         display: none;
     }
-
 }
 
 /* ============================================ *
@@ -113,21 +110,17 @@ $nav-primary-height: 30px;
  * ============================================ */
 
 @include bp(max-width, $bp-medium) {
-
     #header-nav {
         padding: 5px 0;
     }
-
 }
 
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
-
     #header-nav {
         display: inline-block; /* Force visibility */
     }
-
 }
 
 /* ============================================ *
@@ -138,7 +131,6 @@ $nav-primary-height: 30px;
     .nav-primary {
         display: block;
     }
-
 }
 
 /* ============================================ *
@@ -146,9 +138,7 @@ $nav-primary-height: 30px;
  * ============================================ */
 
 @include bp(max-width, $bp-medium) {
-
     .nav-primary {
-
         // Increase clickable area of anchors for small viewports
         a.level0,
         a {
@@ -171,9 +161,10 @@ $nav-primary-height: 30px;
 
         li.parent > a:after {
             @include triangle(right, 5px, #ccc);
+
             top: 50%;
-            left: 10px;
             right: auto;
+            left: 10px;
             margin-top: -5px;
         }
 
@@ -181,9 +172,10 @@ $nav-primary-height: 30px;
         li.parent.sub-menu-active > a:after,
         li.parent.menu-active > a:after {
             @include triangle(down, 5px, #ccc);
+
             top: 50%;
-            left: 10px;
             right: auto;
+            left: 10px;
             margin-top: -5px;
         }
 
@@ -219,17 +211,17 @@ $nav-primary-height: 30px;
         }
 
         li.menu-active > ul.level0 {
-            opacity: 1;
             top: 60px;
+            opacity: 1;
         }
 
         .parent.menu-active > .link:after {
-            content: '';
             position: absolute;
-            height: 100%;
-            width: 100%;
             bottom: -100%;
             left: 0;
+            width: 100%;
+            height: 100%;
+            content: '';
         }
 
         .menu-active {
@@ -238,22 +230,22 @@ $nav-primary-height: 30px;
 
         /* Default styles for 1+ drop-down menus */
         li.level0 ul {
-            background-color: $c-white;
-            opacity: 0;
             position: absolute;
-            left: 0;
-            top: 120px; /* Height of ".nav-primary a.level0" */
             z-index: 10;
+            top: 120px; /* Height of ".nav-primary a.level0" */
+            left: 0;
             width: 250px;
-            padding-left: $box-spacing;
             padding-right: $box-spacing;
+            padding-left: $box-spacing;
             transition: opacity .5s ease, top .6s ease;
+            opacity: 0;
+            background-color: $c-white;
         }
 
         /* Level 2+ */
         li.level1 ul {
-            left: 60px;
             top: 15px;
+            left: 60px;
         }
 
         /* Class for js to add briefly to evaluate element positioning. */
@@ -268,9 +260,9 @@ $nav-primary-height: 30px;
 
             // Sub-menu drop down to the left
             li.level1 ul {
-                left: auto;
-                right: 50px;
                 top: 20px;
+                right: 50px;
+                left: auto;
             }
         }
 
@@ -280,8 +272,9 @@ $nav-primary-height: 30px;
 
             &:after {
                 @include triangle(right, 4px, #ccc);
-                right: 5px;
+
                 top: 50%;
+                right: 5px;
                 margin-top: -3px;
             }
         }

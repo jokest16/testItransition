@@ -50,8 +50,8 @@
 .cart-forms .giftcard,
 .cart-forms .shipping {
     padding: $box-spacing;
-    background-color: $c-module-background;
     border: 1px solid $c-module-border;
+    background-color: $c-module-background;
 }
 
 .cart-table,
@@ -92,8 +92,8 @@
     }
 
     .crosssell {
-        clear: right;
         float: right;
+        clear: right;
     }
 }
 
@@ -117,11 +117,11 @@
         .cart-forms,
         .cart-totals-wrapper,
         .crosssell {
-            padding-top: 0;
-            padding-left: 0;
-            padding-right: 0;
             float: none;
             width: 100%;
+            padding-top: 0;
+            padding-right: 0;
+            padding-left: 0;
         }
     }
 }
@@ -144,23 +144,23 @@
     }
     h1 {
         float: left;
-        border-bottom: none;
-        margin-bottom: 6px;
         margin-right: 10px;
+        margin-bottom: 6px;
+        border-bottom: none;
     }
 }
 
 .checkout-types {
     float: right;
-    text-align: right;
     max-width: 100%;
+    text-align: right;
 
     li {
+        margin: 0 0 5px 5px;
+        vertical-align: top;
         &:after {
             @include clearfix;
         }
-        vertical-align: top;
-        margin: 0 0 5px 5px;
 
         img {
             display: inline;
@@ -202,8 +202,8 @@
             }
         }
         .paypal-or {
-            margin: 0px;
             display: block;
+            margin: 0;
             text-align: center;
         }
     }
@@ -212,8 +212,8 @@
 @include bp(min-width, 741px) {
     .checkout-types.bottom {
         .paypal-or {
-            text-align: right;
             padding-right: 70px;
+            text-align: right;
         }
     }
 }
@@ -230,8 +230,8 @@
         &.bottom,
         &.minicart {
             .paypal-or {
-                width: auto;
                 float: none;
+                width: auto;
             }
         }
     }
@@ -255,23 +255,23 @@
     th,
     td,
     tbody td {
+        vertical-align: top;
         // Adding tbody for extra selector weight
         border-bottom: none;
-        vertical-align: top;
     }
 
     h2 {
-        color: $c-h2;
+        margin-bottom: 0;
         font-size: $f-size;
         font-weight: 600;
-        margin-bottom: 0;
+        color: $c-h2;
     }
 
     thead th,
     tbody td {
-        background-color: transparent;
         padding: 10px 5px;
         font-family: $f-stack-special;
+        background-color: transparent;
     }
 
     .product-cart-info,
@@ -294,10 +294,10 @@
     }
 
     span.or {
-        font-size: 9px;
         padding: 0 5px;
-        text-transform: uppercase;
         font-family: $f-stack-special;
+        font-size: 9px;
+        text-transform: uppercase;
     }
 
     .product-cart-image .cart-links,
@@ -307,12 +307,12 @@
     }
 
     .product-cart-image {
-        padding-left: 0;
         padding-right: 0;
+        padding-left: 0;
 
         .product-image img {
-            max-width: 100%;
             width: 100%;
+            max-width: 100%;
         }
 
         a.cart-edit {
@@ -321,10 +321,10 @@
     }
 
     .product-cart-sku {
-        font-family: $f-stack-serif;
-        font-style: italic;
-        font-size: $f-size-xs;
         margin: 5px 0 12px;
+        font-family: $f-stack-serif;
+        font-size: $f-size-xs;
+        font-style: italic;
 
         .label {
             font-weight: 600;
@@ -346,6 +346,7 @@
 
         &:after {
             @include triangle(left, 6px, $c-text-primary);
+
             position: absolute;
             top: 3px;
             right: -11px;
@@ -354,18 +355,19 @@
         &.cart-tax-total-expanded {
             &:after {
                 @include triangle(down, 6px, $c-text-primary);
-                right: -15px;
+
                 top: 6px;
+                right: -15px;
             }
         }
     }
 
     .cart-links > li {
-        white-space: nowrap;
-        line-height: 1.3;
-        margin-bottom: 5px;
         min-width: 65px;
+        margin-bottom: 5px;
         font-size: $f-size-s;
+        line-height: 1.3;
+        white-space: nowrap;
 
         > a {
             display: block;
@@ -381,12 +383,12 @@
         text-align: center;
 
         .qty {
+            width: 3.2em;
             height: 30px;
-            border-color: $c-input-border;
-            border-radius: 0;
             margin-bottom: 10px;
             text-align: center;
-            width: 3.2em;
+            border-color: $c-input-border;
+            border-radius: 0;
         }
 
         .button {
@@ -401,7 +403,6 @@
 
 @include bp(max-width, $bp-medium) {
     .cart-table {
-
         th {
             font-size: $f-size-xs;
         }
@@ -429,18 +430,18 @@
 }
 
 @include bp(max-width, 599px) {
-
     .cart-table {
-        colgroup, thead {
+        colgroup,
+        thead {
             display: none;
         }
 
         tr {
             display: block;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
             position: relative;
             width: 100%;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
 
             &:after {
                 @include clearfix;
@@ -456,22 +457,22 @@
         }
 
         td {
-            border: none;
             display: block;
+            border: none;
 
             &[data-rwd-label] {
-                padding-left: 15px;
                 margin-bottom: 6px;
+                padding-left: 15px;
 
                 .price {
                     font-weight: normal;
                 }
 
                 &:before {
-                    content: attr(data-rwd-label) ":";
-                    font-size: $f-size-xs;
-                    font-family: $f-stack-special;
                     padding-right: 5px;
+                    font-family: $f-stack-special;
+                    font-size: $f-size-xs;
+                    content: attr(data-rwd-label) ':';
                     text-transform: uppercase;
                 }
             }
@@ -490,19 +491,19 @@
             padding-right: 5px;
 
             > li {
-                white-space: normal;
                 text-align: center;
+                white-space: normal;
 
                 > a {
-                    padding: 2px 0px;
+                    padding: 2px 0;
                 }
             }
         }
 
         .cart-tax-info {
-            font-style: italic;
             padding-left: $trim-small;
             font-size: $f-size-s;
+            font-style: italic;
 
             .price {
                 font-size: $f-size-s;
@@ -510,8 +511,8 @@
         }
 
         .product-cart-image {
-            width: percentage(1/4);
             float: left;
+            width: percentage(1/4);
             padding-bottom: 0;
 
             a.cart-edit {
@@ -530,9 +531,9 @@
 
         .product-cart-actions,
         .product-cart-price {
-            padding-bottom: 0;
-            padding-top: 0;
             float: right;
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         .product-cart-remove,
@@ -552,10 +553,9 @@
         }
 
         .product-cart-info {
-
             .btn-remove {
                 float: right;
-                margin: -4px 0px 2px 7px;
+                margin: -4px 0 2px 7px;
             }
 
             .product-cart-sku {
@@ -574,14 +574,14 @@
 
         .price,
         .product-cart-price:before {
-            font-weight: 500;
-            font-size: $f-size-l;
             font-family: $f-stack-sans;
+            font-size: $f-size-l;
+            font-weight: 500;
         }
 
         .cart-footer-actions {
-            text-align: center;
             width: 100%;
+            text-align: center;
 
             #empty_cart_button {
                 float: right;
@@ -595,7 +595,6 @@
             span.or {
                 display: none;
             }
-
         }
     }
 
@@ -604,7 +603,7 @@
             td {
                 &[data-rwd-tax-label] {
                     &:before {
-                        content: attr(data-rwd-tax-label) ":";
+                        content: attr(data-rwd-tax-label) ':';
                     }
                 }
             }
@@ -617,17 +616,16 @@
  * ============================================ */
 
 .shipping {
-
     h2 {
+        margin: 0 0 5px;
         font-size: $f-size-xs;
         font-weight: bold;
-        margin: 0 0 5px;
     }
 
     select {
+        display: block;
         max-width: 100%;
         height: 30px;
-        display: block;
         border: 1px solid $c-input-border;
     }
 
@@ -640,9 +638,9 @@
     }
 
     .buttons-set {
-        border: none;
         margin: 0;
         padding: 0;
+        border: none;
     }
 
     .form-list {
@@ -663,8 +661,8 @@
         }
 
         .shipping-postcode {
-            margin-right: 0;
             width: 18%;
+            margin-right: 0;
 
             input {
                 margin-top: 4px;
@@ -684,8 +682,8 @@
             font-family: $f-stack-special;
             font-size: $f-size-s;
             font-weight: 400;
-            text-transform: uppercase;
             white-space: nowrap;
+            text-transform: uppercase;
         }
     }
 
@@ -698,10 +696,10 @@
         }
 
         label {
+            min-width: 100px;
             font-family: $f-stack-serif;
             font-size: $f-size-xs;
             font-style: italic;
-            min-width: 100px;
 
             span {
                 font-family: $f-stack-special;
@@ -716,21 +714,20 @@
         margin-left: 0;
     }
     #co-shipping-method-form .sp-methods dd label {
+        min-width: 220px;
         border: 1px solid $c-module-border;
         background-color: $c-module-background-hover;
-        min-width: 220px;
 
         &:hover {
-            background-color: shade($c-module-background, 10%)
+            background-color: shade($c-module-background, 10%);
         }
     }
 }
 
 @include bp(max-width, $bp-medium) {
-
     .shipping .shipping-form .form-list > li {
-        width: 100%;
         float: none;
+        width: 100%;
 
         label {
             display: block;
@@ -755,18 +752,18 @@
     }
 
     table {
+        width: 100%;
+        margin-bottom: 20px;
         font-family: $f-stack-special;
         font-size: $f-size-xs;
-        margin-bottom: 20px;
         text-transform: uppercase;
-        width: 100%;
 
         td {
-            padding: 2px 0px;
+            padding: 2px 0;
         }
         td:first-child {
-            padding-right: 10px;
             min-width: 120px;
+            padding-right: 10px;
         }
 
         tbody tr:last-child td,
@@ -775,18 +772,17 @@
         }
 
         tfoot {
-            border-top: 1px solid #E6E6E6;
-            border-bottom: 1px solid #E6E6E6;
+            border-top: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
             td {
-                font-size: 24px;
                 padding: 2px 5px;
+                font-size: 24px;
                 vertical-align: top;
             }
 
             strong span,
             span.price {
                 font-family: $f-stack-sans;
-
             }
 
             strong {
@@ -797,14 +793,12 @@
 }
 
 @include bp(max-width, 600px) {
-
     .cart-totals {
         text-align: right;
     }
 }
 
 @include bp(max-width, $bp-medium) {
-
     .cart .cart-totals table tfoot td {
         font-size: $f-size-xxl;
     }
@@ -828,14 +822,14 @@
     }
 
     label {
+        display: inline-block;
+        min-width: 105px;
+        margin-right: 10px;
         font-family: $f-stack-special;
         font-size: $f-size-xs;
         font-weight: 400;
         text-align: left;
         text-transform: uppercase;
-        min-width: 105px;
-        display: inline-block;
-        margin-right: 10px;
     }
 
     .field-wrapper {
@@ -856,10 +850,10 @@
     }
 
     .input-text {
-        border-radius: 0;
+        width: 190px;
         height: 30px;
         margin: 4px 10px 0 0;
-        width: 190px;
+        border-radius: 0;
     }
 }
 
@@ -869,7 +863,7 @@
 
 .cart .giftcard .check-gc-status {
     float: left;
-    padding: 0px;
+    padding: 0;
 
     > span > span {
         font-size: $f-size;
@@ -887,8 +881,8 @@
     }
 
     .item a.product-image {
-        width: auto;
         float: left;
+        width: auto;
     }
 }
 
@@ -936,7 +930,7 @@
     .crosssell {
         ul {
             .item {
-                padding: 0 0px 40px;
+                padding: 0 0 40px;
             }
 
             .product-details .crosssell-actions {

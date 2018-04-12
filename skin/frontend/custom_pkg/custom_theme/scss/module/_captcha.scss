@@ -31,45 +31,56 @@
     padding-top: 5px;
 }
 .captcha-image {
-    float: left;
     display: inline;
-    max-width: 100%;
+    float: left;
     position: relative;
     width: 258px;
+    max-width: 100%;
     margin-bottom: 10px;
 }
 .captcha-image .captcha-img {
-    border: 1px solid #b6b6b6;
-    vertical-align: bottom;
     width: 100%;
+    vertical-align: bottom;
+    border: 1px solid #b6b6b6;
 }
-.registered-users .captcha-image { margin: 0 }
+.registered-users .captcha-image {
+    margin: 0;
+}
 .captcha-reload {
-    cursor: pointer;
     position: absolute;
     top: 2px;
     right: 2px;
+    cursor: pointer;
 }
 .captcha-reload.refreshing {
-    animation: rotate 1.5s infinite linear;
     -webkit-animation: rotate 1.5s infinite linear;
     -moz-animation: rotate 1.5s infinite linear;
+    animation: rotate 1.5s infinite linear;
 }
-.customer-account-create .scaffold-form .captcha-input-container label:first-child { width: 100% }
+.customer-account-create .scaffold-form .captcha-input-container label:first-child {
+    width: 100%;
+}
 .captcha-reload {
     position: absolute;
-    right: 4px;
     top: 4px;
+    right: 4px;
 }
-.captcha-img { border: 20px solid #bbb }
-.captcha-input-container { margin-bottom: 10px }
-.control.newsletter-box, .captcha-input-container, .captcha-img-container {
+.captcha-img {
+    border: 20px solid #bbb;
+}
+.captcha-input-container {
+    margin-bottom: 10px;
+}
+.control.newsletter-box,
+.captcha-input-container,
+.captcha-img-container {
     float: none;
     clear: both;
 
-    &:after{
-        content:'';
+    &:after {
         @include clearfix;
+
+        content: '';
     }
 }
 /* ============================================ *
@@ -77,6 +88,6 @@
  * ============================================ */
 #co-billing-form ul.form-list > .control {
     float: left;
-    margin: 0 0 5px;
     width: 100%;
+    margin: 0 0 5px;
 }

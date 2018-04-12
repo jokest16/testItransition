@@ -19,12 +19,12 @@ $_text-upper-transform: false
 ) {
     & {
         position: relative;
-        color: $_color;
-        border:1px solid $_border-color;
-        background-color: $_background-color;
         height: $_button-size;
         user-select: none;
         transition: color .3s ease-in,border-color .3s ease-in,background-color .3s ease-in;
+        color: $_color;
+        border: 1px solid $_border-color;
+        background-color: $_background-color;
     }
 
     & {
@@ -49,8 +49,8 @@ $_text-upper-transform: false
     }
 
     &:hover {
-        border-color: lighten($_border-color,10%);
         color: lighten($_color,10%);
+        border-color: lighten($_border-color,10%);
         background-color: lighten($_background-color,10%);
     }
 }
@@ -62,10 +62,10 @@ $_text-upper-transform: false
 button,
 .button {
     & {
+        display: block;
         font-size: $f-size-s;
         text-align: center;
         text-decoration: none;
-        display: block;
     }
 
     &:hover {
@@ -92,7 +92,7 @@ button,
     }
 
     &.-inverted {
-       @include button-variant (
+        @include button-variant (
         $_color: $theme-c-green,
         $_border-color: $theme-c-green,
         $_background-color: transparent
@@ -109,17 +109,16 @@ button,
 
     &.-third {
         @include button-variant (
-            $_color: $c-white,
-            $_border-color: $theme-c-dark-gray,
-            $_background-color: $theme-c-dark-gray,
-            $_text-upper-transform: true
+        $_color: $c-white,
+        $_border-color: $theme-c-dark-gray,
+        $_background-color: $theme-c-dark-gray,
+        $_text-upper-transform: true
         );
     }
 
     &.-svg-icon {
-        background: none;
         border: none;
         outline: none;
+        background: none;
     }
 }
-

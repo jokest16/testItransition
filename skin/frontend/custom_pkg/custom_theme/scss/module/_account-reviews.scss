@@ -30,12 +30,12 @@
 .product-review {
     .product-img-box {
         p.label {
-            border-bottom: 1px solid $c-module-border;
-            font-size: $f-size-xl;
-            font-family: $f-stack-special;
             margin-top: 20px;
             padding-bottom: $gap;
+            font-family: $f-stack-special;
+            font-size: $f-size-xl;
             text-transform: uppercase;
+            border-bottom: 1px solid $c-module-border;
         }
 
         .rating-box {
@@ -45,12 +45,12 @@
 
     .product-details {
         h2 {
-            border-bottom: 1px solid $c-module-border;
-            color: #3399CC;
+            padding-bottom: $gap;
+            font-family: $f-stack-special;
             font-size: $f-size-xl;
             font-weight: 600;
-            font-family: $f-stack-special;
-            padding-bottom: $gap;
+            color: #39c;
+            border-bottom: 1px solid $c-module-border;
         }
     }
 
@@ -63,27 +63,27 @@
 
         tr {
             float: left;
-            font-size: $f-size-xs;
             margin-right: $gap;
+            font-size: $f-size-xs;
             text-transform: uppercase;
         }
     }
 
     .ratings-description {
         dt {
-            border-bottom: 1px solid $c-module-border;
-            font-size: $f-size-xl;
-            font-weight: 400;
-            font-family: $f-stack-special;
             margin-top: 20px;
             padding: $gap 0;
+            font-family: $f-stack-special;
+            font-size: $f-size-xl;
+            font-weight: 400;
             text-transform: uppercase;
+            border-bottom: 1px solid $c-module-border;
         }
 
         dd {
-            color: #737373;
             font-family: $f-stack-special;
             font-size: $f-size-s;
+            color: #737373;
         }
     }
 }

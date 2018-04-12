@@ -16,8 +16,8 @@ $footer-bottom__font-size: $f-size-xxs;
     & {
         clear: both;
         width: 100%;
-        border-top: 1px solid $c-module-border;
         padding-top: $trim;
+        border-top: 1px solid $c-module-border;
     }
 
     .form-subscribe-header {
@@ -46,17 +46,17 @@ $footer-bottom__font-size: $f-size-xxs;
     }
 
     address {
-        border-top: 1px solid $c-module-border;
-        text-align: center;
         width: 100%;
-        font-size: $f-size-xxs;
         margin-top: $trim;
         padding: $trim 0;
+        font-size: $f-size-xxs;
+        text-align: center;
+        border-top: 1px solid $c-module-border;
     }
 
     .customer-links {
-        text-align: center;
         margin: 20px 0 20px;
+        text-align: center;
     }
 
     .customer-links > .links > .list {
@@ -66,17 +66,17 @@ $footer-bottom__font-size: $f-size-xxs;
     .customer-links > .links {
         display: inline-block;
         position: relative;
-        text-align: left;
-        padding: 0 25px 0 30px;
-        vertical-align: text-top;
         margin-right: 35px;
         margin-left: 10px;
+        padding: 0 25px 0 30px;
+        text-align: left;
+        vertical-align: text-top;
     }
 
     .customer-links > .links:before {
-        content: '';
         position: absolute;
         padding: 15px 15px 25px 15px;
+        content: '';
         background-repeat: no-repeat;
     }
 
@@ -106,20 +106,20 @@ $footer-bottom__font-size: $f-size-xxs;
         padding-right: 0;
     }
 
-    .customer-links > .links .link{
+    .customer-links > .links .link {
         display: inline-block;
+        margin-bottom: 5px;
         font-size: $customer-links--links--link__font-size;
         font-weight: $customer-links--links--link__font-weight;
         text-transform: uppercase;
-        margin-bottom: 5px;
     }
 
     .footer-bottom {
         position: relative;
-        background-color: #403e40;
-        text-align: center;
         padding: 20px 0 25px;
         font-size: $footer-bottom__font-size;
+        text-align: center;
+        background-color: #403e40;
     }
 
     .footer-bottom > .links {
@@ -128,16 +128,17 @@ $footer-bottom__font-size: $f-size-xxs;
     }
 
     .footer-bottom > .links > .link:not(:last-of-type):after {
-        content: '|';
         padding-left: 5px;
+        content: '|';
     }
 
     .go-top {
         & {
             @include centred-content(true,false);
+
             width: 20px;
-            color: $c-white;
             transition: color .3s ease-in-out;
+            color: $c-white;
         }
 
         .svg-icon {

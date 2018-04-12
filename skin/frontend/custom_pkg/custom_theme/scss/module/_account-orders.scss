@@ -33,13 +33,13 @@
     .sales-order-shipment {
         .sub-title {
             float: left;
+            width: 100%;
             font-size: $f-size-l;
             text-align: center;
-            width: 100%;
         }
         .order-links {
-            text-align: center;
             width: 100%;
+            text-align: center;
         }
     }
 }

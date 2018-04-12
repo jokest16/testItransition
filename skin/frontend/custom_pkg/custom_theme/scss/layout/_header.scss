@@ -51,18 +51,18 @@ $page-header-container__box-shadow: $page-header-container__box-shadow-param $pa
 
 .header-language-container {
     & {
+        position: relative;
+        z-index: 1;
         padding: $gap;
+        text-align: center;
         color: $header-language-container__color;
         background-color: $header-language-container__background-color;
-        z-index: 1;
-        position: relative;
-        text-align: center;
     }
 
     .header-language-container {
         max-width: $max-content-width;
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
     }
 
     &:after {
@@ -78,7 +78,6 @@ $page-header-container__box-shadow: $page-header-container__box-shadow-param $pa
     .welcome-msg {
         display: inline-block;
     }
-
 }
 
 .page-header-container {
@@ -87,14 +86,14 @@ $page-header-container__box-shadow: $page-header-container__box-shadow-param $pa
     }
 
     &::after {
-        content: '';
-        background-color: $page-header-container__background-color;
         position: absolute;
-        height: 100%;
+        z-index: -1;
+        right: -25%;
         bottom: 0;
         left: -25%;
-        right: -25%;
-        z-index: -1;
+        height: 100%;
+        content: '';
+        background-color: $page-header-container__background-color;
         box-shadow: $page-header-container__box-shadow;
     }
 }
@@ -131,8 +130,8 @@ $page-header-container__box-shadow: $page-header-container__box-shadow-param $pa
     float: left;
     width: 118px;
     height: 93px;
-    text-align: center;
     padding: $gap;
+    text-align: center;
 
     img {
         max-width: 100%;
@@ -147,7 +146,7 @@ $page-header-container__box-shadow: $page-header-container__box-shadow-param $pa
 }
 
 .logo:hover {
-    opacity: 0.8;
+    opacity: .8;
 }
 
 /* ============================================ *
@@ -157,8 +156,8 @@ $page-header-container__box-shadow: $page-header-container__box-shadow-param $pa
 .skip-links {
     clear: both;
     overflow: hidden;
-    border-top: 1px solid #EDEDED;
-    border-bottom: 1px solid #EDEDED;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
 }
 
 /* -------------------------------------------- *
@@ -170,7 +169,7 @@ a.skip-link {
 }
 
 .skip-link:not(.skip-active):hover {
-    opacity: 0.8;
+    opacity: .8;
 }
 
 /* -------------------------------------------- *
@@ -211,16 +210,17 @@ a.skip-link {
 
 .account-cart-wrapper {
     @include centred-content(true,false);
+
     right: 50px;
 }
 
 .account-cart-wrapper .link.-navigation {
-    position: relative;
-    line-height: 42px;
-    height: 42px;
     float: left;
-    padding: 0 10px;
+    position: relative;
     width: auto;
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
     text-align: center;
 }
 
@@ -231,11 +231,11 @@ a.skip-link {
     #header-account li a,
     .nav-primary a.level0 {
         padding: 0 15px 0 25px;
-        border-bottom: 1px solid $c-module-border;
-        text-align: left;
-        color: $c-text;
-        text-transform: uppercase;
         line-height: 30px;
+        text-align: left;
+        text-transform: uppercase;
+        color: $c-text;
+        border-bottom: 1px solid $c-module-border;
     }
 
     #header-account li:last-child a,
@@ -245,8 +245,8 @@ a.skip-link {
 
     .no-touch #header-account a:hover,
     .no-touch .nav-primary a:hover {
-        background-color: $c-module-background;
         text-decoration: none;
+        background-color: $c-module-background;
     }
 
     .header-language-background {
@@ -258,7 +258,7 @@ a.skip-link {
     }
 
     .skip-link {
-        border-right: 1px solid #EDEDED;
+        border-right: 1px solid #ededed;
     }
 
     .skip-link:last-child {
@@ -281,11 +281,11 @@ a.skip-link {
 
 @include bp(min-width, $bp-medium + 1) {
     .page-header-container {
+        display: flex;
         position: relative;
         max-width: $max-container-width;
         margin: 0 auto;
         padding: 0 $trim;
-        display: flex;
         align-items: center;
     }
 
@@ -305,5 +305,4 @@ a.skip-link {
     .page-header-container {
         position: relative;
     }
-
 }

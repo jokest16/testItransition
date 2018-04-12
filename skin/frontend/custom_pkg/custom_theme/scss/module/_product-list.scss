@@ -56,26 +56,27 @@ h4.product-name,
 h5.product-name,
 p.product-name {
     @include h2;
-    font-size: $f-size-s;
+
     font-family: $f-stack-sans;
+    font-size: $f-size-s;
     font-weight: normal;
     line-height: 1.4;
 
     a {
         color: $c-text;
         &:hover {
-            color: $c-action;
             text-decoration: none;
+            color: $c-action;
         }
     }
 }
 
 .products-grid .product-name,
 .products-list .product-name {
-    text-transform: uppercase;
     margin-bottom: 5px;
-    font-size: $f-size;
     font-family: $f-stack-special;
+    font-size: $f-size;
+    text-transform: uppercase;
 
     a {
         font-weight: 500;
@@ -137,11 +138,11 @@ $productsGridActionHeight: 85px;
 }
 
 .products-grid .actions {
-    padding-top: $box-spacing;
     position: absolute;
-    bottom: 0px;
-    min-height: $productsGridActionHeight;
+    bottom: 0;
     width: 100%;
+    min-height: $productsGridActionHeight;
+    padding-top: $box-spacing;
 }
 
 .products-grid .ratings .rating-box {
@@ -153,9 +154,9 @@ $productsGridActionHeight: 85px;
 }
 
 .products-grid .price-box {
-    color: $c-text-gray;
-    font-size: $f-size-s;
     margin: 0 0 5px;
+    font-size: $f-size-s;
+    color: $c-text-gray;
 }
 
 .products-grid .add-to-links {
@@ -184,9 +185,9 @@ $productsGridActionHeight: 85px;
 }
 
 .products-grid .product-image {
-    margin-bottom: 5px;
-
     @include loadingOverlay();
+
+    margin-bottom: 5px;
 }
 
 // ---------------------------------------------
@@ -197,7 +198,6 @@ $productsGridActionHeight: 85px;
     $column-count: 3;
     $column-gutters: 2;
     $container: 600 - (2 * $trim);
-
     // Math: (540 - (2 * 30 gutter)) / 3 items = 160
     $column-width: ($container - ($column-gutters * $product-column-spacing)) / $column-count;
 
@@ -225,17 +225,15 @@ $productsGridActionHeight: 85px;
 }
 
 // This mixin outputs the styles to allow for grids with more than 3 columns
-@mixin product-grid($column-count, $container-width, $class-append:"") {
-
-    // Allow this mixin to be used for more specific purposes, such as grids contained within widgets
-    @if $class-append != "" {
-        $class-append: -#{$class-append};
-    }
-
+@mixin product-grid($column-count, $container-width, $class-append: '') {
     /* Config: Columns + flexible gutter */
     $column-gutters: ($column-count) - 1;
     $container: $container-width - (2 * $trim);
     $column-width: ($container - ($column-gutters * $product-column-spacing)) / $column-count;
+    // Allow this mixin to be used for more specific purposes, such as grids contained within widgets
+    @if $class-append != '' {
+        $class-append: -#{$class-append};
+    }
 
     /* Undo three-column config */
     .products-grid--max-#{$column-count}-col#{$class-append} > li:nth-child(odd) {
@@ -282,8 +280,8 @@ $productsGridActionHeight: 85px;
     margin-bottom: 20px;
 
     & > li {
-        padding-bottom: 20px;
         margin-bottom: 20px;
+        padding-bottom: 20px;
         border-bottom: 1px solid $c-module-border-light;
 
         &:after {
@@ -341,14 +339,14 @@ $productsGridActionHeight: 85px;
     .product-primary,
     .desc {
         float: left;
-        width: 65%;
         overflow: hidden;
+        width: 65%;
     }
     .product-secondary {
         float: right;
+        clear: right;
         width: 35%;
         text-align: right;
-        clear: right;
     }
 }
 
@@ -394,7 +392,6 @@ $productsGridActionHeight: 85px;
  * ============================================ */
 
 .mini-products-list {
-
     .product-image {
         float: left;
         min-width: 50px;
@@ -409,8 +406,8 @@ $productsGridActionHeight: 85px;
     }
 
     li {
-        margin-bottom: $gap;
         clear: both;
+        margin-bottom: $gap;
 
         &:after {
             @include clearfix();
@@ -419,7 +416,6 @@ $productsGridActionHeight: 85px;
 }
 
 .mini-products-images-list {
-
     &:after {
         @include clearfix;
     }
@@ -444,7 +440,6 @@ $productsGridActionHeight: 85px;
             }
         }
     }
-
 }
 
 
@@ -454,8 +449,8 @@ $productsGridActionHeight: 85px;
  * ============================================ */
 
 .category-image {
-    border: 1px solid $c-module-border;
     padding: 10px;
+    border: 1px solid $c-module-border;
 
     img {
         width: 100%;
@@ -472,9 +467,10 @@ $productsGridActionHeight: 85px;
  * ============================================ */
 
 .block-layered-nav .block-subtitle--filter {
-    // Will be shown at smaller viewports
-    display: none;
     @include accordionDtBase;
+    // Will be shown at smaller viewports
+
+    display: none;
     cursor: pointer;
 }
 
@@ -484,12 +480,13 @@ $productsGridActionHeight: 85px;
 }
 
 .block-layered-nav dl dd {
-    margin-bottom: $box-spacing;
     margin-top: $box-spacing;
+    margin-bottom: $box-spacing;
 
-    ol > li > span, ol > li > a {
-        padding: 5px 15px;
+    ol > li > span,
+    ol > li > a {
         display: block;
+        padding: 5px 15px;
     }
     ol > li > a .count {
         color: $c-text-gray;
@@ -518,34 +515,37 @@ $productsGridActionHeight: 85px;
 
     // Remove the top padding and re-add it as margin-top so that the margin will collapse with elements above it
     .block-layered-nav .block-content {
-        padding-top: 0;
-        margin-top: 15px;
         @include accordionCollapse;
+
+        margin-top: 15px;
+        padding-top: 0;
     }
 
     .block-layered-nav .block-subtitle--filter {
-        background-color: $c-action;
-        border: 0;
-        margin-bottom: 0;
         display: block;
-        color: #FFFFFF;
+        margin-bottom: 0;
+        color: #fff;
+        border: 0;
+        background-color: $c-action;
 
         &:after {
-            @include triangle(right, 4px, #FFFFFF);
-            right: 10px;
+            @include triangle(right, 4px, #fff);
+
             top: 50%;
+            right: 10px;
             margin-top: -5px;
         }
 
         &:hover {
+            color: #fff;
             background-color: $c-button-hover;
-            color: #FFFFFF;
         }
 
         &.active:after {
-            @include triangle(down, 4px, #FFFFFF);
-            right: 10px;
+            @include triangle(down, 4px, #fff);
+
             top: 50%;
+            right: 10px;
             margin-top: -3px;
         }
     }
@@ -559,8 +559,8 @@ $productsGridActionHeight: 85px;
 
     .block-layered-nav dl ol > li > a,
     .block-layered-nav dl ol > li > span {
-        padding: 7px;
         margin: 5px;
+        padding: 7px;
     }
 
     .block-layered-nav dl ol > li > a {
@@ -575,13 +575,14 @@ $productsGridActionHeight: 85px;
 
 .block-layered-nav .currently {
     .block-subtitle {
-        display: block;
         @include h4;
+
+        display: block;
     }
 
     ol {
-        padding-left: $box-spacing;
         margin-bottom: $box-spacing;
+        padding-left: $box-spacing;
     }
     ol li {
         margin-bottom: 5px;
@@ -597,6 +598,6 @@ $productsGridActionHeight: 85px;
 }
 
 .block-layered-nav .actions {
-    text-align: right;
     margin-bottom: $element-spacing;
+    text-align: right;
 }

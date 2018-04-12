@@ -28,11 +28,11 @@
  * ============================================ */
 
 .header-minicart {
-    display: inline-block;
-
     @include bp(max-width, $bp-medium) {
         display: block;
     }
+
+    display: inline-block;
 
     .minicart-message {
         display: block;
@@ -46,6 +46,7 @@
 
     .minicart-wrapper {
         @include loadingOverlay();
+
         clear: both;
         position: relative;
     }
@@ -55,37 +56,37 @@
     }
 
     .block-subtitle {
-        color: #50A4CF;
+        margin-bottom: 0;
+        padding: 5px;
         font-family: $f-stack-special;
         font-size: 10px;
         font-weight: bold;
         line-height: 1.4;
-        padding: 5px;
         text-align: center;
         text-transform: uppercase;
-        margin-bottom: 0px;
+        color: #50a4cf;
 
         .close {
-            width: 40px;
-            float: right;
             display: block;
-            color: $c-text;
-            text-decoration: none;
-            font-weight: normal;
-            font-size: 30px;
+            float: right;
             position: absolute;
             top: -8px;
             right: $box-spacing - 13px;
+            width: 40px;
+            font-size: 30px;
+            font-weight: normal;
+            text-decoration: none;
+            color: $c-text;
         }
     }
     .mini-products-list {
         padding: $box-spacing;
-        padding-top: 0px;
+        padding-top: 0;
 
         li {
-            padding: 8px 5px 8px 11px;
-            border-bottom: 1px solid #DDDDDD;
             position: relative;
+            padding: 8px 5px 8px 11px;
+            border-bottom: 1px solid #ddd;
 
             &.last {
                 border: none;
@@ -99,7 +100,7 @@
 
     .product-details {
         .product-name {
-            padding-top: 0px;
+            padding-top: 0;
             font-weight: bold;
 
             a {
@@ -109,15 +110,15 @@
     }
 
     .info-wrapper {
-        margin-bottom: 0.5em;
+        margin-bottom: .5em;
 
         th {
-            text-transform: uppercase;
             padding-right: $gap;
+            text-transform: uppercase;
         }
         td {
-            color: $c-text-primary;
             clear: right;
+            color: $c-text-primary;
         }
 
         .qty-wrapper {
@@ -128,19 +129,19 @@
         }
 
         .qty {
-            padding-left: 4px;
-            padding-right: 4px;
-            margin-right: 2px;
             width: 3.2em;
-            text-align: center;
             height: 30px;
+            margin-right: 2px;
+            padding-right: 4px;
+            padding-left: 4px;
+            text-align: center;
         }
 
         .quantity-button {
-            opacity: 0;
-
             @include transition-property(opacity);
             @include transition-duration(100ms);
+
+            opacity: 0;
 
             &[disabled] {
                 cursor: default;
@@ -153,13 +154,13 @@
     }
 
     .subtotal {
-        background-color: #DDDDDD;
-        text-align: center;
         line-height: 2em;
+        text-align: center;
+        background-color: #ddd;
 
         .label {
-            color: white;
             text-transform: uppercase;
+            color: white;
         }
         .price {
             color: $c-text-primary;
@@ -167,10 +168,10 @@
     }
 
     .minicart-actions {
-        padding: $box-spacing;
-        margin-top: 0px;
         overflow: hidden;
         position: relative;
+        margin-top: 0;
+        padding: $box-spacing;
         text-align: center;
 
         .checkout-button {
@@ -179,9 +180,9 @@
 
         .cart-link {
             height: 33px;
+            font-size: $f-size-s;
             line-height: 39px;
             text-transform: uppercase;
-            font-size: $f-size-s;
         }
 
         .paypal-logo {
@@ -192,15 +193,15 @@
     }
 
     #minicart-error-message {
+        display: none;
         text-align: center;
         color: red;
-        display: none;
     }
 
     #minicart-success-message {
+        display: none;
         text-align: center;
         color: green;
-        display: none;
     }
 
     //hide jcarousel controls until carousel is properly integrated with design
@@ -237,7 +238,7 @@
         }
         .minicart-wrapper {
             &:before {
-                background-color: #EDEDED;
+                background-color: #ededed;
             }
         }
 
@@ -257,9 +258,9 @@
             padding-bottom: 33px;
 
             .cart-link {
-                bottom: 0;
-                right: $box-spacing;
                 position: absolute;
+                right: $box-spacing;
+                bottom: 0;
             }
 
             .checkout-types.minicart {
@@ -277,9 +278,9 @@
                         }
 
                         .paypal-or {
-                            width: auto;
-                            float: none;
                             display: inline;
+                            float: none;
+                            width: auto;
                             margin: 0 10px 5px 10px;
                             line-height: 40px;
                         }
@@ -296,8 +297,8 @@
             .cart-link {
                 right: auto;
                 left: 0;
-                text-align: center;
                 width: 100%;
+                text-align: center;
             }
 
             .checkout-types.minicart {
@@ -305,8 +306,8 @@
                     .paypal-logo {
                         .paypal-or,
                         .paypal-button {
-                            width: 100%;
                             display: block;
+                            width: 100%;
                             margin-left: 0;
                         }
 

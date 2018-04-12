@@ -31,6 +31,7 @@
 *:before,
 *:after {
     @include box-sizing(border-box);
+
     margin: 0;
     padding: 0;
 }
@@ -41,9 +42,9 @@ html {
 }
 
 body {
-    background: #FFFFFF;
-    color: #000000;
     line-height: 1;
+    color: #000;
+    background: #fff;
 }
 
 html,
@@ -100,7 +101,7 @@ q:after {
 
 // Standard outline-offset in Chrome and make the search input same as text input
 input:focus,
-input[type="search"]:focus {
+input[type='search']:focus {
     outline: none;
 }
 
@@ -110,9 +111,9 @@ input {
 }
 
 // Resetting Normalize so that search inputs behave the same as text inputs
-input[type="search"] {
-    -webkit-appearance: none; /* 1 */
-    -moz-box-sizing: border-box;
+input[type='search'] {
     -webkit-box-sizing: border-box; /* 2 */
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-appearance: none; /* 1 */
 }

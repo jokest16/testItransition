@@ -35,9 +35,7 @@
     // Note: this technique has issues on Android 3.x
     // An alternative that requires the :before generated content was added to H5BP
     // See: https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
-
     //color:transparent; font:0/0 a; text-shadow:none; vertical-align:middle;
-
     // The simplest option remains using text-indent:-9999px despite the performance drawback
     text-indent: -9999px;
 }

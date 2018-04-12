@@ -27,27 +27,27 @@
  * Checkout - Multiple Addresses
  * ============================================ */
 
-body[class*="checkout-multishipping-"] {
+body[class*='checkout-multishipping-'] {
     .checkout-progress {
-        width: 100%;
         float: left;
+        width: 100%;
         margin-bottom: 25px;
         > li {
             float: left;
             width: 20%;
-            text-align: center;
-            padding: 8px 1% 6px;
-            background: $c-module-background;
-            text-transform: uppercase;
-            border-bottom: 1px solid $c-module-border;
-            border-right: 1px solid $c-module-border;
             margin-bottom: 10px;
+            padding: 8px 1% 6px;
             font-family: $f-stack-special;
+            text-align: center;
+            text-transform: uppercase;
+            border-right: 1px solid $c-module-border;
+            border-bottom: 1px solid $c-module-border;
+            background: $c-module-background;
             &.active {
                 background-color: $c-button-secondary;
             }
             &.last {
-                border-right: 0px;
+                border-right: 0;
             }
         }
     }
@@ -56,19 +56,19 @@ body[class*="checkout-multishipping-"] {
         width: 100%;
         margin-bottom: 15px;
         h1 {
-            border: 0 none;
             float: left;
             margin-top: 2px;
             margin-right: 2%;
+            border: 0 none;
         }
         .button {
             float: right;
         }
     }
     .multiple-checkout > h2 {
-        text-transform: none;
-        font-size: 17px;
         margin-bottom: 15px;
+        font-size: 17px;
+        text-transform: none;
     }
     .messages {
         float: left;
@@ -85,9 +85,9 @@ body[class*="checkout-multishipping-"] {
     }
 
     .grand-total {
-        text-align: right;
         font-size: $f-size-xl;
         font-weight: bold;
+        text-align: right;
     }
 
     #checkout-review-submit {
@@ -102,10 +102,10 @@ body[class*="checkout-multishipping-"] {
 
 .checkout-multishipping-addresses {
     .btn-remove2 {
-        text-indent: -5555px;
         display: block;
         width: 22px;
         height: 22px;
+        text-indent: -5555px;
     }
 }
 
@@ -132,29 +132,32 @@ body[class*="checkout-multishipping-"] {
 .checkout-multishipping-shipping,
 .checkout-multishipping-billing,
 .checkout-multishipping-overview {
-    .col-1, .col-2 {
+    .col-1,
+    .col-2 {
         .box-title {
-            h2, h3, h4 {
-                font-weight: normal;
+            h2,
+            h3,
+            h4 {
                 width: 100%;
-                background: $c-module-background;
-                border-bottom: 1px solid $c-module-border;
                 padding: 10px;
                 font-size: 14px;
+                font-weight: normal;
+                border-bottom: 1px solid $c-module-border;
+                background: $c-module-background;
             }
         }
         > h4 {
-            font-weight: normal;
             width: 100%;
-            background: $c-module-background;
-            border-bottom: 1px solid $c-module-border;
             padding: 10px;
             font-size: 14px;
+            font-weight: normal;
+            border-bottom: 1px solid $c-module-border;
+            background: $c-module-background;
         }
         .box-content {
+            margin-top: 10px;
             margin-bottom: 25px;
             padding-left: 10px;
-            margin-top: 10px;
         }
     }
 }
@@ -171,30 +174,30 @@ body[class*="checkout-multishipping-"] {
 }
 
 #review-order-form > div:nth-child(3) > div.divider {
+    clear: both;
     width: 100%;
-    clear:both;
 }
 
 @include bp(max-width, $bp-large) {
-    body[class*="checkout-multishipping-"] {
+    body[class*='checkout-multishipping-'] {
         .checkout-progress span {
             word-spacing: 300px;
         }
     }
-    #review-order-form{
+    #review-order-form {
         .col-1,
         .col-2 {
             float: none;
             width: auto;
-            border: 0;
             padding-right: 0;
             padding-left: 0;
+            border: 0;
         }
     }
 }
 
 @include bp(max-width, $bp-medium) {
-    body[class*="checkout-multishipping-"] {
+    body[class*='checkout-multishipping-'] {
         .checkout-progress span {
             width: 12px;
         }
@@ -202,13 +205,13 @@ body[class*="checkout-multishipping-"] {
             li {
                 width: 100%;
                 margin: 0;
-                text-align: left;
                 padding-left: 3%;
-                border-right: 0px;
+                text-align: left;
+                border-right: 0;
             }
             span {
-                word-spacing: 1px;
                 width: 12px;
+                word-spacing: 1px;
             }
         }
         .box-title {
@@ -228,7 +231,8 @@ body[class*="checkout-multishipping-"] {
                 min-width: 200px;
             }
         }
-        .col-1.col-narrow, .col-2.col-wide {
+        .col-1.col-narrow,
+        .col-2.col-wide {
             width: 100%;
             padding: 0;
         }
@@ -237,14 +241,14 @@ body[class*="checkout-multishipping-"] {
 
 @include bp(max-width, $bp-small) {
     .checkout-multishipping-addresses .linearize-table tbody td[data-rwd-label] {
-        text-align: left;
-        padding-left: 10px;
         margin-top: 12px;
+        padding-left: 10px;
+        text-align: left;
     }
 }
 
 @include bp(max-width, $bp-xsmall) {
-    body[class*="checkout-multishipping-"] {
+    body[class*='checkout-multishipping-'] {
         .buttons-set .back-link {
             display: block;
         }

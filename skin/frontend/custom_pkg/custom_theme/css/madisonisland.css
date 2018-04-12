@@ -46,27 +46,27 @@ body.cms-home .slideshow-container {
 }
 
 .slideshow .banner-msg {
-  position: absolute;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-  top: 30%;
+  -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
   user-select: none;
+  -o-user-select: none;
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .slideshow .banner-msg h2 {
-  color: #FFFFFF;
   font-size: 24px;
+  color: #fff;
 }
 
 .slideshow .banner-msg h2 strong {
-  font-weight: bold;
   display: block;
   font-size: 36px;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 770px) {
@@ -94,29 +94,29 @@ body.cms-home .slideshow-container {
  * Promotion Banner Section
  */
 .promos {
+  width: 100%;
   margin: 0 0 10px 0;
   padding: 0;
-  width: 100%;
 }
 
 .promos:after {
-  content: '';
   display: table;
   clear: both;
+  content: '';
 }
 
 /* Specifying the body only in order to override the .std ul li styling */
 body .promos > li {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -o-user-select: none;
+  position: relative;
   margin: 0 0 10px 0;
   list-style: none;
   text-align: center;
-  position: relative;
-  border: 1px solid #CCCCCC;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+  border: 1px solid #ccc;
 }
 
 .promos > li:last-child {
@@ -124,8 +124,8 @@ body .promos > li {
 }
 
 .promos img {
-  max-width: 100%;
   width: 100%;
+  max-width: 100%;
 }
 
 .promos a:hover {
@@ -135,21 +135,21 @@ body .promos > li {
 }
 
 .promos span {
-  color: #FFFFFF;
-  text-transform: uppercase;
-  position: absolute;
   display: block;
-  width: 100%;
+  position: absolute;
   top: 10%;
-  font-weight: 500;
-  font-size: 20px;
+  width: 100%;
   font-family: "Montserrat", "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .promos strong {
-  font-weight: 600;
-  font-size: 26px;
   display: block;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 771px) {
@@ -193,11 +193,11 @@ body .promos > li {
 
 .cms-index-index h2.subtitle {
   padding: 6px 0;
-  text-align: center;
-  color: #3399CC;
   font-weight: 600;
-  border-bottom: 1px solid #CCCCCC;
-  border-top: 1px solid #CCCCCC;
+  text-align: center;
+  color: #39c;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .cms-index-noroute h2.subtitle {
@@ -212,28 +212,28 @@ body .promos > li {
 }
 
 .categorylandingMainblock {
-  border: 1px solid #E2E2E2;
   padding: 7px;
+  border: 1px solid #e2e2e2;
 }
 
 .catblocks {
   float: left;
-  padding: 0 0 20px 0;
   width: 100%;
+  padding: 0 0 20px 0;
 }
 
 .catblocks li {
-  position: relative;
   float: left !important;
+  position: relative;
   width: 23% !important;
   margin-right: 2.66667% !important;
   margin-bottom: 10px;
-  border: 1px solid #CCCCCC;
   padding: 10px;
+  border: 1px solid #ccc;
 }
 
 .catblocks li:hover {
-  border-color: #3399CC;
+  border-color: #39c;
 }
 
 @media only screen and (max-width: 770px) {
@@ -248,9 +248,9 @@ body .promos > li {
 
 @media only screen and (max-width: 479px) {
   .catblocks li {
+    float: none;
     width: 100% !important;
     margin-right: 0 !important;
-    float: none;
   }
 }
 
@@ -264,49 +264,49 @@ body .promos > li {
 }
 
 .catblocks li a span {
-  color: #FFFFFF;
   position: absolute;
-  background-color: #7B7C7B;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-right: 10px;
+  padding: 5px 10px;
   font-family: raleway;
   font-size: 17px;
   font-weight: bold;
-  text-transform: uppercase;
   text-align: center;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  padding: 5px 10px;
-  margin-right: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #7b7c7b;
 }
 
 .catblocklinks a {
-  color: #FFFFFF;
   text-decoration: none;
+  color: #fff;
 }
 
 .catlandingbottomPromoblock {
   float: left;
   width: 100%;
-  border: 1px solid #E2E2E2;
   margin-bottom: 100px;
+  border: 1px solid #e2e2e2;
 }
 
 .catalog-category-view div.categoryland-caption {
   display: block;
-  margin: 0;
   position: absolute;
-  color: #000000;
+  margin: 0;
   font-size: 30px;
   font-weight: 500;
   line-height: 36px;
   text-align: center;
+  color: #000;
 }
 
 .catalog-category-view div.categoryland-caption span.blue-big-text {
-  color: #3399CC;
+  padding: 0 0 0 8px;
   font-size: 50px;
   font-weight: 800;
-  padding: 0 0 0 8px;
+  color: #39c;
 }
 
 .catalog-category-view div.categoryland-caption span.blue-big-text {
@@ -314,28 +314,28 @@ body .promos > li {
 }
 
 .catalog-category-view div.categoryland-caption span.three-dots {
-  background: url(../images/bg_threeDots.png) no-repeat center center;
   display: block;
   height: 20px;
+  background: url(../images/bg_threeDots.png) no-repeat center center;
 }
 
 .catalog-category-view div.categoryland-caption p.desc {
-  font: italic 18px/28px Georgia, "Times New Roman", Times, serif;
+  font: italic 18px/28px Georgia, 'Times New Roman', Times, serif;
   color: #656565;
 }
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption a.link:hover,
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption span.link:hover {
   text-decoration: underline;
-  color: #1189C5;
+  color: #1189c5;
 }
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption span.blue-big-text,
 .catalog-category-view div.categoryland-caption span.blue-big-text {
-  color: #3399CC;
+  padding: 0 0 0 8px;
   font-size: 50px;
   font-weight: 800;
-  padding: 0 0 0 8px;
+  color: #39c;
 }
 
 .catalog-category-view div.categoryland-caption span.blue-big-text {
@@ -344,14 +344,14 @@ body .promos > li {
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption span.three-dots,
 .catalog-category-view div.categoryland-caption span.three-dots {
-  background: url(../images/bg_threeDots.png) no-repeat center center;
   display: block;
   height: 20px;
+  background: url(../images/bg_threeDots.png) no-repeat center center;
 }
 
 .cms-home #homepage-main-slides div.slides_control div div.slideshow-caption p.desc,
 .catalog-category-view div.categoryland-caption p.desc {
-  font: italic 18px/28px Georgia, "Times New Roman", Times, serif;
+  font: italic 18px/28px Georgia, 'Times New Roman', Times, serif;
   color: #656565;
 }
 

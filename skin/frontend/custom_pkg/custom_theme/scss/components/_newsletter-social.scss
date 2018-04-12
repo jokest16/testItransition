@@ -26,29 +26,29 @@ $social-links--social-link--icon_hover__color: $theme-c-dark-gray;
     .social-links > .wrapper,
     .block-subscribe > .wrapper {
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
         position: relative;
         min-height: 250px;
+        align-items: center;
+        justify-content: center;
     }
 
     .block-subscribe {
-        background-color: $newsletter-social--block-subscribe__background-color;
-        color: $newsletter-social--block-subscribe__color;
         text-align: right;
+        color: $newsletter-social--block-subscribe__color;
+        background-color: $newsletter-social--block-subscribe__background-color;
     }
 
     .block-subscribe .form {
-        padding: 0 90px;
         width: 100%;
+        padding: 0 90px;
     }
 
     .block-subscribe .input-box {
         display: inline-block;
-        margin-top: 20px;
         position: relative;
         width: 100%;
+        margin-top: 20px;
     }
 
     .block-subscribe .input-text {
@@ -59,11 +59,12 @@ $social-links--social-link--icon_hover__color: $theme-c-dark-gray;
 
     .block-subscribe .button.-svg-icon {
         & {
-            @include centred-content($vertical:true,$horizontal: false);
-            color: $newsletter-social--block-subscribe__background-color;
+            @include centred-content($vertical: true,$horizontal: false);
+
             right: 10px;
             height: 15px;
             transition: color .3s ease-in-out;
+            color: $newsletter-social--block-subscribe__background-color;
         }
 
         &:hover {
@@ -77,22 +78,22 @@ $social-links--social-link--icon_hover__color: $theme-c-dark-gray;
     }
 
     .block-subscribe > .wrapper > .message {
-        max-width: 380px;
         display: inline-block;
+        max-width: 380px;
         font-size: 1rem;
         font-weight: $newsletter-social--block-subscribe--message__font-weight;
     }
 
     .block-subscribe .checkbox-wrapper {
+        width: 100%;
         margin: 10px auto 0 auto;
         text-align: left;
-        width: 100%;
     }
 
     .block-subscribe .checkbox-wrapper > .label {
         display: inline-block;
-        vertical-align: middle;
         padding-bottom: 10px;
+        vertical-align: middle;
     }
 
     .social-links {
@@ -101,8 +102,8 @@ $social-links--social-link--icon_hover__color: $theme-c-dark-gray;
 
     .block-subscribe > .wrapper,
     .social-links > .wrapper {
-        text-align: center;
         width: 100%;
+        text-align: center;
     }
 
     .block-subscribe > .wrapper > .title,

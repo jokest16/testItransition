@@ -29,90 +29,90 @@
 
 @mixin h1 {
     margin: 0;
-    margin-bottom: 0.7em;
-    color: $c-h1;
+    margin-bottom: .7em;
     font-family: $f-stack-special;
     font-size: 20px;
     font-weight: 400;
     font-style: normal;
     line-height: 1.2;
-    text-rendering: optimizeLegibility;
-    text-transform: uppercase;
     letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $c-h1;
+    text-rendering: optimizeLegibility;
 }
 
 @mixin h2 {
     margin: 0;
-    margin-bottom: 0.5em;
-    color: $c-h2;
+    margin-bottom: .5em;
     font-family: $f-stack-special;
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
     line-height: 1.2;
-    text-rendering: optimizeLegibility;
     text-transform: uppercase;
+    color: $c-h2;
+    text-rendering: optimizeLegibility;
 }
 
 @mixin h3 {
     margin: 0;
     margin-bottom: 10px;
-    color: $c-h3;
     font-family: $f-stack-special;
     font-size: 14px;
     font-weight: 400;
     font-style: normal;
     line-height: 28px;
-    text-rendering: optimizeSpeed;
     text-transform: uppercase;
+    color: $c-h3;
+    text-rendering: optimizeSpeed;
 }
 
 @mixin h4 {
     margin: 0;
     margin-bottom: 10px;
-    color: $c-h4;
     font-family: $f-stack-special;
     font-size: 10px;
     font-weight: bold;
     font-style: normal;
     line-height: 1.4;
-    text-rendering: optimizeSpeed;
     text-transform: uppercase;
+    color: $c-h4;
+    text-rendering: optimizeSpeed;
 }
 
 @mixin h5 {
     margin: 0;
     margin-bottom: 10px;
-    color: $c-h5;
     font-family: $f-stack-sans;
     font-size: 11px;
     font-weight: bold;
     font-style: normal;
     line-height: 1.4;
-    text-rendering: optimizeSpeed;
     text-transform: uppercase;
+    color: $c-h5;
+    text-rendering: optimizeSpeed;
 }
 
 @mixin h6 {
     margin: 0;
     margin-bottom: 5px;
-    color: $c-h6;
     font-family: $f-stack-sans;
     font-size: 10px;
     font-weight: bold;
     font-style: normal;
     line-height: 1.4;
-    text-rendering: optimizeSpeed;
     text-transform: uppercase;
+    color: $c-h6;
+    text-rendering: optimizeSpeed;
 }
 
 @mixin pageTitle() {
-    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding-bottom: 3px;
     font-size: 24px;
     font-weight: 600;
+    text-transform: uppercase;
+    text-transform: uppercase;
     color: $c-text;
     border-bottom: 1px solid $c-module-border-light;
-    padding-bottom: 3px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
 }

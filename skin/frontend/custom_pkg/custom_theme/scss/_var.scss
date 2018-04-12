@@ -86,12 +86,12 @@ $max-std-formatted-width: 50em;
 // Usually not used directly in Sass partials.
 // Only used to define context-based color vars in this file.
 $c-green: #42a62a;
-$c-blue: #3399CC;
-$c-pink: #D85378;
-$c-orange: #F3793B;
-$c-red: #CF5050;
-$c-yellow: #FFDD15;
-$c-black: #000000;
+$c-blue: #39c;
+$c-pink: #d85378;
+$c-orange: #f3793b;
+$c-red: #cf5050;
+$c-yellow: #ffdd15;
+$c-black: #000;
 $c-gray: #413c38;
 $c-white: #fff;
 
@@ -114,8 +114,8 @@ $theme-c-light-gray: #9a9588;
 // Text
 
 $c-text: #413c38;
-$c-text-gray: #A0A0A0;
-$c-text-white: #E6E6E6;
+$c-text-gray: #a0a0a0;
+$c-text-white: #e6e6e6;
 // Primary font color for headings and other non-link text
 $c-text-primary: $c-blue;
 
@@ -129,24 +129,24 @@ $icon__font-size-m: 1.5rem;
 
 $c-action: $c-blue;
 $c-stimulus: darken($c-blue, 15%);
-$c-subtle: #A0A0A0;
+$c-subtle: #a0a0a0;
 
 // Notifications
 
-$c-danger: #DF280A;
-$c-danger-background: #FAEBE7;
+$c-danger: #df280a;
+$c-danger-background: #faebe7;
 
 $c-success: $c-green;
-$c-success-background: #EFF5EA;
+$c-success-background: #eff5ea;
 
-$c-warn: #E26703;
-$c-warn-background: #F9EBE6;
+$c-warn: #e26703;
+$c-warn-background: #f9ebe6;
 
 $c-dark: #676157;
 
 // Global Elements
 
-$c-divider-border: #ECECEC;
+$c-divider-border: #ececec;
 
 // =============================================
 // Element Colors
@@ -160,22 +160,22 @@ $c-button-active: darken($c-blue, 10%);
 
 // Secondary Buttons
 
-$c-button-secondary: #DDDDDD;
-$c-button-secondary-hover: darken(#DDDDDD, 5%);
-$c-button-secondary-active: darken(#DDDDDD, 10%);
+$c-button-secondary: #ddd;
+$c-button-secondary-hover: darken(#ddd, 5%);
+$c-button-secondary-active: darken(#ddd, 10%);
 
-$c-button-subtle: #ECECEC;
+$c-button-subtle: #ececec;
 
 // Forms
 
-$c-input-border: #C0C0C0;
+$c-input-border: #c0c0c0;
 $c-input-border-focus: $c-blue;
 
 $c-input-placeholder: $c-text-gray;
 $c-input-text: $c-text;
 
-$c-fieldset-border: #CCCCCC;
-$c-fieldset-border-light: #EDEDED;
+$c-fieldset-border: #ccc;
+$c-fieldset-border-light: #ededed;
 
 // Headings
 
@@ -194,38 +194,38 @@ $c-link-active: darken($c-action, (5% / 2));
 
 // Module (generic)
 
-$c-module-background: #F4F4F4;
+$c-module-background: #f4f4f4;
 $c-module-background-hover: shade($c-module-background, 3%);
-$c-module-background-secondary: #EAF8FF;
-$c-module-background-dark: #AAAAAA;
+$c-module-background-secondary: #eaf8ff;
+$c-module-background-dark: #aaa;
 // This should be applied whenever the border is surrounding a white element and/or is directly showing on white.
-$c-module-border: #CCCCCC;
+$c-module-border: #ccc;
 // This should be applied whenever the border is wrapping an element with $c-module-background
-$c-module-border-light: #EDEDED;
-$c-module-border-dark: #777777;
+$c-module-border-light: #ededed;
+$c-module-border-dark: #777;
 $c-module-border-highlight: $c-blue;
 
 
 // Table
 
-$c-table-background: #F4F4F4;
-$c-table-border: #C0C0C0;
+$c-table-background: #f4f4f4;
+$c-table-border: #c0c0c0;
 
-$c-table-zebra-odd: #F8F7F5;
-$c-table-zebra-even: #EEEDED;
+$c-table-zebra-odd: #f8f7f5;
+$c-table-zebra-even: #eeeded;
 
 // Tabs
 
-$c-tabs-background: #F0F0F0;
+$c-tabs-background: #f0f0f0;
 
 // Email
-$c-email-background: #EBEBEB;
-$c-email-background-secondary: #E1F0F8;
-$c-email-border: #C3CED4;
-$c-email-action: #3696C2;
-$c-email-cell: #F1F1F1;
-$c-email-highlighted-background: #FFFDD9;
-$c-email-highlighted-border: #FFF74C;
+$c-email-background: #ebebeb;
+$c-email-background-secondary: #e1f0f8;
+$c-email-border: #c3ced4;
+$c-email-action: #3696c2;
+$c-email-cell: #f1f1f1;
+$c-email-highlighted-background: #fffdd9;
+$c-email-highlighted-border: #fff74c;
 
 // =============================================
 // Typography

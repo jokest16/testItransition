@@ -27,38 +27,38 @@
 // Mixin - Triangle
 // =============================================
 
-@mixin triangle($direction: up, $size: 5px, $color: #000000) {
-    content: '';
+@mixin triangle($direction: up, $size: 5px, $color: #000) {
+    display: block;
     position: absolute;
     width: 0;
     height: 0;
-    display: block;
+    content: '';
 
     @if $direction == up {
-        border-right: $size solid transparent;
-        border-left: $size solid transparent;
-        border-bottom: $size solid $color;
         border-top: none;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        border-left: $size solid transparent;
     }
 
     @if $direction == down {
-        border-right: $size solid transparent;
-        border-left: $size solid transparent;
         border-top: $size solid $color;
+        border-right: $size solid transparent;
         border-bottom: none;
+        border-left: $size solid transparent;
     }
 
     @if $direction == right {
         border-top: $size solid transparent;
+        border-right: none;
         border-bottom: $size solid transparent;
         border-left: $size solid $color;
-        border-right: none;
     }
 
     @if $direction == left {
         border-top: $size solid transparent;
-        border-bottom: $size solid transparent;
         border-right: $size solid $color;
+        border-bottom: $size solid transparent;
         border-left: none;
     }
 }

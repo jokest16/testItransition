@@ -34,7 +34,18 @@ $mq-fixed-value: 1024;
 /* ============================================ *
  * General Styles
  * ============================================ */
-body, table.body, th, h1, h2, h3, h4, h5, h6, td, p, strong {
+body,
+table.body,
+th,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+td,
+p,
+strong {
   font-family: Verdana, Arial;
   font-weight: normal;
 }
@@ -44,7 +55,7 @@ body {
   padding: 0;
   text-align: left;
   color: #413c38;
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
 }
 
 body {
@@ -53,8 +64,8 @@ body {
 }
 
 table {
-  mso-table-lspace: 0pt;
-  mso-table-rspace: 0pt;
+  mso-table-lspace: 0;
+  mso-table-rspace: 0;
 }
 
 img {
@@ -62,10 +73,10 @@ img {
 }
 
 body {
-  background: #EBEBEB;
-  font-size: 12px;
   margin: 0;
   padding: 0;
+  font-size: 12px;
+  background: #ebebeb;
 }
 
 table,
@@ -78,7 +89,7 @@ table td {
 }
 
 a {
-  color: #3696C2;
+  color: #3696c2;
 }
 
 .cell-content.product-info,
@@ -91,13 +102,13 @@ a {
 
 html,
 #background-table {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
 }
 
 #background-table {
-  font-size: 12px;
   margin: 0 auto;
   padding: 0;
+  font-size: 12px;
 }
 
 .container-td {
@@ -113,9 +124,9 @@ html,
  * Header Styles
  * ============================================ */
 .top-content {
-  border: 1px solid #EBEBEB;
-  background: #FFF;
   padding: 5px;
+  border: 1px solid #ebebeb;
+  background: #fff;
 }
 
 table.logo-container {
@@ -123,44 +134,44 @@ table.logo-container {
 }
 
 td.logo {
-  padding: 15px 0px 10px 5px;
+  padding: 15px 0 10px 5px;
 }
 
 td.logo a {
-  float: left;
   display: block;
+  float: left;
 }
 
 td.logo img {
-  outline: none;
   text-decoration: none;
+  outline: none;
 }
 
 td.email-heading {
-  padding: 0 1%;
-  background: #E1F0F8;
-  border-right: 1px dashed #C3CED4;
-  text-align: center;
   width: 58%;
+  padding: 0 1%;
+  text-align: center;
+  border-right: 1px dashed #c3ced4;
+  background: #e1f0f8;
 }
 
 td.email-heading h1 {
-  font-weight: 700;
-  font-size: 16px;
   margin: 1em 0;
+  font-size: 16px;
+  font-weight: 700;
   line-height: 20px;
   text-transform: uppercase;
 }
 
 td.email-heading p {
-  line-height: 20px;
   margin: 1em 0;
+  line-height: 20px;
 }
 
 td.store-info {
-  padding: 2%;
-  background: #E1F0F8;
   width: 40%;
+  padding: 2%;
+  background: #e1f0f8;
 }
 
 td.store-info h4 {
@@ -169,14 +180,14 @@ td.store-info h4 {
 }
 
 td.store-info p {
+  margin: 1em 0;
   font-size: 11px;
   line-height: 17px;
-  margin: 1em 0;
 }
 
 td.store-info a {
   text-decoration: underline;
-  color: #3696C2;
+  color: #3696c2;
 }
 
 /* ============================================ *
@@ -188,15 +199,15 @@ td.order-details {
 }
 
 td.order-details h3 {
-  font-size: 17px;
-  margin-bottom: 10px;
   margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 17px;
   font-weight: normal;
 }
 
 td.order-details p {
-  font-size: 11px;
   margin: 1em 0 15px;
+  font-size: 11px;
 }
 
 .items {
@@ -206,11 +217,11 @@ td.order-details p {
 
 .cell-name {
   padding: 10px 15px;
-  background: #F1F1F1;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: left;
   font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  background: #f1f1f1;
 }
 
 .cell-name.align-center {
@@ -230,30 +241,30 @@ td.order-details p {
 
 .cell-content {
   padding: 10px 15px;
-  border-top: 1px solid #EBEBEB;
   font-family: Verdana, Arial;
+  border-top: 1px solid #ebebeb;
 }
 
 .product-info a.product-name {
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #3696C2;
-  text-decoration: none;
-  vertical-align: middle;
+  display: block;
   float: left;
   width: 100%;
-  display: block;
+  font-weight: 700;
+  vertical-align: middle;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #3696c2;
 }
 
 .table-totals {
   width: 100%;
-  background: #E1F0F8;
+  background: #e1f0f8;
 }
 
 .padding-totals {
   padding: 20px 15px;
-  text-align: right;
   line-height: 20px;
+  text-align: right;
 }
 
 .padding-totals .last {
@@ -270,10 +281,10 @@ td.order-details p {
 }
 
 .grand-total {
-  border-top: 1px solid #C3CED4;
   padding-top: 5px;
-  font-weight: 700;
   font-size: 15px;
+  font-weight: 700;
+  border-top: 1px solid #c3ced4;
 }
 
 .shipping-information td {
@@ -290,24 +301,24 @@ td.order-details p {
 
 .address-details,
 .method-info {
-  text-align: left;
   padding: 10px 15px 0;
+  text-align: left;
 }
 
 .address-details h6,
 .method-info h6 {
+  margin-top: 5px;
+  margin-bottom: 0;
   font-size: 12px;
   font-weight: 700;
-  margin-bottom: 0px;
-  margin-top: 5px;
   text-transform: uppercase;
 }
 
 .address-details p {
+  margin-top: 2px;
+  margin-bottom: 15px;
   font-size: 12px;
   line-height: 18px;
-  margin-bottom: 15px;
-  margin-top: 2px;
 }
 
 .method-info {
@@ -315,26 +326,26 @@ td.order-details p {
 }
 
 .method-info p {
-  font-size: 12px;
   margin-top: 2px;
   margin-bottom: 30px;
+  font-size: 12px;
   line-height: 18px;
 }
 
 .closing-text {
-  text-align: center;
-  font-size: 22px;
-  line-height: 32px;
-  font-weight: normal;
-  margin-bottom: 75px;
   margin-top: 30px;
+  margin-bottom: 75px;
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 32px;
+  text-align: center;
 }
 
 .product-info > p,
 .product-info > dl {
+  display: block;
   float: left;
   width: 100%;
-  display: block;
 }
 
 .product-info > dl {
@@ -347,10 +358,10 @@ td.order-details p {
 }
 
 .action-content h1 {
+  margin-top: 5px;
+  margin-bottom: 25px;
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 25px;
-  margin-top: 5px;
   line-height: 28px;
 }
 
@@ -358,7 +369,8 @@ td.order-details p {
   height: 5px;
 }
 
-.method-info p, .method-info dl {
+.method-info p,
+.method-info dl {
   padding: 0;
 }
 
@@ -366,10 +378,10 @@ td.order-details p {
  * Comments and Messages - Styles
  * ============================================ */
 .message-container {
-  margin: 15px 0;
   width: 100%;
-  background-color: #FFFDD9;
-  border: 1px solid #FFF74C;
+  margin: 15px 0;
+  border: 1px solid #fff74c;
+  background-color: #fffdd9;
 }
 
 .message-container,
@@ -379,27 +391,27 @@ td.order-details p {
 }
 
 .message-container td {
-  padding: 10px 15px;
   margin: 0;
+  padding: 10px 15px;
 }
 
 .highlighted-text {
-  border: 1px solid #C3CED4;
   padding: 13px 18px;
-  background: #F1F1F1;
+  border: 1px solid #c3ced4;
+  background: #f1f1f1;
 }
 
 /* ============================================ *
  * Bundle Products - Styles
  * ============================================ */
 .bundle-item {
-  padding: 0px 15px;
+  padding: 0 15px;
   text-align: left;
 }
 
 .bundle-item-parent {
-  border-top: 1px solid #EBEBEB;
   padding: 10px 15px;
+  border-top: 1px solid #ebebeb;
 }
 
 .bundle-item-parent.product-info {
@@ -408,9 +420,9 @@ td.order-details p {
 
 .bundle-item > div,
 .bundle-item > strong {
+  display: block;
   float: left;
   width: 100%;
-  display: block;
 }
 
 .bundle-item.bundle-details > div {
@@ -427,42 +439,42 @@ td.order-details p {
 }
 
 .action-button td {
-  background-color: #3696C2;
-  color: #FFF;
+  display: block;
   width: 100%;
   height: 40px;
-  display: block;
-  border: 0 none;
+  margin: 0 auto;
   text-align: center;
-  text-transform: uppercase;
   vertical-align: middle;
   white-space: nowrap;
-  margin: 0 auto;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0 none;
+  background-color: #3696c2;
 }
 
 .action-button a {
+  display: inline-block;
   width: 100%;
   height: 100%;
-  line-height: 40px;
   font-size: 15px;
-  display: inline-block;
+  line-height: 40px;
   text-decoration: none;
 }
 
 .action-button a span {
-  color: #FFF;
+  color: #fff;
 }
 
 /* ============================================ *
  * Newsletter - Default Template Styles
  * ============================================ */
 hr {
-  background-color: #D9D9D9;
-  border: medium none;
-  color: #D9D9D9;
+  width: 94%;
   height: 1px;
   margin-left: 3%;
-  width: 94%;
+  color: #d9d9d9;
+  border: medium none;
+  background-color: #d9d9d9;
 }
 
 td.email-heading h1 {
@@ -470,14 +482,15 @@ td.email-heading h1 {
 }
 
 td.store-info h4 {
-  font-size: 12px;
   margin-top: 13px;
+  font-size: 12px;
   font-weight: bold;
 }
 
-table, table td {
-  padding: 0;
+table,
+table td {
   margin: 0;
+  padding: 0;
 }
 
 table.columns.heading {
@@ -486,14 +499,14 @@ table.columns.heading {
 
 .main-image {
   width: 100%;
-  margin-bottom: 3px;
   margin-top: 5px;
+  margin-bottom: 3px;
 }
 
 table.row {
-  padding: 0px;
-  width: 100%;
   position: relative;
+  width: 100%;
+  padding: 0;
 }
 
 table.container table.row {
@@ -502,8 +515,8 @@ table.container table.row {
 }
 
 td.wrapper {
-  padding: 10px 0 0;
   position: relative;
+  padding: 10px 0 0;
 }
 
 .full {
@@ -529,23 +542,23 @@ td.wrapper {
 
 td.expander {
   visibility: hidden;
-  width: 0px;
+  width: 0;
   padding: 0;
 }
 
 table.button {
-  width: 100%;
   overflow: hidden;
+  width: 100%;
 }
 
 table.button td,
 table.social-button td {
   display: block;
   width: auto;
-  text-align: center;
-  color: #FFF;
   padding: 8px 4%;
   cursor: pointer;
+  text-align: center;
+  color: #fff;
 }
 
 .social-button {
@@ -554,7 +567,7 @@ table.social-button td {
 }
 
 table.button td {
-  background: #3696C2;
+  background: #3696c2;
 }
 
 table.social-button td {
@@ -563,10 +576,10 @@ table.social-button td {
 
 table.button td a,
 table.social-button td a {
-  color: #FFF;
   font-size: 16px;
-  text-transform: uppercase;
   text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 table.social-button td a {
@@ -575,8 +588,8 @@ table.social-button td a {
 }
 
 .panel {
-  background-color: #F2F2F2;
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
+  background-color: #f2f2f2;
 }
 
 .panel p {
@@ -584,13 +597,13 @@ table.social-button td a {
 }
 
 .panel h6 {
-  font-size: 20px;
   margin: 15px 10px;
+  font-size: 20px;
 }
 
 .panel a {
-  color: #3696C2;
   text-decoration: none;
+  color: #3696c2;
 }
 
 .sidebar-links table {
@@ -602,9 +615,9 @@ table.social-button td a {
 }
 
 .sidebar-links a {
-  margin: 8px 0;
   float: left;
   width: 100%;
+  margin: 8px 0;
   text-align: left;
 }
 
@@ -622,28 +635,28 @@ table.google-plus td,
 table.facebook td a,
 table.twitter td a,
 table.google-plus td a {
-  text-align: center;
   height: 17px;
+  text-align: center;
 }
 
 table.facebook td {
-  background: #3B5998;
+  background: #3b5998;
 }
 
 table.twitter td {
-  background: #00ACEE;
+  background: #00acee;
 }
 
 table.google-plus td {
-  background: #DB4A39;
+  background: #db4a39;
 }
 
 /* ============================================ *
  * Product Grid
  * ============================================ */
 h2.products {
-  padding-left: 10px;
   padding-right: 10px;
+  padding-left: 10px;
 }
 
 .products-grid > tr > td {
@@ -656,18 +669,18 @@ h2.products {
 }
 
 .products-grid .product-wrapper {
-  padding-left: 10px;
   padding-right: 10px;
+  padding-left: 10px;
 }
 
 .product-name {
   margin: 0 0 5px 0;
-  color: #413c38;
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-  text-transform: uppercase;
-  line-height: 1.4;
   font-size: 14px;
+  font-style: normal;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: #413c38;
+  text-rendering: optimizeLegibility;
 }
 
 p.product-name {
@@ -692,12 +705,12 @@ p.sku {
 }
 
 .price-notice {
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 
 .price-box .price {
-  color: #3399CC;
   font-size: 16px;
+  color: #39c;
 }
 
 .price-box .price,
@@ -706,20 +719,20 @@ p.sku {
 }
 
 .price-box .price-label {
-  color: #A0A0A0;
-  white-space: nowrap;
   font-family: "Montserrat", "Helvetica Neue", Verdana, Arial, sans-serif;
+  white-space: nowrap;
+  color: #a0a0a0;
 }
 
 .price-box .minimal-price-link {
-  padding-left: 1em;
-  color: #3399CC;
   display: block;
   /* We want this to show on its own line, otherwise the layout looks funky */
+  padding-left: 1em;
+  color: #39c;
 }
 
 .price-box .minimal-price-link .label {
-  color: #A0A0A0;
+  color: #a0a0a0;
 }
 
 /* -------------------------------------------- *
@@ -741,17 +754,17 @@ p.sku {
 }
 
 .price-box .old-price .price {
-  color: #A0A0A0;
   text-decoration: line-through;
+  color: #a0a0a0;
 }
 
 .price-box .special-price {
-  color: #3399CC;
   padding-left: 1em;
+  color: #39c;
 }
 
 .price-box .special-price .price-label {
-  color: #D84D3C;
+  color: #d84d3c;
 }
 
 /* -------------------------------------------- *

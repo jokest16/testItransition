@@ -32,7 +32,7 @@
 //      @include clearfix;
 //  }
 @mixin clearfix {
-    content: '';
     display: table;
     clear: both;
+    content: '';
 }

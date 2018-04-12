@@ -36,7 +36,6 @@ $block-cart__background-color: $c-white;
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
-
     .skip-cart {
         width: auto;
         padding: 0 10px;
@@ -57,7 +56,6 @@ $block-cart__background-color: $c-white;
             display: block;
         }
     }
-
 }
 
 /* -------------------------------------------- *
@@ -66,26 +64,26 @@ $block-cart__background-color: $c-white;
 
 .skip-cart .count {
     @include border-radius(12px);
+
     display: inline-block;
-    top: -6px;
     position: relative;
     z-index: 5;
+    top: -6px;
     width: 22px;
     height: 22px;
-    background: rgba($c-action, 0.9);
-    color: #FFFFFF;
+    font-family: $f-stack-sans;
     font-size: $f-size-xxs;
     line-height: 22px;
     text-align: center;
-    font-family: $f-stack-sans;
+    color: #fff;
+    background: rgba($c-action, .9);
 }
 .skip-link.skip-active .count {
     color: white;
 }
 
 // Using extra .skip-link selector to increase specificity
-.skip-link.skip-cart .count {
-}
+
 
 .skip-cart.no-count .count {
     display: none;
@@ -99,8 +97,8 @@ $block-cart__background-color: $c-white;
 
 @include bp(min-width, $bp-medium + 1) {
     .skip-cart {
-        color: $c-action;
         text-transform: uppercase;
+        color: $c-action;
 
         &:hover {
             text-decoration: none;
@@ -108,11 +106,12 @@ $block-cart__background-color: $c-white;
 
         .count {
             @include border-radius(0px);
+
             position: static;
-            background: none;
-            margin-left: 0px;
-            font-size: $f-size;
             width: auto;
+            margin-left: 0;
+            font-size: $f-size;
+            background: none;
 
             &:before {
                 content: '(';
@@ -180,9 +179,9 @@ $block-cart__background-color: $c-white;
     position: relative;
     min-height: (15px + 60px + 15px);
     padding: 15px 15px 15px (15px + 60px + 15px);
-    border-top: 1px solid $c-module-border;
     font-size: $f-size-s;
     line-height: 1.35;
+    border-top: 1px solid $c-module-border;
 }
 
 .mini-cart-list .product-name {
@@ -191,8 +190,8 @@ $block-cart__background-color: $c-white;
 
 .mini-cart-list .product-image {
     position: absolute;
-    left: 15px;
     top: 15px;
+    left: 15px;
 }
 
 .mini-cart-list .product-image img {
@@ -204,13 +203,13 @@ $block-cart__background-color: $c-white;
 
 .mini-cart-list .has-options {
     margin-bottom: 0;
-    color: $c-text-gray;
     font-size: $f-size-xs;
+    color: $c-text-gray;
 }
 
 /* Too full - additional items will be shown in cart */
 .cart-menu .last-added {
     padding: 10px 15px 15px;
-    border-top: 1px solid $c-module-border;
     font-size: $f-size-s;
+    border-top: 1px solid $c-module-border;
 }

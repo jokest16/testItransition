@@ -35,19 +35,19 @@
     margin-top: 10px;
 }
 .product-tags {
-    background-color: $c-module-background;
-    border: 1px solid $c-module-border;
     float: left;
+    width: 98%;
     margin-bottom: 10px;
     padding: 5px 1% 10px;
-    width: 98%;
+    border: 1px solid $c-module-border;
+    background-color: $c-module-background;
 }
 .product-tags li {
     float: left;
     margin-right: 15px;
 }
 .product-tags li.last {
-    margin-right: 0px;
+    margin-right: 0;
 }
 .tags-list {
     float: left;

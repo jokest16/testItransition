@@ -30,15 +30,15 @@
 // ----------------------------------------------
 // Browser Resets
 
-@import "vendor/normalize";
-@import "core/reset";
+@import 'vendor/normalize';
+@import 'core/reset';
 
 // ----------------------------------------------
 // Core
 
-@import "core/common";
-@import "core/form";
-@import "core/table";
+@import 'core/common';
+@import 'core/form';
+@import 'core/table';
 
 // ----------------------------------------------
 // Vendor
@@ -48,21 +48,21 @@
 // ----------------------------------------------
 // Components
 
-@import "components/link";
-@import "components/icons";
-@import "components/button";
-@import "components/newsletter-social";
-@import "components/form-components";
+@import 'components/link';
+@import 'components/icons';
+@import 'components/button';
+@import 'components/newsletter-social';
+@import 'components/form-components';
 
 // ----------------------------------------------
 // Layout
 
-@import "layout/header";
-@import "layout/header-nav";
-@import "layout/header-search";
-@import "layout/header-account";
-@import "layout/header-cart";
-@import "layout/footer";
+@import 'layout/header';
+@import 'layout/header-nav';
+@import 'layout/header-search';
+@import 'layout/header-account';
+@import 'layout/header-cart';
+@import 'layout/footer';
 
 // ----------------------------------------------
 // Modules
@@ -72,35 +72,35 @@
 //  2. Selectors of equal weight get applied based on which appears last in the stylesheet,
 //     so we should try not to change this order once it is in place
 
-@import "module/product-list";
-@import "module/catalog-product";
-@import "module/catalog-msrp";
-@import "module/catalog-compare";
-@import "module/checkout-cart";
-@import "module/checkout-onepage";
-@import "module/checkout-success";
-@import "module/configurableswatches";
-@import "module/customer";
-@import "module/contacts";
-@import "module/paypal";
-@import "module/review";
-@import "module/slideshow";
-@import "module/wishlist";
-@import "module/checkout-cart-minicart";
-@import "module/search";
-@import "module/account-reviews";
-@import "module/cms";
-@import "module/pricing_conditions";
-@import "module/cookies";
-@import "module/tags";
-@import "module/captcha";
-@import "module/account-orders";
-@import "module/recurring-profiles";
-@import "module/billing-agreements";
-@import "module/popular-terms";
-@import "module/widget";
-@import "module/checkout-multi-address";
+@import 'module/product-list';
+@import 'module/catalog-product';
+@import 'module/catalog-msrp';
+@import 'module/catalog-compare';
+@import 'module/checkout-cart';
+@import 'module/checkout-onepage';
+@import 'module/checkout-success';
+@import 'module/configurableswatches';
+@import 'module/customer';
+@import 'module/contacts';
+@import 'module/paypal';
+@import 'module/review';
+@import 'module/slideshow';
+@import 'module/wishlist';
+@import 'module/checkout-cart-minicart';
+@import 'module/search';
+@import 'module/account-reviews';
+@import 'module/cms';
+@import 'module/pricing_conditions';
+@import 'module/cookies';
+@import 'module/tags';
+@import 'module/captcha';
+@import 'module/account-orders';
+@import 'module/recurring-profiles';
+@import 'module/billing-agreements';
+@import 'module/popular-terms';
+@import 'module/widget';
+@import 'module/checkout-multi-address';
 
 // ----------------------------------------------
 // Override
-@import "override/plugin";
+@import 'override/plugin';

@@ -33,8 +33,8 @@
 }
 
 .checkout-onepage-index .col-main {
-    width: auto;
     float: none;
+    width: auto;
 }
 
 @include bp(min-width, $bp-large+1) {
@@ -47,8 +47,8 @@
 
         .col-right,
         .col-left {
-            width: percentage(300px/960px);
             display: block;
+            width: percentage(300px/960px);
         }
 
         .col-right {
@@ -68,10 +68,11 @@
  */
 
 .opc .section .step-title {
+    @include not-selectable;
+
+    position: relative;
     width: 100%;
     border-top: 1px solid $c-divider-border;
-    position: relative;
-    @include not-selectable;
 
     &:after {
         @include clearfix;
@@ -98,9 +99,9 @@
 .opc .section.allow:not(.active) .step-title a {
     display: block;
     float: right;
-    line-height: 40px;
     height: 40px;
-    padding: 0px 10px;
+    padding: 0 10px;
+    line-height: 40px;
 }
 
 .no-touch .opc .section .step-title a:hover {
@@ -110,17 +111,17 @@
 .opc .section .step-title .number,
 .opc .section.allow.active .step-title .number,
 .no-touch .opc .section.allow:hover .step-title .number {
-    width: 26px;
-    height: 26px;
-    text-align: center;
-    color: #FFFFFF;
-    line-height: 26px;
-    background-color: $c-action;
     display: block;
     position: absolute;
     top: 50%;
     left: 10px;
+    width: 26px;
+    height: 26px;
     margin-top: -13px;
+    line-height: 26px;
+    text-align: center;
+    color: #fff;
+    background-color: $c-action;
 }
 
 .opc .section.allow .step-title .number {
@@ -137,29 +138,29 @@
 }
 
 .opc .section .step-title h2 {
+    float: left;
+    height: 40px;
+    margin: 0 4px 0 45px;
     font-size: $f-size-xl;
     font-weight: 400;
     line-height: 40px;
-    height: 40px;
-    float: left;
-    margin: 0px 4px 0px 45px;
 }
 
 .opc .section .step {
+    @include bp(max-width, $bp-large) {
+        padding: $box-spacing;
+    }
+
     padding: $box-spacing-large;
 
     &:after {
         @include clearfix;
     }
-
-    @include bp(max-width, $bp-large) {
-        padding: $box-spacing;
-    }
 }
 
 .opc select {
-    max-width: 365px;
     width: 100%;
+    max-width: 365px;
 }
 
 .opc h3 {
@@ -171,23 +172,23 @@
 
     button.button {
         float: left;
-        margin-left: 0;
         margin-right: $gap;
         margin-bottom: 0;
+        margin-left: 0;
     }
     p.required {
         float: right;
-        margin-left: 5px;
         margin-bottom: 0;
+        margin-left: 5px;
     }
     .back-link {
         float: right;
         margin: 0;
     }
     a {
-        line-height: 20px;
         display: inline-block;
         padding: 5px 5px 5px 0;
+        line-height: 20px;
     }
 }
 
@@ -202,12 +203,12 @@
 
 .opc #opc-login {
     .step {
-        padding: 0px;
+        padding: 0;
     }
 
     .buttons-set {
-        border-top: 0;
         padding-top: 5px;
+        border-top: 0;
     }
 }
 
@@ -251,12 +252,12 @@ body:not(.opc-has-progressed-from-login) .opc-block-progress-step-login {
 }
 
 body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-login .step-title .number {
-    width: 0px;
     overflow: hidden;
+    width: 0;
 }
 
 body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-login .step-title h2 {
-    margin-left: 0px;
+    margin-left: 0;
 }
 
 /* -------------------------------------------- *
@@ -277,12 +278,14 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
     dd li {
         margin: 5px 0;
     }
-    label img { // This applies to the Paypal Express label
+    label img {
+        // This applies to the Paypal Express label
         float: left;
     }
-    label a { // This applies to the Paypal Express label
-        margin-top: 6px;
+    label a {
         float: right;
+        // This applies to the Paypal Express label
+        margin-top: 6px;
         margin-left: 10px;
     }
     .price {
@@ -310,20 +313,6 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
     }
 
     .checkmo-list {
-        li {
-            margin: 0 0 5px;
-            @include clearfix;
-        }
-        label {
-            width: 165px;
-            padding-right: 15px;
-            text-align: right;
-            float: left;
-        }
-        address {
-            float: left;
-        }
-
         @include bp(max-width, $bp-xsmall) {
             padding-left: 0;
 
@@ -331,10 +320,24 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
                 width: 135px;
             }
         }
+        li {
+            @include clearfix;
+
+            margin: 0 0 5px;
+        }
+        label {
+            float: left;
+            width: 165px;
+            padding-right: 15px;
+            text-align: right;
+        }
+        address {
+            float: left;
+        }
     }
 
     .release-amounts {
-        margin: 0.5em 0;
+        margin: .5em 0;
     }
     .release-amounts button {
         float: left;
@@ -344,20 +347,21 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 
 /* One Page Checkout */
 .block-progress {
-    border: 0;
     margin: 0;
-    border-left: 1px solid $c-module-border;
     padding-left: 20px;
+    border: 0;
+    border-left: 1px solid $c-module-border;
 
     .block-content {
         font-size: $f-size-s;
     }
     dt {
-        padding-top: 6px;
         @include h4;
+
         margin-bottom: 6px;
-        text-transform: uppercase;
+        padding-top: 6px;
         font-weight: normal;
+        text-transform: uppercase;
         color: $c-text-gray;
     }
 
@@ -365,8 +369,8 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
         color: $c-h4;
     }
     dd {
-        padding-left: 15px;
         margin-bottom: 10px;
+        padding-left: 15px;
         font-family: $f-stack-serif;
         font-style: italic;
 
@@ -380,17 +384,16 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
     }
 
     .payment-info {
-
         dt {
-            padding: 0;
-            margin: 0 0 3px 0;
-            color: $c-text;
-            font-family: $f-stack-serif;
-            text-transform: none;
-            font-style: italic;
             float: left;
             clear: both;
+            margin: 0 0 3px 0;
+            padding: 0;
+            font-family: $f-stack-serif;
             font-size: $f-size-s;
+            font-style: italic;
+            text-transform: none;
+            color: $c-text;
 
             &:after {
                 content: ': ';
@@ -406,7 +409,6 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
         &:after {
             @include clearfix;
         }
-
     }
 }
 
@@ -468,27 +470,27 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 
 /* On small screens, the progress review content will be moved to the review step via JS. Styled via this CSS: */
 #checkout-step-review .opc-block-progress {
-    border-left: none;
     padding-left: 0;
+    border-left: none;
 
     .block-title {
         display: none;
     }
     .block-content {
+        @include bp(max-width, $bp-xsmall) {
+            & > dl > div {
+                float: none;
+                width: auto;
+            }
+        }
         // Override the no-display
+
         display: block !important;
         padding: 0;
 
         & > dl > div {
             float: left;
             width: 50%;
-        }
-
-        @include bp(max-width, $bp-xsmall) {
-            & > dl > div {
-                float: none;
-                width: auto;
-            }
         }
 
         .changelink {
@@ -511,7 +513,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 }
 
 #checkout-step-review .centinel {
-    &> p {
+    & > p {
         margin-bottom: $box-spacing;
     }
 
@@ -525,6 +527,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 .gift-messages-form {
     .item {
         @include clearfix;
+
         margin-top: $trim;
 
         h5 {
@@ -532,8 +535,8 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
         }
 
         .product-img-box {
-            width: auto;
             float: left;
+            width: auto;
             padding-right: 15px;
         }
 
@@ -547,9 +550,10 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
     .inner-box {
         > div {
             @include clearfix;
+
+            display: block;
             width: 100%;
             margin-top: $trim-small;
-            display: block;
 
             &.extra-options-container {
                 p {
@@ -582,8 +586,8 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
     }
 
     .gift-item {
-        padding-bottom: $gap;
         margin-bottom: $gap;
+        padding-bottom: $gap;
         border-bottom: solid 1px $c-divider-border;
 
         &:after {
@@ -595,8 +599,8 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 
             .product-image {
                 width: 75px;
-                margin-left: auto;
                 margin-right: auto;
+                margin-left: auto;
             }
 
             .product-name {
@@ -612,19 +616,18 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 
 @include bp('max-width', $bp-medium) {
     .gift-message-form {
-
-        .giftmessage-area{
+        .giftmessage-area {
             max-width: 100%;
         }
 
         .gift-item {
             .product-img-box {
-                width: 100%;
                 float: none;
+                width: 100%;
             }
 
             .fieldset {
-                margin-left: 0px;
+                margin-left: 0;
 
                 textarea {
                     width: 100%;

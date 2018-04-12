@@ -23,29 +23,29 @@
 // @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 //
 
-@mixin loadingOverlay($opacity: 0.8) {
+@mixin loadingOverlay($opacity: .8) {
     &:before,
     &:after {
-        content:'';
+        display: none;
         position: absolute;
-        top: 0px;
-        left: 0px;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        display: none;
+        content: '';
     }
 
     &:before {
-        background-color: white;
+        z-index: 2;
         opacity: $opacity;
-        z-index:2;
+        background-color: white;
     }
 
     &:after {
+        z-index: 3;
         background-image: url('../images/opc-ajax-loader.gif');
         background-repeat: no-repeat;
         background-position: center;
-        z-index:3;
     }
 
     &.loading {

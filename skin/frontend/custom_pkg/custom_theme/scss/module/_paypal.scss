@@ -33,9 +33,18 @@
             .col2-set {
                 .col-1,
                 .col-2 {
-                    padding: 0px;
+                    padding: 0;
                 }
             }
+        }
+    }
+    @include bp(max-width, $bp-medium) {
+        .col-1 {
+            padding-bottom: 0;
+        }
+
+        .field.inactive {
+            display: none;
         }
     }
 
@@ -46,22 +55,12 @@
     }
 
     .buttons-set {
-        margin-top: 0px;
-        padding-top: 0px;
+        margin-top: 0;
+        padding-top: 0;
         border: 0;
 
         button {
             margin-bottom: $gap;
-        }
-    }
-
-    @include bp(max-width, $bp-medium) {
-        .col-1 {
-            padding-bottom: 0;
-        }
-
-        .field.inactive {
-            display: none;
         }
     }
 }
@@ -83,8 +82,8 @@
 
 .bml-ad {
     display: none;
-    text-align: center;
     margin-bottom: 5px;
+    text-align: center;
 
     span {
         display: block;
@@ -95,11 +94,11 @@
         max-width: 100%;
     }
     a:hover {
-        opacity: 0.7;
+        opacity: .7;
     }
     img {
-        height: auto !important; // Override inline style
         max-width: 100%;
+        height: auto !important; // Override inline style
     }
 }
 
@@ -122,9 +121,9 @@
 }
 
 div.paypal-logo {
-    text-align: center;
-    margin: $trim-small 0;
     max-width: 100%;
+    margin: $trim-small 0;
+    text-align: center;
 
     span {
         display: block;
@@ -157,15 +156,15 @@ div.paypal-logo {
 
 .sidebar {
     .paypal-logo {
-        text-align: center;
         line-height: 0;
+        text-align: center;
 
         > a {
             display: inline-block;
             max-width: 100%;
 
             &:hover {
-                opacity: 0.8;
+                opacity: .8;
             }
             img {
                 display: block;

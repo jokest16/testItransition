@@ -26,8 +26,8 @@
 @mixin tabs() {
     .toggle-tabs {
         display: block;
-        width: 100%;
         position: relative;
+        width: 100%;
         border: 1px solid $c-module-border;
         background-color: $c-module-background;
 
@@ -38,15 +38,16 @@
 
             > span {
                 @include not-selectable;
+
                 display: inline-block;
-                padding: 0 $trim;
+                position: relative;
+                bottom: -1px;
                 height: 40px;
+                padding: 0 $trim;
+                font-size: $f-size-xs;
                 line-height: 40px;
                 cursor: pointer;
                 text-transform: uppercase;
-                font-size: $f-size-xs;
-                position: relative;
-                bottom: -1px;
             }
         }
 
@@ -55,8 +56,8 @@
             border-left: 1px solid $c-module-border;
 
             > span {
-                background-color: #FFFFFF;
                 z-index: 5;
+                background-color: #fff;
             }
         }
 
@@ -82,8 +83,8 @@
         }
 
         > dd {
-            width: 100%;
             display: none;
+            width: 100%;
             padding: 15px;
             border: 1px solid $c-module-border;
             border-top: 0;
@@ -98,19 +99,21 @@
 @mixin accordionDtBase($arrow-direction: 'down', $border-color: $c-module-border) {
     @include h4;
     @include not-selectable;
-    font-weight: normal;
-    margin-bottom: 0px;
+
+    position: relative;
+    margin-bottom: 0;
     padding: 7px 10px 7px 24px;
+    font-weight: normal;
     border-width: 1px;
     border-style: solid;
     border-color: $border-color;
-    position: relative;
     background-color: $c-module-background;
 
     &:after {
         @include triangle(#{$arrow-direction}, 4px, $c-action);
-        left: 10px;
+
         top: 50%;
+        left: 10px;
         margin-top: -3px;
     }
 
@@ -127,12 +130,13 @@
     > dl {
         > dt {
             @include accordionDtBase;
+
             display: block;
         }
 
         > dd {
-            padding: $box-spacing;
             margin: 0;
+            padding: $box-spacing;
             border-width: 0 1px;
             border-style: solid;
             border-color: $c-module-border;
@@ -174,8 +178,9 @@
 
                 &.current:after {
                     @include triangle(down, 4px, $c-action);
-                    left: 6px;
+
                     top: 50%;
+                    left: 6px;
                     margin-top: -3px;
                 }
             }

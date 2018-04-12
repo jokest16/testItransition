@@ -36,8 +36,8 @@
         }
 
         .form-list {
-            max-width: 400px;
             width: 100%;
+            max-width: 400px;
         }
 
         .box-title {
@@ -46,13 +46,13 @@
         }
 
         .button {
+            @include bp(max-width, $bp-xsmall) {
+                float: none;
+                width: 100%;
+            }
+
             float: right;
             margin-top: $element-spacing;
-
-            @include bp(max-width, $bp-xsmall) {
-                width: 100%;
-                float: none;
-            }
         }
     }
 
@@ -65,16 +65,17 @@
 
 .billing-agreement-view-header-wrapper {
     .heading {
-        max-width: 80%;
-
         @include bp(max-width, $bp-xsmall) {
             max-width: 100%;
         }
+
+        max-width: 80%;
     }
 }
 
 .billing-agreement-details {
-    td, th {
+    td,
+    th {
         padding: $element-spacing/2;
     }
 }

@@ -23,7 +23,7 @@
 // @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 //
 
-@import "framework";
+@import 'framework';
 
 /* ============================================ *
  * SCAFFOLD FORM
@@ -87,9 +87,7 @@
 }
 
 @include bp(max-width, $bp-small) {
-
     .scaffold-form {
-
         label:first-child {
             float: none;
             width: auto;
@@ -101,9 +99,9 @@
             max-width: 100%;
         }
         .control .input-box {
-            clear: none;
-            float: left;
             display: inline;
+            float: left;
+            clear: none;
             width: auto;
         }
         .control label:first-child {

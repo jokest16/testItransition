@@ -50,8 +50,8 @@
 
     .actions {
         float: left;
-        text-align: right;
         padding-bottom: (40px - $f-size-xxs) / 2;
+        text-align: right;
     }
 }
 
@@ -68,7 +68,6 @@
 // ---------------------------------------------
 
 @include bp(max-width, $bp-medium) {
-
     .notice-cookie {
         padding: 0 20px;
 
@@ -82,7 +81,6 @@
 // ---------------------------------------------
 
 @include bp(max-width, 620px) {
-
     .notice-cookie {
         padding: 0 20px;
 

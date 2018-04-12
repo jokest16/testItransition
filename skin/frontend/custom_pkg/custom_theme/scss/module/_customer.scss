@@ -28,6 +28,53 @@
  * ============================================ */
 
 .customer-account-login {
+    @include bp(min-width, $bp-xsmall + 1) {
+        .col2-set {
+            .col-1,
+            .col-2 {
+                margin-top: 20px;
+                padding-top: 0;
+            }
+
+            .col-1 {
+                padding-right: 20px;
+            }
+
+            .col-2 {
+                padding-left: 20px;
+                border-left: 1px solid $c-module-border-light;
+            }
+        }
+    }
+    @include bp(min-width, $bp-medium) {
+        .col2-set {
+            .col-1 {
+                padding-right: 0;
+            }
+
+            .col-2 {
+                padding-left: $trim * 2;
+                border-left: 1px solid $c-module-border-light;
+            }
+        }
+    }
+    @include bp(max-width, $bp-xsmall) {
+        .col2-set {
+            .col-1 {
+                padding-bottom: $trim;
+            }
+
+            .col-2 {
+                padding-top: $trim;
+                border-top: 1px solid $c-module-border-light;
+            }
+        }
+    }
+    @include bp(max-width, $bp-medium) {
+        .col2-set p.required {
+            display: none;
+        }
+    }
     .scaffold-form {
         label:first-child {
             width: 115px;
@@ -49,61 +96,10 @@
 
         .col-1 {
             ul {
-                list-style: disc;
-                padding-left: 20px;
                 margin: $gap 0 $gap * 2 0;
-            }
-        }
-    }
-
-    @include bp(min-width, $bp-xsmall + 1) {
-        .col2-set {
-            .col-1,
-            .col-2 {
-                padding-top: 0;
-                margin-top: 20px;
-            }
-
-            .col-1 {
-                padding-right: 20px;
-            }
-
-            .col-2 {
                 padding-left: 20px;
-                border-left: 1px solid $c-module-border-light;
+                list-style: disc;
             }
-        }
-    }
-
-    @include bp(min-width, $bp-medium) {
-        .col2-set {
-            .col-1 {
-                padding-right: 0;
-            }
-
-            .col-2 {
-                padding-left: $trim * 2;
-                border-left: 1px solid $c-module-border-light;
-            }
-        }
-    }
-
-    @include bp(max-width, $bp-xsmall) {
-        .col2-set {
-            .col-1 {
-                padding-bottom: $trim;
-            }
-
-            .col-2 {
-                padding-top: $trim;
-                border-top: 1px solid $c-module-border-light;
-            }
-        }
-    }
-
-    @include bp(max-width, $bp-medium) {
-        .col2-set p.required {
-            display: none;
         }
     }
 }
@@ -117,9 +113,9 @@
 }
 
 .opc #opc-login p:not(.required) {
-    font-style: italic;
     font-family: $f-stack-serif;
     font-size: $f-size-s;
+    font-style: italic;
     color: $c-text-gray;
 }
 
@@ -128,16 +124,16 @@
         display: none;
     }
     .link-tip {
-        font-size: $f-size-s;
         padding-left: $gap;
+        font-size: $f-size-s;
     }
 }
 
 .remember-me-popup {
     display: none;
-    border: 1px solid $c-module-border;
-    padding: $box-spacing;
     position: relative;
+    padding: $box-spacing;
+    border: 1px solid $c-module-border;
 
     &.show {
         display: block;
@@ -167,11 +163,11 @@
 
     .fieldset,
     .buttons-set {
-        margin-left: $trim;
-
         @include bp(max-width, $bp-xsmall) {
             margin-left: 0;
         }
+
+        margin-left: $trim;
     }
 
     .fieldset .hidden {
@@ -186,12 +182,12 @@
 .customer-account-forgotpassword {
     .fieldset,
     .buttons-set {
-        margin-left: $trim;
-        max-width: 400px;
-
         @include bp(max-width, $bp-xsmall) {
             margin-left: 0;
         }
+
+        max-width: 400px;
+        margin-left: $trim;
     }
 
     .fieldset .input-box input.input-text {
@@ -206,8 +202,8 @@ body.customer-account {
     .my-account {
         .page-title {
             h1 {
-                border: 0;
                 text-align: left;
+                border: 0;
             }
         }
 
@@ -221,8 +217,8 @@ body.customer-account {
 
             .button {
                 position: absolute;
-                right: 0;
                 top: 0;
+                right: 0;
             }
 
             a,
@@ -235,8 +231,8 @@ body.customer-account {
         .fieldset h2,
         .addresses-list h2,
         .order-details h2 {
-            width: 100%;
             display: inline-block;
+            width: 100%;
         }
 
         .addresses-list h3 {
@@ -256,9 +252,9 @@ body.customer-account {
         td {
             a {
                 font-family: $f-stack-special;
-                text-transform: uppercase;
-                font-style: normal;
                 font-size: $f-size-s;
+                font-style: normal;
+                text-transform: uppercase;
             }
         }
 
@@ -342,14 +338,14 @@ body.customer-account {
     .customer-dob {
         .dob-month,
         .dob-day {
-            width: 40px;
             float: left;
+            width: 40px;
             margin-right: $box-spacing;
         }
 
         .dob-year {
-            width: 80px;
             float: left;
+            width: 80px;
         }
     }
 }
@@ -361,14 +357,14 @@ body.customer-account {
 .dashboard {
     .box-head {
         margin-top: $trim;
-        border-bottom: 1px solid $c-module-border;
         padding-bottom: 7px;
+        border-bottom: 1px solid $c-module-border;
 
         h2 {
-            font-size: $f-size-l;
-            font-weight: 600;
             display: inline-block;
             margin-bottom: 0;
+            font-size: $f-size-l;
+            font-weight: 600;
         }
 
         a {
@@ -379,15 +375,15 @@ body.customer-account {
     .box-title,
     .box-head {
         a {
-            text-transform: uppercase;
             font-size: $f-size-xs;
+            text-transform: uppercase;
         }
     }
 
     .box-account {
+        margin-bottom: 45px;
         padding-bottom: 40px;
         border-bottom: 1px solid $c-module-border;
-        margin-bottom: 45px;
 
         p,
         address {
@@ -408,9 +404,9 @@ body.customer-account {
 
                 h2,
                 h3 {
-                    font-weight: 600;
-                    font-size: $f-size;
                     margin-bottom: 0;
+                    font-size: $f-size;
+                    font-weight: 600;
                 }
 
                 a {
@@ -434,10 +430,10 @@ body.customer-account {
             }
 
             .number {
-                margin-right: -20px;
                 float: left;
-                line-height: 1.4;
+                margin-right: -20px;
                 font-size: $f-size-s;
+                line-height: 1.4;
             }
 
             .details {
@@ -445,13 +441,14 @@ body.customer-account {
 
                 .ratings {
                     @include clearfix;
+
                     margin-bottom: 0;
 
                     strong {
                         float: left;
+                        margin-right: 5px;
                         font-family: $f-stack-special;
                         font-size: $f-size-s;
-                        margin-right: 5px;
                     }
 
                     .rating-box {
@@ -470,6 +467,28 @@ body.customer-account {
 
 .my-account {
     .addresses-list {
+        @include bp(max-width, $bp-medium) {
+            .col-1,
+            .col-2 {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 0;
+
+                li.empty {
+                    width: 100%;
+                }
+            }
+        }
+        @include bp(max-width, $bp-small) {
+            .addresses-additional {
+                p {
+                    a {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+
         font-family: $f-stack-serif;
 
         .col-1,
@@ -484,29 +503,6 @@ body.customer-account {
                 margin-top: $box-spacing;
             }
         }
-
-        @include bp(max-width, $bp-medium) {
-            .col-1,
-            .col-2 {
-                width: 100%;
-                padding-left: 0;
-                padding-right: 0;
-
-                li.empty {
-                    width: 100%;
-                }
-            }
-        }
-
-        @include bp(max-width, $bp-small) {
-            .addresses-additional {
-                p {
-                    a {
-                        white-space: nowrap;
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -515,10 +511,10 @@ body.customer-account {
  * ============================================ */
 
 .order-info {
-    padding-bottom: $box-spacing;
-    border-bottom: 1px solid $c-module-border-light;
     width: 100%;
     margin-bottom: $trim;
+    padding-bottom: $box-spacing;
+    border-bottom: 1px solid $c-module-border-light;
 
     dt,
     dd,
@@ -550,8 +546,8 @@ body.customer-account {
 }
 
 .order-info-box {
-    margin-bottom: 40px;
     margin-top: 20px;
+    margin-bottom: 40px;
 
     + .order-info-box {
         padding-bottom: 40px;
@@ -559,8 +555,8 @@ body.customer-account {
     }
 
     .col-1 {
-        padding-right: 0;
         width: 48%;
+        padding-right: 0;
     }
 
     .col-2 {
@@ -575,13 +571,13 @@ body.customer-account {
     }
 
     .box-title {
+        float: left;
         width: 150px;
         padding-right: $box-spacing;
-        float: left;
 
         h2 {
-            font-size: $f-size;
             font-family: $f-stack-special;
+            font-size: $f-size;
             font-weight: bold;
             line-height: 1.5;
 
@@ -629,8 +625,8 @@ body.customer-account {
     }
 
     tr.bundle:not(:last-child) td {
-        border-bottom: none;
         border-top: none;
+        border-bottom: none;
     }
 }
 
@@ -793,8 +789,8 @@ ol#cart-sidebar-reorder {
         }
 
         .box-account {
-            padding-bottom: $trim-small;
             margin-bottom: $trim;
+            padding-bottom: $trim-small;
         }
 
         .col2-set {
@@ -842,12 +838,12 @@ ol#cart-sidebar-reorder {
                 text-align: center;
 
                 .button {
-                    width: 100%;
                     position: static;
+                    width: 100%;
                     margin-bottom: $trim-small;
 
                     + .button {
-                        margin-left: 0px;
+                        margin-left: 0;
                     }
                 }
             }
@@ -868,10 +864,10 @@ ol#cart-sidebar-reorder {
 
             .addresses-list {
                 .item {
-                    margin-bottom: $trim-small;
-                    padding-right: 0;
                     float: none;
                     width: auto;
+                    margin-bottom: $trim-small;
+                    padding-right: 0;
                 }
 
                 h2 {
@@ -914,14 +910,14 @@ ol#cart-sidebar-reorder {
         .col-1,
         .col-2 {
             width: 100%;
-            border-bottom: 1px solid $c-module-border-light;
             padding: $trim-small 0;
+            border-bottom: 1px solid $c-module-border-light;
         }
 
         + .order-info-box {
+            margin-bottom: $trim;
             padding-bottom: 0;
             border-bottom: 0;
-            margin-bottom: $trim;
         }
     }
 
@@ -946,7 +942,7 @@ body.newsletter-manage-index .my-account {
     }
 
     .form-list {
-        border-top: 1px solid $c-fieldset-border-light;
         padding-top: $gap;
+        border-top: 1px solid $c-fieldset-border-light;
     }
 }

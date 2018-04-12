@@ -28,26 +28,26 @@
  * ============================================ */
 
 .slideshow-container {
-    position: relative;
     display: block;
+    position: relative;
     width: 100%;
     margin: $gap 0;
     border: 1px solid $c-module-border-light;
 
     .slideshow {
-        width: 100%;
-        padding: 0;
         position: relative;
+        width: 100%;
         margin: 0;
-        border: 10px solid #FFFFFF;
+        padding: 0;
+        border: 10px solid #fff;
         & > li {
+            display: block;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 0;
-            display: block;
             margin: 0;
+            padding: 0;
 
             // in case script does not load
             &:first-child {
@@ -56,44 +56,46 @@
             }
 
             img {
-                max-width: 100%;
                 width: 100%;
+                max-width: 100%;
             }
         }
     }
 }
 
 .slideshow-pager {
-    text-align: center;
-    width: 100%;
-    z-index: 115;
-    position: absolute;
-    bottom: 0px;
-    top: auto;
-    overflow: hidden;
     @include not-selectable;
 
+    overflow: hidden;
+    position: absolute;
+    z-index: 115;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
     span {
-        font-family: arial;
-        width: 44px;
-        height: 44px;
-        display: inline-block;
-        color: #DDDDDD;
-        cursor: pointer;
         $pager-size: 16px;
 
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        font-family: arial;
+        cursor: pointer;
+        color: #ddd;
+
         &:before {
-            content: '';
             display: block;
+            position: relative;
+            top: 50%;
+            left: 50%;
             width: $pager-size;
             height: $pager-size;
-            left: 50%;
-            top: 50%;
-            margin-left: (-$pager-size/2);
             margin-top: (-$pager-size/2);
+            margin-left: (-$pager-size/2);
+            content: '';
             border-radius: 1px;
-            background-color: #FFFFFF;
-            position: relative;
+            background-color: #fff;
         }
 
         &:hover:before {
@@ -112,26 +114,27 @@
 
 .slideshow-prev,
 .slideshow-next {
+    @include not-selectable();
+
     position: absolute;
+    z-index: 110;
     top: 0;
     width: 15%;
     max-width: 80px;
     height: 100%;
-    opacity: 0.6;
-    z-index: 110;
     cursor: pointer;
-    @include not-selectable();
+    opacity: .6;
 
     &:before {
-        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
         width: 0;
         height: 0;
-        font-size: 0;
-        position: absolute;
-        border-style: solid;
-        display: block;
-        top: 50%;
         margin-top: -15px;
+        font-size: 0;
+        content: '';
+        border-style: solid;
     }
 
     &:hover {
@@ -139,7 +142,8 @@
     }
 
     &.disabled {
-        @include opacity(0.5);
+        @include opacity(.5);
+
         cursor: default;
     }
 }
@@ -148,10 +152,10 @@
     left: 8px;
 
     &:before {
-        border-width: 15px 15px 15px 0;
-        border-color: transparent #FFFFFF transparent transparent;
         top: 50%;
         left: 10px;
+        border-width: 15px 15px 15px 0;
+        border-color: transparent #fff transparent transparent;
     }
 
     &:hover:before {
@@ -163,10 +167,10 @@
     right: 8px;
 
     &:before {
-        border-width: 15px 0 15px 15px;
-        border-color: transparent transparent transparent #FFFFFF;
         top: 50%;
         right: 10px;
+        border-width: 15px 0 15px 15px;
+        border-color: transparent transparent transparent #fff;
     }
 
     &:hover:before {
@@ -176,20 +180,20 @@
 
 .cycle-caption {
     position: absolute;
-    color: white;
-    bottom: 15px;
-    right: 15px;
     z-index: 110;
+    right: 15px;
+    bottom: 15px;
+    color: white;
 }
 
 .cycle-overlay {
-    font-family: tahoma, arial;
     position: absolute;
+    z-index: 120;
     bottom: 0;
     width: 100%;
-    z-index: 120;
-    background: black;
-    color: white;
     padding: 15px;
+    font-family: tahoma, arial;
     opacity: .5;
+    color: white;
+    background: black;
 }

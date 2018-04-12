@@ -35,7 +35,6 @@ $price__color: $theme-c-red;
 
 .product-view {
     .product-essential {
-
         .extra-info {
             .ratings {
                 .rating-box,
@@ -67,14 +66,14 @@ $price__color: $theme-c-red;
 
     .product-shop {
         & {
-            width: 50%;
             float: right;
+            width: 50%;
         }
 
         .product-name {
-            padding-top: 35px;
             display: none;
             float: left;
+            padding-top: 35px;
         }
         .product-name .h1 {
             float: left;
@@ -82,9 +81,9 @@ $price__color: $theme-c-red;
         }
 
         .extra-info {
-            padding-right: $trim/2;
             clear: left;
             width: 70%;
+            padding-right: $trim/2;
         }
 
         .price-info {
@@ -99,8 +98,8 @@ $price__color: $theme-c-red;
         }
 
         .short-description {
-            margin-bottom: $box-spacing;
             clear: both;
+            margin-bottom: $box-spacing;
         }
 
         .ratings {
@@ -124,12 +123,11 @@ $price__color: $theme-c-red;
             .regular-price .price,
             .special-price .price,
             .full-product-price .price {
-                color: $price__color;
                 font-size: 24px;
+                color: $price__color;
             }
 
             .special-price {
-
                 .price-label {
                     font-size: $f-size-xl;
                     text-transform: uppercase;
@@ -159,7 +157,6 @@ $price__color: $theme-c-red;
                     font-size: 20px;
                 }
             }
-
         }
     }
 
@@ -175,11 +172,10 @@ $price__color: $theme-c-red;
 
     .add-to-cart-wrapper,
     .block-related {
-        width: 50%;
         float: right;
         clear: right;
+        width: 50%;
     }
-
 }
 
 @include bp(max-width, 850px) {
@@ -205,8 +201,8 @@ $price__color: $theme-c-red;
     .product-view {
         .add-to-cart-wrapper {
             float: none;
-            width: 100%;
             clear: both;
+            width: 100%;
         }
 
         .product-shop {
@@ -244,8 +240,8 @@ $price__color: $theme-c-red;
 }
 
 .product-img-box {
-    width: 50%;
     float: left;
+    width: 50%;
 
     .product-name {
         h1 {
@@ -259,13 +255,11 @@ $price__color: $theme-c-red;
 
     .product-image img {
         max-width: 100%;
-
         // Since product detail page images are not cropped to a specific aspect ratio, in order to make the image not
         // cut off on tall skinny screens, we are setting a max-height on the image
         max-height: 750px;
-
         // Centering the image for instances where max-height kicks in
-        margin: 0px auto;
+        margin: 0 auto;
     }
 }
 
@@ -277,6 +271,8 @@ $price__color: $theme-c-red;
 }
 
 .product-image-gallery {
+    @include loadingOverlay();
+
     position: relative;
 
     .gallery-image {
@@ -286,12 +282,10 @@ $price__color: $theme-c-red;
             display: block;
 
             &.hidden {
-                visibility:hidden;
+                visibility: hidden;
             }
         }
     }
-
-    @include loadingOverlay();
 }
 
 .product-image-thumbs {
@@ -341,15 +335,14 @@ $price__color: $theme-c-red;
 }
 
 .product-view {
-
     .add-to-box:after,
     .add-to-cart:after {
         @include clearfix;
     }
 
     .add-to-cart {
-        padding-bottom: 3px;
         margin-bottom: 10px;
+        padding-bottom: 3px;
     }
 
     /* Set a min-height so that the floated elements break appropriately */
@@ -377,15 +370,15 @@ $price__color: $theme-c-red;
     }
 
     .add-to-cart .qty-wrapper .qty {
-        border: none;
-        font-weight: $font-weight__semibold;
         height: 40px;
+        font-weight: $font-weight__semibold;
+        border: none;
     }
 
     .add-to-cart-buttons {
         & {
-            margin-right: 10px;
             max-width: 100%; // Constrain width in Firefox
+            margin-right: 10px;
         }
 
         .paypal-logo {
@@ -393,9 +386,9 @@ $price__color: $theme-c-red;
             text-align: center;
 
             .paypal-button {
-                margin: 0 auto;
                 display: block;
                 width: 170px;
+                margin: 0 auto;
             }
 
             .bml_button {
@@ -410,9 +403,9 @@ $price__color: $theme-c-red;
 
             .paypal-or {
                 display: block;
+                margin-right: 0;
                 margin-bottom: 10px;
                 margin-left: 0;
-                margin-right: 0;
                 line-height: 1;
                 text-align: center;
             }
@@ -420,10 +413,10 @@ $price__color: $theme-c-red;
     }
 
     .add-to-cart-buttons .button {
-        min-height: 40px;
-        line-height: 40px;
-        padding: 0px 30px;
         min-width: 160px;
+        min-height: 40px;
+        padding: 0 30px;
+        line-height: 40px;
         white-space: normal;
     }
 
@@ -443,12 +436,12 @@ $price__color: $theme-c-red;
         .paypal-or,
         .paypal-button,
         .button {
-            text-align: center;
-            width: 100%;
             display: block;
+            float: none;
+            width: 100%;
             margin-right: 0;
             margin-left: 0;
-            float: none;
+            text-align: center;
         }
     }
 }
@@ -459,10 +452,10 @@ $price__color: $theme-c-red;
 }
 
 .product-view .add-to-links {
-    clear: both;
-    margin-top: 0px;
-    margin-right: 15px;
     float: left;
+    clear: both;
+    margin-top: 0;
+    margin-right: 15px;
 
     &:after {
         @include clearfix;
@@ -473,17 +466,17 @@ $price__color: $theme-c-red;
     }
 
     a {
-        padding: 2px 7px 2px 0px;
         margin-left: 7px;
+        padding: 2px 7px 2px 0;
         border-right: 1px solid $c-module-border;
     }
 
     li:first-child a {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     li:last-child a {
-        border-right: 0px;
+        border-right: 0;
     }
 }
 
@@ -496,42 +489,44 @@ $price__color: $theme-c-red;
 
     li {
         float: left;
-        padding: 0px 7px 7px;
+        padding: 0 7px 7px;
     }
 
     a {
         @include image-replacement;
         @extend .icon-sprite;
+
         display: block;
         width: 26px;
         height: 26px;
     }
     a:hover {
-        opacity: 0.8;
+        opacity: .8;
     }
     a.link-wishlist {
-        background-position: 0px -225px;
+        background-position: 0 -225px;
     }
     a.link-compare {
-        background-position: 0px -250px;
+        background-position: 0 -250px;
     }
     a.link-email-friend {
-        background-position: 0px (-325px + 3px);
+        background-position: 0 (-325px + 3px);
     }
     a.link-facebook {
-        background-position: 0px -425px;
+        background-position: 0 -425px;
     }
     a.link-twitter {
-        background-position: 0px (-375px + 3px);
+        background-position: 0 (-375px + 3px);
     }
 }
 
 @include bp(max-width, 599px) {
     .add-to-box .add-to-links {
         a {
+            @include image-replacement-override;
+
             float: none;
             width: auto;
-            @include image-replacement-override;
         }
     }
 }
@@ -553,14 +548,12 @@ $price__color: $theme-c-red;
 }
 
 @include bp(min-width, $bp-medium + 1) {
-
     .product-collateral {
         @include tabs;
     }
 }
 
 @include bp(max-width, $bp-medium) {
-
     .product-collateral {
         @include accordion;
         @include accordionCollapse;
@@ -568,21 +561,19 @@ $price__color: $theme-c-red;
 }
 
 @include bp(max-width, $bp-medium) {
-
     .product-view .product-shop,
     .product-view .add-to-cart-wrapper,
     .product-view .block-related,
     .product-img-box,
     .product-collateral {
-        width: 100%;
         float: none;
+        width: 100%;
         padding-right: 0;
         padding-left: 0;
     }
 }
 
 @include bp(min-width, $bp-medium + 1) {
-
     .product-view .product-shop .product-name {
         display: block;
     }
@@ -592,7 +583,6 @@ $price__color: $theme-c-red;
 }
 
 @include bp(max-width, $bp-xsmall) {
-
     .product-view .product-shop,
     .product-img-box,
     .product-collateral,
@@ -604,8 +594,8 @@ $price__color: $theme-c-red;
 
 .product-view .ratings {
     .rating-links {
-        clear: left;
         float: left;
+        clear: left;
         margin-top: 0;
     }
 }
@@ -625,23 +615,24 @@ $price__color: $theme-c-red;
  */
 
 .grouped-items-table-wrapper {
-    border: solid 1px $c-table-border;
+    @include bp(max-width, $bp-xsmall) {
+        margin-bottom: $trim-small;
+    }
+
     width: 100%;
-    padding: $box-spacing;
     margin-bottom: 15px;
+    padding: $box-spacing;
+    border: solid 1px $c-table-border;
 
     tbody tr:last-child td {
         border-bottom: none;
-    }
-    @include bp(max-width, $bp-xsmall) {
-        margin-bottom: $trim-small;
     }
 }
 
 .grouped-items-table {
     .name-wrapper {
-        color: $c-text-primary;
         font-family: $f-stack-special;
+        color: $c-text-primary;
     }
 
     .qty-wrapper {
@@ -661,7 +652,7 @@ $price__color: $theme-c-red;
             text-align: left;
         }
     }
-    .price-box{
+    .price-box {
         text-align: right;
     }
 }
@@ -671,12 +662,12 @@ $price__color: $theme-c-red;
  */
 
 .product-options {
+    clear: both;
+    position: relative;
     width: 100%;
     margin: 10px 0 0;
     padding: 10px 15px 15px;
     border: 1px solid $c-fieldset-border;
-    clear: both;
-    position: relative;
 }
 
 .product-options p.required {
@@ -715,21 +706,21 @@ $price__color: $theme-c-red;
 }
 
 .product-options dd .qty-disabled {
-    background: none;
-    border: 0;
     padding: 0 2px;
+    border: 0;
+    background: none;
 }
 
 .product-options dd {
-    padding: 0 0 10px 0;
     margin: 0 0 5px;
+    padding: 0 0 10px 0;
     border-bottom: 1px solid $c-fieldset-border-light;
 }
 
 .product-options dl.last dd.last {
-    border-bottom: 0;
-    padding-bottom: 5px;
     margin-bottom: 0;
+    padding-bottom: 5px;
+    border-bottom: 0;
 }
 
 .product-options dd .input-text {
@@ -746,6 +737,7 @@ $price__color: $theme-c-red;
 
 .product-options dd .time-picker {
     @include inline-block;
+
     padding: 2px 0;
     vertical-align: middle;
 }
@@ -765,8 +757,8 @@ $price__color: $theme-c-red;
 }
 
 .product-options ul.options-list li {
-    line-height: 1.5;
     margin-bottom: 7px;
+    line-height: 1.5;
 }
 
 .product-options ul.options-list li:last-child {
@@ -793,11 +785,11 @@ $price__color: $theme-c-red;
 }
 
 .product-options-bottom {
-    background-color: $c-module-background;
+    margin-bottom: $box-spacing;
     padding: 15px 20px;
     border: 1px solid $c-fieldset-border;
     border-top: 0;
-    margin-bottom: $box-spacing;
+    background-color: $c-module-background;
 }
 
 .product-options-bottom:after {
@@ -806,26 +798,26 @@ $price__color: $theme-c-red;
 
 .product-options-bottom .product-pricing,
 .product-options-bottom .tier-prices {
-    float: right;
-    margin: 0;
-    padding: 0 0 $gap;
-    border: 0;
-    background: 0;
-    color: $c-text;
-
     @include bp(max-width, $bp-xlarge) {
         float: none;
         width: 100%;
-        text-align: right;
-        padding-bottom: $gap / 2;
         margin-bottom: $gap;
+        padding-bottom: $gap / 2;
+        text-align: right;
         border-bottom: 1px solid $c-fieldset-border;
     }
+
+    float: right;
+    margin: 0;
+    padding: 0 0 $gap;
+    color: $c-text;
+    border: 0;
+    background: 0;
 }
 
 .product-options-bottom .tier-prices li {
-    background: 0;
     padding: 2px 0;
+    background: 0;
 }
 
 .product-options-bottom .tier-prices .price,
@@ -863,7 +855,6 @@ $price__color: $theme-c-red;
 /* Block: Related */
 
 .block-related {
-
     li {
         margin-bottom: $element-spacing;
     }
@@ -873,6 +864,7 @@ $price__color: $theme-c-red;
 
         h2 {
             @include h2();
+
             margin-bottom: 0;
         }
     }
@@ -882,8 +874,8 @@ $price__color: $theme-c-red;
     }
 
     .product {
-        margin-left: 20px;
         position: relative;
+        margin-left: 20px;
     }
     .checkbox {
         float: left;
@@ -909,9 +901,9 @@ $price__color: $theme-c-red;
 
             &:first-child {
                 margin-left: 0;
-                font-size: $f-size-xl;
                 padding-right: 5px;
                 padding-left: 5px;
+                font-size: $f-size-xl;
             }
         }
         &:after {

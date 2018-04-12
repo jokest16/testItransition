@@ -28,15 +28,6 @@
  * ============================================ */
 
 #recurring_profile_list_view {
-
-    th {
-        white-space: normal;
-
-        span {
-            white-space: inherit;
-        }
-    }
-
     @include bp (max-width, $bp-xsmall) {
         font-size: $f-size-xs;
 
@@ -49,7 +40,13 @@
             padding: 2px;
         }
     } //end bp-xsmall breakpoint
+    th {
+        white-space: normal;
 
+        span {
+            white-space: inherit;
+        }
+    }
 } //end #recurring_profile_list_view
 
 .recurring-profiles-title {
@@ -61,14 +58,14 @@
 }
 
 body.customer-account .my-account .title-buttons.recurring-profiles-title-buttons {
-    float:right;
-    text-align: right;
-    margin-bottom: $trim;
-
     @include bp(max-width, $bp-xsmall) {
-        text-align: center;
         float: none;
+        text-align: center;
     }
+
+    float: right;
+    margin-bottom: $trim;
+    text-align: right;
 
     .button {
         position: static;

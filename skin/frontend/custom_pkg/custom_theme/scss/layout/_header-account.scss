@@ -32,7 +32,6 @@
  */
 
 .skip-account {
-
     &:not(.skip-active):hover {
         .icon {
             background-position: -50px+4px (-50px + ($toolbar-icon-padding-offset/2) + 2px);
@@ -41,20 +40,20 @@
 
     .icon {
         @extend .icon-sprite;
-        background-position: -0px+4px (-50px + ($toolbar-icon-padding-offset/2) + 2px);
+
+        background-position: -0+4px (-50px + ($toolbar-icon-padding-offset/2) + 2px);
     }
 }
 
 // ---------------------------------------------
 
 @include bp(min-width, $bp-medium + 1) {
-
     .skip-account {
+        display: inline-block;
         float: none;
         width: auto;
-        vertical-align: top;
-        display: inline-block;
         padding: 0 10px;
+        vertical-align: top;
         text-transform: uppercase;
     }
 
@@ -73,14 +72,13 @@
     #header-account a {
         display: block;
         padding: 5px 10px;
-        color: $c-text;
         line-height: 2;
+        color: $c-text;
     }
 
     #header-account a:hover {
         color: $c-action;
     }
-
 }
 
 /* -------------------------------------------- *
@@ -92,14 +90,13 @@
 }
 
 #header-account a {
-    position: relative;
     display: block;
+    position: relative;
     padding: 5px 10px;
-    line-height:23px;
+    line-height: 23px;
     text-align: center;
 }
 
 #header-account a:hover {
     color: $c-action;
 }
-

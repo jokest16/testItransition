@@ -41,17 +41,16 @@
     }
 
     .std {
-
         img {
             max-width: 100%;
         }
 
         p {
-            color: $c-text;
             font-family: $f-stack-serif;
             font-size: 14px;
             font-style: italic;
             line-height: 24px;
+            color: $c-text;
         }
 
         h1 {
@@ -63,11 +62,11 @@
         }
 
         li {
-            color: $c-text;
             font-family: $f-stack-serif;
             font-size: $f-size;
             font-style: italic;
             line-height: 24px;
+            color: $c-text;
         }
     }
 
@@ -80,7 +79,6 @@
 
 .cms-no-route {
     .std {
-
         img {
             width: 100%;
         }
@@ -98,10 +96,10 @@
         }
 
         li {
-            list-style: none;
             margin-left: 0;
-            font-style: normal;
             font-family: $f-stack-sans;
+            font-style: normal;
+            list-style: none;
         }
     }
 }
@@ -113,8 +111,8 @@
     @include accordion;
 
     li {
-        position: relative;
         overflow: hidden;
+        position: relative;
 
         .plusimage h2 {
             margin-right: $gap;
@@ -128,15 +126,17 @@
 .page-sitemap {
     .links {
         display: block;
-        text-align: right;
         margin: 0 20px 0 0;
+        text-align: right;
 
-        a { position: relative; }
+        a {
+            position: relative;
+        }
     }
 
     .sitemap {
-        padding: 0 20px;
         margin: 15px 0;
+        padding: 0 20px;
         font-size: $f-size-xs;
 
         li {
@@ -171,7 +171,6 @@
 }
 
 @include bp(max-width, $bp-medium) {
-
     #contactForm {
         padding-left: 0;
     }

@@ -40,17 +40,17 @@
 .swatch-link,
 .swatch-label {
     display: block;
-    border-radius: $default-border-radius - 2;
+    box-sizing: content-box;
     font-size: $f-size;
     text-align: center;
-    color: $c-h4;
     text-decoration: none;
-    box-sizing: content-box;
+    color: $c-h4;
+    border-radius: $default-border-radius - 2;
 }
 
 .swatch-link {
-    border: 1px solid $c-module-border;
     margin: 0 0 3px;
+    border: 1px solid $c-module-border;
 
     img {
         border-radius: $default-border-radius - 3;
@@ -63,14 +63,14 @@
 
     .x {
         display: none;
-        text-indent: -999em;
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: url(../images/bg_x.png) center no-repeat transparent;
         z-index: 10;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-indent: -999em;
+        background: url(../images/bg_x.png) center no-repeat transparent;
     }
 
     &.has-image {
@@ -87,16 +87,16 @@
 }
 
 .swatch-label {
-    border: 1px solid #fff;
     margin: 0;
     white-space: nowrap;
+    border: 1px solid #fff;
     background: $c-module-background;
 }
 
 .configurable-swatch-list {
-    margin-left: -3px;
-    zoom: 1;
     clear: both;
+    zoom: 1;
+    margin-left: -3px;
     -webkit-transform: translateZ(0px);
 
     li {
@@ -118,11 +118,11 @@
         }
 
         .swatch-link {
-            border-color: $c-module-border-light;
             position: relative;
+            border-color: $c-module-border-light;
 
             &.has-image img {
-                opacity: 0.4;
+                opacity: .4;
                 filter: alpha(opacity=40);
             }
         }
@@ -144,15 +144,15 @@
 
 #narrow-by-list dd {
     .configurable-swatch-list li {
-        margin: 0 0 0 3px;
         width: 47%;
+        margin: 0 0 0 3px;
     }
 
     .swatch-link {
-        border: none;
-        line-height: $f-size + 11px;
         margin-right: 2px;
+        line-height: $f-size + 11px;
         text-align: left;
+        border: none;
 
         &.has-image {
             line-height: inherit;
@@ -164,20 +164,20 @@
     }
 
     .swatch-label {
-        background: $c-module-background;
-        border: 1px solid $c-module-border;
-        border-radius: $default-border-radius - 2;
         display: block;
         float: left;
-        line-height: 1.5em;
         margin: 0 5px 0 0;
         padding: 1px 5px;
+        line-height: 1.5em;
         white-space: nowrap;
+        border: 1px solid $c-module-border;
+        border-radius: $default-border-radius - 2;
+        background: $c-module-background;
 
         img {
+            box-sizing: content-box;
             border: 1px solid #fff;
             border-radius: $default-border-radius - 2px;
-            box-sizing: content-box;
         }
     }
 
@@ -198,10 +198,10 @@
         position: relative;
 
         .btn-remove {
-            margin-top: -10px;
             position: absolute;
-            right: 0;
             top: 50%;
+            right: 0;
+            margin-top: -10px;
         }
 
         span {
@@ -215,8 +215,8 @@
         margin: 0 0 0 3px;
 
         &:hover {
-            border-color: $c-module-border;
             cursor: default;
+            border-color: $c-module-border;
         }
     }
 }
@@ -236,14 +236,14 @@
     }
 
     .validation-advice {
+        display: block;
+        float: left;
         margin: 0 0 5px;
-        background: $c-danger;
         padding: 2px 5px !important;
         font-weight: bold;
         color: #fff !important;
-        float: left;
-        display: block;
         border-radius: $default-border-radius - 2;
+        background: $c-danger;
     }
 }
 
@@ -255,8 +255,8 @@
 .product-view {
     .product-options {
         .swatch-attr {
-            float: none;
             display: block;
+            float: none;
             clear: both;
             border: 0;
 
@@ -272,9 +272,9 @@
 
             .select-label {
                 display: inline;
+                padding-left: 5px;
                 font-weight: normal;
                 color: $c-text-primary;
-                padding-left: 5px;
             }
         }
 
@@ -289,7 +289,7 @@
     }
 
     .add-to-cart button.out-of-stock {
-        background-position: -80px -362px;
         cursor: default;
+        background-position: -80px -362px;
     }
 }

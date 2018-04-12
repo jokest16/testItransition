@@ -32,7 +32,6 @@
  */
 
 body.cms-home {
-
     .main-container {
         padding-top: 20px;
     }
@@ -43,28 +42,28 @@ body.cms-home {
 }
 
 .slideshow .banner-msg {
+    @include not-selectable;
+
     position: absolute;
+    top: 30%;
+    width: 100%;
     text-align: center;
     text-transform: uppercase;
-    width: 100%;
-    top: 30%;
-    @include not-selectable;
 }
 
 .slideshow .banner-msg h2 {
-    color: #FFFFFF;
     font-size: 24px;
+    color: #fff;
     //@include single-text-shadow(1px, 1px, 3px, false, #555555);
 }
 
 .slideshow .banner-msg h2 strong {
-    font-weight: bold;
     display: block;
     font-size: 36px;
+    font-weight: bold;
 }
 
 @include bp(max-width, $bp-medium) {
-
     .slideshow .banner-msg h2 {
         font-size: 20px;
     }
@@ -75,7 +74,6 @@ body.cms-home {
 }
 
 @include bp(max-width, $bp-xsmall) {
-
     .slideshow .banner-msg {
         top: 20%;
     }
@@ -94,9 +92,9 @@ body.cms-home {
  */
 
 .promos {
+    width: 100%;
     margin: 0 0 $gap 0;
     padding: 0;
-    width: 100%;
 }
 
 .promos:after {
@@ -106,12 +104,13 @@ body.cms-home {
 /* Specifying the body only in order to override the .std ul li styling */
 
 body .promos > li {
+    @include not-selectable;
+
+    position: relative;
     margin: 0 0 10px 0;
     list-style: none;
     text-align: center;
-    position: relative;
     border: 1px solid $c-module-border;
-    @include not-selectable;
 }
 
 .promos > li:last-child {
@@ -119,36 +118,36 @@ body .promos > li {
 }
 
 .promos img {
-    max-width: 100%;
     width: 100%;
+    max-width: 100%;
 }
 
 .promos a:hover {
-    @include opacity(0.8);
+    @include opacity(.8);
+
     display: block;
 }
 
 .promos span {
-    color: #FFFFFF;
-    text-transform: uppercase;
-    position: absolute;
     display: block;
-    width: 100%;
+    position: absolute;
     top: 10%;
-    font-weight: 500;
-    font-size: 20px;
+    width: 100%;
     font-family: $f-stack-special;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fff;
     //@include single-text-shadow(1px, 1px, 3px, false, #555555);
 }
 
 .promos strong {
-    font-weight: 600;
-    font-size: 26px;
     display: block;
+    font-size: 26px;
+    font-weight: 600;
 }
 
 @include bp(min-width, $bp-medium + 1) {
-
     .promos span {
         font-size: 16px;
     }
@@ -196,11 +195,11 @@ body .promos > li {
 
 .cms-index-index h2.subtitle {
     padding: 6px 0;
+    font-weight: 600;
     text-align: center;
     color: $c-text-primary;
-    font-weight: 600;
-    border-bottom: 1px solid $c-module-border;
     border-top: 1px solid $c-module-border;
+    border-bottom: 1px solid $c-module-border;
 }
 
 .cms-index-noroute h2.subtitle {
