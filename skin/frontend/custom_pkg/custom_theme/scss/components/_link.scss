@@ -1,4 +1,4 @@
-$link-primary__color: $c-black;
+$link-primary__color: $c-text;
 $link-primary_hover__color: lighten($c-black,60%);
 $link-secondary__color: lighten($c-black,60%);
 $link-secondary_hover__color: $c-black;
@@ -31,8 +31,20 @@ $link-active__color: $theme-c-red;
         color: $link-secondary_hover__color;
     }
 
+    &.-accent {
+        color: $link-active__color;
+    }
+
+    &.-accent:hover {
+        color: lighten($link-active__color, 30%);
+    }
+
     &.-no-hover:hover {
         transition: none;
         color: inherit;
+    }
+
+    &.-upper {
+        text-transform: uppercase;
     }
 }

@@ -1,32 +1,8 @@
-//
-// Magento
-//
-// NOTICE OF LICENSE
-//
-// This source file is subject to the Academic Free License (AFL 3.0)
-// that is bundled with this package in the file LICENSE_AFL.txt.
-// It is also available through the world-wide-web at this URL:
-// http://opensource.org/licenses/afl-3.0.php
-// If you did not receive a copy of the license and are unable to
-// obtain it through the world-wide-web, please send an email
-// to license@magento.com so we can send you a copy immediately.
-//
-// DISCLAIMER
-//
-// Do not edit or add to this file if you wish to upgrade Magento to newer
-// versions in the future. If you wish to customize Magento for your
-// needs please refer to http://www.magento.com for more information.
-//
-// @category    design
-// @package     rwd_default
-// @copyright   Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
-// @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
-//
-
 /* ============================================ *
  * Catalog - Product Variables
  * ============================================ */
 
+$product-collateral__border-color: $theme-c-gray;
 $price__color: $theme-c-red;
 
 /* ============================================ *
@@ -63,6 +39,8 @@ $price__color: $theme-c-red;
         margin-bottom: 10px;
         border: 0;
     }
+
+
 
     .product-shop {
         & {
@@ -109,53 +87,53 @@ $price__color: $theme-c-red;
         .availability {
             font-size: $f-size-xl;
         }
+    }
 
-        .price-box {
+    .price-box {
+        & {
             margin-top: 0;
+        }
 
-            .old-price,
-            .special-price,
-            .regular-price {
-                padding-right: 0;
-                line-height: 1.2;
+        .old-price,
+        .special-price,
+        .regular-price {
+            padding-right: 0;
+            line-height: 1.2;
+        }
+
+        .price {
+            font-size: 24px;
+            color: $price__color;
+        }
+
+        .special-price {
+            .price-label {
+                font-size: $f-size-xl;
+                text-transform: uppercase;
             }
 
-            .regular-price .price,
-            .special-price .price,
-            .full-product-price .price {
-                font-size: 24px;
-                color: $price__color;
-            }
-
-            .special-price {
-                .price-label {
-                    font-size: $f-size-xl;
-                    text-transform: uppercase;
-                }
-
-                span.weee {
-                    color: $c-text;
-
-                    span.price {
-                        font-size: $f-size-xl;
-                    }
-                }
-            }
-
-            .price-excluding-tax,
-            .price-including-tax {
-                display: block;
-                line-height: 1.2;
+            span.weee {
                 color: $c-text;
 
-                .label {
+                span.price {
                     font-size: $f-size-xl;
-                    font-weight: 300;
                 }
+            }
+        }
 
-                .price {
-                    font-size: 20px;
-                }
+        .price-excluding-tax,
+        .price-including-tax {
+            display: block;
+            line-height: 1.2;
+            color: $c-text;
+
+            .label {
+                font-size: $f-size-xl;
+                font-weight: 300;
+            }
+
+            .price {
+                font-size: 20px;
             }
         }
     }
@@ -170,27 +148,32 @@ $price__color: $theme-c-red;
         }
     }
 
-    .add-to-cart-wrapper,
-    .block-related {
+    .add-to-cart-wrapper {
         float: right;
         clear: right;
         width: 50%;
+    }
+
+    .additional-ifonrmation {
+        float: right;
+        clear: right;
+        width: 50%;
+        padding-left: 25px;
+        margin-bottom: 10px;
     }
 }
 
 @include bp(max-width, 850px) {
     .product-view {
-        .product-shop {
-            .price-box {
-                .price-excluding-tax,
-                .price-including-tax {
-                    .label {
-                        font-size: $f-size-l;
-                    }
+        .price-box {
+            .price-excluding-tax,
+            .price-including-tax {
+                .label {
+                    font-size: $f-size-l;
+                }
 
-                    .price {
-                        font-size: $f-size-xxl;
-                    }
+                .price {
+                    font-size: $f-size-xxl;
                 }
             }
         }
@@ -315,10 +298,15 @@ $price__color: $theme-c-red;
     padding-right: $trim/2;
 }
 
+.product-collateral {
+    border-top: 1px solid $product-collateral__border-color;
+    margin-top: 55px;
+    padding-top: 30px;
+}
+
 .product-view .product-shop,
 .product-img-box,
 .product-collateral,
-.product-view .block-related,
 .box-collateral {
     margin-bottom: $box-spacing;
 }
@@ -341,7 +329,7 @@ $price__color: $theme-c-red;
     }
 
     .add-to-cart {
-        margin-bottom: 10px;
+        margin-bottom: 25px;
         padding-bottom: 3px;
     }
 
@@ -357,6 +345,13 @@ $price__color: $theme-c-red;
     .add-to-cart-buttons .button,
     .add-to-cart-buttons .paypal-logo {
         margin-bottom: 10px;
+    }
+
+    .add-to-cart-buttons {
+        .btn-cstm .svg-icon {
+            width: 15px;
+            height: 15px;
+        }
     }
 
     .add-to-cart .qty-wrapper,
@@ -382,8 +377,10 @@ $price__color: $theme-c-red;
         }
 
         .paypal-logo {
-            clear: left;
-            text-align: center;
+            & {
+                clear: left;
+                text-align: center;
+            }
 
             .paypal-button {
                 display: block;
@@ -395,10 +392,10 @@ $price__color: $theme-c-red;
                 display: block;
                 width: 174px;
                 margin: 0 auto;
+            }
 
-                a {
-                    text-align: center;
-                }
+            .bml_button a {
+                text-align: center;
             }
 
             .paypal-or {
@@ -481,42 +478,16 @@ $price__color: $theme-c-red;
 }
 
 .product-view .sharing-links {
-    float: left;
-
-    &:after {
-        @include clearfix;
+    > .item {
+        display: inline-block;
     }
 
-    li {
-        float: left;
-        padding: 0 7px 7px;
+    > .item:not(:last-child) {
+        margin-right: 25px;
     }
 
-    a {
-        @include image-replacement;
-        @extend .icon-sprite;
-
-        display: block;
-        width: 26px;
-        height: 26px;
-    }
-    a:hover {
-        opacity: .8;
-    }
-    a.link-wishlist {
-        background-position: 0 -225px;
-    }
-    a.link-compare {
-        background-position: 0 -250px;
-    }
-    a.link-email-friend {
-        background-position: 0 (-325px + 3px);
-    }
-    a.link-facebook {
-        background-position: 0 -425px;
-    }
-    a.link-twitter {
-        background-position: 0 (-375px + 3px);
+    .svg-icon {
+        width: 16px;
     }
 }
 
@@ -642,7 +613,6 @@ $price__color: $theme-c-red;
     .qty-label {
         margin-left: $element-spacing;
     }
-
 
     td {
         padding: 4px;
@@ -849,79 +819,10 @@ $price__color: $theme-c-red;
 }
 
 /* -------------------------------------------- *
- * Related Products
- */
-
-/* Block: Related */
-
-.block-related {
-    li {
-        margin-bottom: $element-spacing;
-    }
-
-    .block-title {
-        border-bottom: none;
-
-        h2 {
-            @include h2();
-
-            margin-bottom: 0;
-        }
-    }
-
-    .block-subtitle {
-        margin-bottom: $element-spacing;
-    }
-
-    .product {
-        position: relative;
-        margin-left: 20px;
-    }
-    .checkbox {
-        float: left;
-        margin-top: 36px;
-    }
-
-    .product-details {
-        margin-left: 90px;
-    }
-
-    .product-name {
-        margin-bottom: 3px;
-    }
-
-    .product-details .price-box {
-        margin: 2px 0 3px;
-
-        a,
-        p,
-        span {
-            float: left;
-            margin-left: 3px;
-
-            &:first-child {
-                margin-left: 0;
-                padding-right: 5px;
-                padding-left: 5px;
-                font-size: $f-size-xl;
-            }
-        }
-        &:after {
-            @include clearfix;
-        }
-    }
-    .link-wishlist {
-        display: none;
-    }
-}
-
-/* -------------------------------------------- *
  * Upsell Products
  */
 
 .box-up-sell {
-    margin-top: $box-spacing-large;
-
     .ratings {
         display: none;
     }

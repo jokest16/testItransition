@@ -1,0 +1,15 @@
+._uppercase {
+    text-transform: uppercase!important;
+}
+
+@include bp(min-width, $bp-medium) {
+    ._hidden-m {
+        display: none;
+    }
+}
+
+@include bp(max-width, $bp-medium) {
+    ._hidden-s {
+        display: none;
+    }
+}

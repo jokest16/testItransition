@@ -1,0 +1,268 @@
+$customize-popup__background-color: $theme-c-bege;
+$customize-popup--sittings--sub-title__color: $c-text;
+$customize-popup--sittings--sub-title_second__color: $c-text-gray;
+
+.popup-wrapper {
+    .skip-link-close.-overlay {
+        background: rgba(#000,.6);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    &.skip-active {
+        display: block;
+    }
+
+    .customize-popup {
+        & {
+            @include centred-content(true,true,true);
+
+            max-width: 920px;
+            z-index: 14;
+            background-color: $customize-popup__background-color;
+        }
+
+        .title {
+            display: block;
+            text-align: center;
+        }
+
+        .sittings,
+        .product-image {
+            width: 50%;
+        }
+
+        .product-image {
+            float: left;
+        }
+
+        .product-image > .title,
+        .product-image > .signature {
+            @include centred-content(false,true);
+
+            font-size: $f-size-xxs;
+        }
+
+        .product-image > .title {
+            top: 20%
+        }
+
+        .product-image > .signature {
+            bottom: 20%;
+        }
+
+        .sittings {
+            float: right;
+        }
+
+        .product-image > .image {
+            width: 100%;
+        }
+
+        .sittings {
+            margin-bottom: 20px;
+        }
+
+        .sittings > .close {
+            width: 12px;
+            position: absolute;
+            right: 15px;
+            top: 8px;
+        }
+
+        .sittings .svg-icon.cancel {
+            width: 100%;
+        }
+
+        .sittings > .form {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .sittings .sub-title {
+            text-align: left;
+            color: $customize-popup--sittings--sub-title__color;
+            text-transform: uppercase;
+        }
+
+        .sittings .sub-title.-secondary {
+            color: $customize-popup--sittings--sub-title_second__color;
+            text-transform: none;
+        }
+
+        .sittings > .form > .field {
+            display: block;
+            text-align: left;
+            margin-bottom: 2px;
+            width: 100%;
+            min-height: 40px;
+            background-color: $customize-popup__background-color;
+            border: 1px solid $theme-c-gray;
+            transition: background-color .3s ease-out;
+        }
+
+        .sittings > .form > .counter {
+            text-align: right;
+            margin-bottom: 2px;
+        }
+
+        .sittings > .form > .field:focus {
+            background-color: lighten($customize-popup__background-color,100%);
+        }
+
+        .sittings > .form > .counter {
+            visibility: hidden;
+        }
+
+        .sittings > .form > .field:focus + .counter {
+            visibility: visible;
+        }
+
+        .sittings .price-info {
+            margin-bottom: 15px;
+        }
+
+        .sittings .price-box {
+            margin-bottom: 0;
+        }
+
+        > .bottom {
+            float: left;
+            width: 100%;
+            text-align: center;
+            font-size: $f-size-xxs;
+            padding: 20px 10px;
+            color: $theme-c-gray;
+        }
+    }
+
+    .chose-wrapper {
+        & {
+            margin-bottom: 35px;
+        }
+
+        .title {
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        > .label {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+        }
+
+        > .label > .chose {
+            visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        > .label > .chose:after {
+            content: '';
+            position: absolute;
+            visibility: visible;
+            background-color: inherit;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 1px solid transparent;
+        }
+
+        > .label > .chose:checked:after {
+            border: 1px solid #000;
+        }
+
+        > .label > .name {
+            display: inline-block;
+            width: 100%;
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+        }
+    }
+
+    .chose-wrapper.-font{
+        & {
+            margin-bottom: 30px;
+        }
+
+        > .label {
+            background-color: #fff;
+        }
+
+        > .label > .chose:after {
+            content: 'A';
+            padding-top: 5px;
+            font-size: $f-size-l;
+            text-align: center;
+            border: 1px solid $theme-c-gray;
+        }
+
+        > .label > .chose:checked:after {
+            border: 1px solid $c-black;
+        }
+    }
+
+    .qty-wrapper {
+        & {
+            margin-bottom: 15px;
+        }
+
+        .qty {
+            text-align: right;
+        }
+    }
+
+    .price {
+        font-size: 24px;
+        color: $price__color;
+    }
+}
+
+@include bp(min-width, $bp-medium) {
+    .popup-wrapper .customize-popup {
+        & {
+            padding: 20px 0 0 0;
+        }
+
+        > .title {
+            font-size: $f-size-xxl;
+        }
+
+        .sittings {
+            padding: 20px 90px 0 10px;
+        }
+
+        .sittings .sub-title {
+            font-size: $f-size-l;
+            margin-bottom: 5px;
+        }
+
+        .sittings .sub-title.-secondary {
+            font-size: $f-size-xs;
+        }
+
+        .chose-wrapper {
+            > .label {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        > .bottom {
+            padding: 20px 60px;
+        }
+    }
+}

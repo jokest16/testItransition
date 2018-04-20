@@ -127,7 +127,7 @@ $icon__font-size-m: 1.5rem;
 
 // Interaction
 
-$c-action: $c-blue;
+$c-action: $theme-c-red;
 $c-stimulus: darken($c-blue, 15%);
 $c-subtle: #a0a0a0;
 
@@ -266,3 +266,7 @@ $font-weight__semibold: 700;
 
 $b-line-height: 1.5;
 $b-margin-bottom: 1.5em;
+
+// Theme
+
+$price__color: $theme-c-red;

@@ -1,0 +1,75 @@
+<?php
+$_product = $this->getProduct();
+$_helper = $this->helper('catalog/output');
+$fontColorsArray = array(['ff1e00','Rosso'],['0069b3','Blu'],['db9000','Oro'],['dadada','Argento'],['000','Nero']);
+$fontFamilyArray = array(['sans','Sans'],['serif','Serif']);
+$_maxLengthCustomText = 21;
+?>
+<div id="customize-popup" class="popup-wrapper js-skip-wrapper skip-content">
+    <a class="skip-link-close -overlay" href="#" title="Close"></a>
+    <div class="customize-popup" data-role="customize-popup">
+        <h2 class="title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+        <div class="product-image">
+            <div class="title js-title js-style-container"></div>
+            <img class="visible image"
+                 src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>"
+                 alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>"
+                 title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
+            <div class="signature js-signature js-style-container"></div>
+        </div>
+        <div class="sittings">
+            <a class="close skip-link-close link -primary" href="#" title="Close">
+                <svg class="svg-icon cancel">
+                    <use xlink:href="#cancel"></use>
+                </svg>
+            </a>
+            <form class="form">
+                <div class="sub-title"><?php echo $this->__('Enter some text')?></div>
+                <div class="sub-title -secondary"><?php echo $this->__('Max 20 symbols')?></div>
+                <input type="text" class="field js-field" data-text-for="signature" maxlength="<?php echo $_maxLengthCustomText?>"/>
+                <div class="counter">0/<?php echo $_maxLengthCustomText?></div>
+                <input type="text" class="field js-field" data-text-for="title" maxlength="<?php echo $_maxLengthCustomText?>"/>
+                <div class="counter">0/<?php echo $_maxLengthCustomText?></div>
+                <div class="chose-wrapper -color">
+                    <div class="title sub-title"><?php echo $this->__('Choose color')?>: <span class="js-chose-value"></span></div>
+                    <?php foreach ($fontColorsArray as $_color):?>
+                        <label for="<?php echo $_color[1]?>" class="label">
+                            <input type="radio" id="<?php echo $_color[1]?>"
+                                   class="chose js-color"
+                                   style="color: #<?php echo $_color[0]?>;background-color: #<?php echo $_color[0]?>;"
+                                   name="color"/>
+                            <span class="name"><?php echo $_color[1]?></span>
+                        </label>
+                    <?php endforeach?>
+                </div>
+                <div class="chose-wrapper -font">
+                    <div class="title sub-title"><?php echo $this->__('Chose font')?>: <span class="js-chose-value"></span></div>
+                    <?php foreach ($fontFamilyArray as $_family):?>
+                        <label for="<?php echo $_family[1]?>" style="font-family:<?php echo $_family[0]?>;" class="label">
+                            <input type="radio"
+                                   id="<?php echo $_family[1]?>"
+                                   class="chose js-font"
+                                   style="font-family:<?php echo $_family[0]?>;"
+                                   name="font"/>
+                            <span class="name"><?php echo $_family[1]?></span>
+                        </label>
+                    <?php endforeach?>
+                </div>
+                <div class="price-info">
+                    <?php echo $this->getPriceHtml($_product); ?>
+                    <?php echo $this->getTierPriceHtml() ?>
+                    <span>+5€ <?php echo $this->__('for personalization')?></span>
+                </div>
+                <div class="add-to-box">
+                    <?php echo $this->getChildHtml('addtocart_customize') ?>
+                </div>
+            </form>
+        </div>
+        <div class="bottom">
+            <?php echo $this->getChildHtml('popup.footer') ?>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    customizePopup.init('[data-role="customize-popup"]');
+</script>

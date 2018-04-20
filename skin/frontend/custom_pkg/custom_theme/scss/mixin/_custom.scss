@@ -1,6 +1,10 @@
-@mixin centred-content($vertical, $horizontal) {
-    @if ( $vertical == true and $horizontal == true) {
+@mixin centred-content($vertical, $horizontal, $fixed: false) {
+    @if ( $fixed == true ) {
+        position: fixed;
+    }  @else {
         position: absolute;
+    }
+    @if ( $vertical == true and $horizontal == true) {
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
