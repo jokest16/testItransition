@@ -38,25 +38,25 @@ Supported layout update handles (special):
 -->
 <layout version="0.1.0">
 
-<!--
-Default layout, loads most of the pages
--->
+    <!--
+    Default layout, loads most of the pages
+    -->
 
     <default>
 
         <!-- Mage_Catalog -->
         <reference name="left">
             <!--<block type="core/template" name="left.permanent.callout" template="callouts/left_col.phtml">-->
-                <!--<action method="setImgSrc"><src>images/media/col_left_callout.jpg</src></action>-->
-                <!--<action method="setImgAlt" translate="alt" module="catalog"><alt>Our customer service is available 24/7. Call us at (555) 555-0123.</alt></action>-->
-                <!--<action method="setLinkUrl"><url>checkout/cart</url></action>-->
+            <!--<action method="setImgSrc"><src>images/media/col_left_callout.jpg</src></action>-->
+            <!--<action method="setImgAlt" translate="alt" module="catalog"><alt>Our customer service is available 24/7. Call us at (555) 555-0123.</alt></action>-->
+            <!--<action method="setLinkUrl"><url>checkout/cart</url></action>-->
             <!--</block>-->
         </reference>
         <reference name="right">
             <block type="catalog/product_compare_sidebar" before="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
             <!--<block type="core/template" name="right.permanent.callout" template="callouts/right_col.phtml">-->
-                <!--<action method="setImgSrc"><src>images/media/col_right_callout.jpg</src></action>-->
-                <!--<action method="setImgAlt" translate="alt" module="catalog"><alt>Keep your eyes open for our special Back to School items and save A LOT!</alt></action>-->
+            <!--<action method="setImgSrc"><src>images/media/col_right_callout.jpg</src></action>-->
+            <!--<action method="setImgAlt" translate="alt" module="catalog"><alt>Keep your eyes open for our special Back to School items and save A LOT!</alt></action>-->
             <!--</block>-->
         </reference>
         <reference name="footer_links">
@@ -66,9 +66,9 @@ Default layout, loads most of the pages
     </default>
 
 
-<!--
-Category default layout
--->
+    <!--
+    Category default layout
+    -->
 
     <catalog_category_default translate="label">
         <label>Catalog Category (Non-Anchor)</label>
@@ -108,9 +108,9 @@ Category default layout
         </reference>
     </catalog_category_default>
 
-<!--
-Category layered navigation layout
--->
+    <!--
+    Category layered navigation layout
+    -->
 
     <catalog_category_layered translate="label">
         <label>Catalog Category (Anchor)</label>
@@ -155,9 +155,9 @@ Category layered navigation layout
         </reference>
     </catalog_category_layered>
 
-<!--
-Compare products page
--->
+    <!--
+    Compare products page
+    -->
 
     <catalog_product_compare_index translate="label">
         <label>Catalog Product Compare List</label>
@@ -182,9 +182,9 @@ Compare products page
         </reference>
     </customer_account_index>
 
-<!--
-Product view
--->
+    <!--
+    Product view
+    -->
 
     <catalog_product_view translate="label">
         <label>Catalog Product View (Any)</label>
@@ -197,7 +197,9 @@ Product view
             <action method="addJs"><script>varien/product_options.js</script></action>
             <action method="addJs"><script>varien/configurable.js</script></action>
             <action method="addItem"><type>skin_js</type><script>js/lib/elevatezoom/jquery.elevateZoom-3.0.8.min.js</script></action>
-
+            <action method="addItem"><type>skin_js</type><name>js/lib/swiper.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/product-carousel.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/customize-popup.js</name></action>
             <action method="addItem"><type>js_css</type><name>calendar/calendar-win2k-1.css</name><params/><!--<if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
             <action method="addItem"><type>js</type><name>calendar/calendar-setup.js</name><!--<params/><if/><condition>can_load_calendar_js</condition>--></action>
@@ -223,6 +225,11 @@ Product view
                     <action method="setItemLimit"><type>upsell</type><limit>6</limit></action>
                 </block>
 
+                <block type="catalog/product_list_upsell" name="product.info.upsell" as="upsell_products_carousel" template="catalog/product/list/upsell-carousel.phtml">
+                    <action method="setColumnCount"><columns>6</columns></action>
+                    <action method="setItemLimit"><type>upsell</type><limit>6</limit></action>
+                </block>
+
                 <block type="catalog/product_view_additional" name="product.info.additional" as="product_additional_data" />
                 <block type="catalog/product_view_description" name="product.description" as="description" template="catalog/product/view/description.phtml">
                     <action method="addToParentGroup"><group>detailed_info</group></action>
@@ -234,6 +241,8 @@ Product view
                 </block>
                 <block type="catalog/product_list_related" name="catalog.product.related" as="related_products" template="catalog/product/list/related.phtml" />
 
+                <block type="catalog/product_list_related" name="catalog.product.related" as="related_products_carousel" template="catalog/product/list/related-carousel.phtml" />
+
                 <block type="catalog/product_view" name="product.info.sharing" as="sharing" template="catalog/product/view/sharing.phtml"/>
                 <block type="catalog/product_view" name="product.info.addtocart" as="addtocart" template="catalog/product/view/addtocart.phtml"/>
 
@@ -241,17 +250,31 @@ Product view
                     <label>Product View Extra Hint</label>
                 </block>
 
-                <block type="catalog/product_view" name="product.info.options.wrapper" as="product_options_wrapper" template="catalog/product/view/options/wrapper.phtml" translate="label">
-                    <label>Info Column Options Wrapper</label>
-                    <block type="core/template" name="options_js" template="catalog/product/view/options/js.phtml"/>
-                    <block type="catalog/product_view_options" name="product.info.options" as="product_options" template="catalog/product/view/options.phtml">
-                        <action method="addOptionRenderer"><type>text</type><block>catalog/product_view_options_type_text</block><template>catalog/product/view/options/type/text.phtml</template></action>
-                        <action method="addOptionRenderer"><type>file</type><block>catalog/product_view_options_type_file</block><template>catalog/product/view/options/type/file.phtml</template></action>
-                        <action method="addOptionRenderer"><type>select</type><block>catalog/product_view_options_type_select</block><template>catalog/product/view/options/type/select.phtml</template></action>
-                        <action method="addOptionRenderer"><type>date</type><block>catalog/product_view_options_type_date</block><template>catalog/product/view/options/type/date.phtml</template></action>
+                <block type="cms/block" name="shipping.information">
+                    <action method="setBlockId"><block_id>shipping-information</block_id></action>
                 </block>
-                        <block type="core/html_calendar" name="html_calendar" as="html_calendar" template="page/js/calendar.phtml"/>
+                <block type="cms/block" name="return.information">
+                    <action method="setBlockId"><block_id>return-information</block_id></action>
+                </block>
+
+                <block type="catalog/product_view" name="customize.popup" template="catalog/product/view/customize-popup.phtml">
+                    <block type="catalog/product_view" name="product.info.addtocart.customize" as="addtocart_customize" template="catalog/product/view/addtocart-customize.phtml"/>
+                    <block type="cms/block" name="popup.footer">
+                        <action method="setBlockId"><block_id>customize-popup-footer</block_id></action>
                     </block>
+                </block>
+
+                <block type="catalog/product_view" name="product.info.options.wrapper" as="product_options_wrapper" template="catalog/product/view/options/wrapper.phtml" translate="label">
+                <label>Info Column Options Wrapper</label>
+                <block type="core/template" name="options_js" template="catalog/product/view/options/js.phtml"/>
+                <block type="catalog/product_view_options" name="product.info.options" as="product_options" template="catalog/product/view/options.phtml">
+                    <action method="addOptionRenderer"><type>text</type><block>catalog/product_view_options_type_text</block><template>catalog/product/view/options/type/text.phtml</template></action>
+                    <action method="addOptionRenderer"><type>file</type><block>catalog/product_view_options_type_file</block><template>catalog/product/view/options/type/file.phtml</template></action>
+                    <action method="addOptionRenderer"><type>select</type><block>catalog/product_view_options_type_select</block><template>catalog/product/view/options/type/select.phtml</template></action>
+                    <action method="addOptionRenderer"><type>date</type><block>catalog/product_view_options_type_date</block><template>catalog/product/view/options/type/date.phtml</template></action>
+                </block>
+                    <block type="core/html_calendar" name="html_calendar" as="html_calendar" template="page/js/calendar.phtml"/>
+            </block>
                 <block type="catalog/product_view" name="product.info.options.wrapper.bottom" as="product_options_wrapper_bottom" template="catalog/product/view/options/wrapper/bottom.phtml" translate="label">
                     <label>Bottom Block Options Wrapper</label>
                     <action method="insert"><block>product.tierprices</block></action>
@@ -282,9 +305,9 @@ Product view
         </reference>
     </catalog_product_view>
 
-<!--
-Additional block dependant on product type
--->
+    <!--
+    Additional block dependant on product type
+    -->
     <PRODUCT_TYPE_simple translate="label" module="catalog">
         <label>Catalog Product View (Simple)</label>
         <reference name="product.info">

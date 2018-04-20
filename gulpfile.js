@@ -21,7 +21,8 @@ const js 		  = {},
       magento 	  = {},
       external 	  = {},
       xml         = {},
-      svg         = {};
+      svg         = {},
+      phtml       = {};
 
 /* Magento core */
 magento.source  = [
@@ -110,6 +111,8 @@ svg.fileName            = 'sprite.svg';
 svg.templateFolder      = 'app/design/frontend/'+ theme +'/custom_theme/template/page/template/';
 svg.folder              = 'skin/frontend/'+ theme +'/custom_theme/images/svg_icon/';
 svg.spriteFolder        = 'skin/frontend/'+ theme +'/custom_theme/images/';
+
+phtml.folder = 'app/design/frontend/'+ theme +'/custom_theme/template';
 
 /* Externals */
 external.folder  = 'js/tbuy/';
@@ -272,7 +275,8 @@ gulp.task('watch',['magentoJS', 'externalJS', 'appFramework', 'appJS', 'appCSS']
     gulp.watch(
         [
             js.folder + js.dest + '**/*.js',
-            css.folder + css.dest + '**/*.css'
+            css.folder + css.dest + '**/*.css',
+            phtml.folder + '**/**/*.phtml'
         ]
     )
         .on( 'change', livereload.changed );
