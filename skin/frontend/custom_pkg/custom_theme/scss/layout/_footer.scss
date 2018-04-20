@@ -32,6 +32,10 @@ $footer-bottom__font-size: $f-size-xxs;
         display: none;
     }
 
+    .input-box .button.-svg-icon {
+        padding: 0;
+    }
+
     .form-language,
     .currency-switcher,
     .store-switcher {

@@ -6007,6 +6007,10 @@ a.skip-link {
   display: none;
 }
 
+.footer .input-box .button.-svg-icon {
+  padding: 0;
+}
+
 .footer .form-language,
 .footer .currency-switcher,
 .footer .store-switcher {
