@@ -48,6 +48,55 @@ button {
     touch-action: manipulation;
 }
 
+* {
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    position: relative;
+}
+
+.main-container {
+    min-height: 49.9vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+}
+
+.footer-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/*
+.catalog-product-view > .wrapper,
+body > .wrapper > .page {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-product-view > .wrapper > .page {
+    display: block;
+    flex: 1 0 auto;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.main-container {
+    flex: 1 0 auto;
+}
+
+.footer-container {
+    flex: 0 0 auto;
+}
+*/
+
 body {
     background-color: $theme-c-bege;
 }
@@ -178,10 +227,6 @@ body:not(.customer-account) .block:first-child .block-title {
 
 .block-content.unpad {
     padding: 0;
-}
-
-.block-content li.item {
-    margin: 0 0 $box-spacing 9px;
 }
 
 .block-content li.item:last-child {
@@ -556,6 +601,12 @@ a.button:hover {
     margin: -15px 0 15px;
 }
 
+.breadcrumbs > .link.-back {
+    font-weight: $font-weight__bold;
+    text-transform: uppercase;
+    float: right;
+}
+
 .breadcrumbs li {
     float: left;
     font-family: $f-stack-special;
@@ -706,6 +757,7 @@ a.button:hover {
 
 .main-container {
     padding: 165px $trim-small $trim-small;
+    max-width: $max-content-width;
 }
 
 .main-container,
@@ -1161,15 +1213,6 @@ a.button:hover {
     margin-bottom: 0;
 }
 
-.price-notice {
-    color: $c-text-gray;
-}
-
-.price-box .price {
-    font-size: $f-size-xl;
-    color: $c-text-primary;
-}
-
 .price-box .price-label {
     font-family: $f-stack-special;
     white-space: nowrap;
@@ -1400,17 +1443,12 @@ span.weee {
 .no-touch .product-img-box .product-image:not(.zoom-available):hover {
     display: block;
     position: relative;
-    border: 1px solid $c-module-border-light;
 }
 
 @include bp (max-width, $bp-medium) {
     body .product-img-box .product-image:hover {
         border-color: $c-module-border-light;
     }
-}
-
-.no-touch .product-image:hover {
-    border-color: $c-module-border-highlight;
 }
 
 /* -------------------------------------------- *
@@ -1483,15 +1521,6 @@ span.weee {
 .std .note {
     font-size: $f-size-s;
     color: $c-text-gray;
-}
-
-/* -------------------------------------------- *
- * Tabs
- */
-
-.tabs {
-    margin-bottom: $gap;
-    background: #fff;
 }
 
 /* -------------------------------------------- *
@@ -1896,17 +1925,4 @@ body.customer-account .data-table {
     float: none;
     width: auto;
     max-height: 50px;
-}
-
-
-@include bp(min-width, $bp-medium) {
-    ._hidden-m {
-        display: none;
-    }
-}
-
-@include bp(max-width, $bp-medium) {
-    ._hidden-s {
-        display: none;
-    }
 }

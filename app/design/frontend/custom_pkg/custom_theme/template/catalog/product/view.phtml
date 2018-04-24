@@ -96,24 +96,66 @@
                     <div class="add-to-box">
                         <?php if($_product->isSaleable()): ?>
                             <?php echo $this->getChildHtml('addtocart') ?>
-                            <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                                <span class="or"><?php echo $this->__('OR') ?></span>
-                            <?php endif; ?>
                         <?php endif; ?>
                         <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
                     </div>
                     <?php echo $this->getChildHtml('extra_buttons') ?>
                 <?php elseif (!$_product->isSaleable()): ?>
                     <div class="add-to-box">
                         <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
                     </div>
                 <?php endif; ?>
             </div>
-
-            <?php echo $this->getChildHtml('related_products') ?>
-
+            <div class="additional-ifonrmation">
+                <div class="accordion-block">
+                    <ul class="list">
+                        <li class="item">
+                            <label class="block-wrapper">
+                                <input type="checkbox" class="toggle"/>
+                                <div class="description">
+                                    <span class="title"><?php echo $this->__('Details')?></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon arrow-right-lighter -down">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right-lighter"></use>
+                                    </svg>
+                                    <div class="text">
+                                        <span class="_uppercase"><b><?php echo $this->__('sku')?></b></span>: <span><b><?php echo $_product->getData('sku')?></b></span><br>
+                                        <span class="_uppercase"><b><?php echo $this->__('weight')?></b></span>: <span><b><?php echo $_product->getData('weight')?></b></span>
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="item">
+                            <label class="block-wrapper">
+                                <input type="checkbox" class="toggle"/>
+                                <div class="description">
+                                    <span class="title"><?php echo $this->__('Shipping')?></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon arrow-right-lighter -down">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right-lighter"></use>
+                                    </svg>
+                                    <div class="text">
+                                        <?php echo $this->getChildHtml('shipping.information')?>
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+                        <li class="item">
+                            <label class="block-wrapper">
+                                <input type="checkbox" class="toggle"/>
+                                <div class="description">
+                                    <span class="title"><?php echo $this->__('Returns')?></span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon arrow-right-lighter -down">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right-lighter"></use>
+                                    </svg>
+                                    <div class="text">
+                                        <?php echo $this->getChildHtml('return.information')?>
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <?php echo $this->getChildHtml('sharing') ?>
+            </div>
             <div class="clearer"></div>
             <?php if ($_product->isSaleable() && $this->hasOptions()):?>
                 <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
@@ -170,9 +212,29 @@
             }.bind(productAddToCartForm);
         //]]>
         </script>
+        </div>
     </div>
+    <?php if(!!$this->getChildHtml('related_products') || !!$this->getChildHtml('upsell_products')):?>
+        <div class="product-collateral toggle-content tabs">
+            <dl id="collateral-tabs" class="collateral-tabs">
+                <?php if(!!$this->getChildHtml('related_products')):?>
+                    <dt class="title"><span><?php echo $this->__('Wear with') ?></span></dt>
+                    <dd class="container">
+                        <div class="content"><?php echo $this->getChildHtml('related_products_carousel') ?></div>
+                    </dd>
+                <?php endif;?>
+                <?php if(!!$this->getChildHtml('upsell_products')):?>
+                    <dt class="title"><span><?php echo $this->__('You may also like') ?></span></dt>
+                    <dd class="container">
+                        <div class="content"><?php echo $this->getChildHtml('upsell_products_carousel') ?></div>
+                    </dd>
+                <?php endif;?>
+            </dl>
+        </div>
+    <?php endif;?>
 
-    <?php echo $this->getChildHtml('upsell_products') ?>
     <?php echo $this->getChildHtml('product_additional_data') ?>
 
+    <?php echo $this->getChildHtml('customize.popup') ?>
 </div>
+

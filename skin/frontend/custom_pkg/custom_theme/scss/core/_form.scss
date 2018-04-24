@@ -94,7 +94,6 @@ label {
     display: inline-block;
     font-family: $f-stack-special;
     font-size: $f-size-s;
-    font-weight: $font-weight__semibold;
 }
 
 label.required:after,
@@ -233,23 +232,6 @@ input:-moz-placeholder {
 /* -------------------------------------------- *
  * Checkbox And Radio
  */
-
-.checkbox,
-.radio {
-    display: inline-block;
-    position: relative;
-    top: -1px;
-}
-
-.checkbox + label,
-.radio + label {
-    width: auto;
-    max-width: 85%;
-    padding: 0 0 0 8px;
-    font-size: $f-size;
-    font-weight: normal;
-    vertical-align: top;
-}
 
 /* -------------------------------------------- *
  * Validation

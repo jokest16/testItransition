@@ -39,11 +39,15 @@
 @import 'core/common';
 @import 'core/form';
 @import 'core/table';
+@import 'core/helpers';
 
 // ----------------------------------------------
 // Vendor
 
 // @import "vendor/abc";
+
+@import 'vendor/swiper';
+@import 'vendor/iconmoon';
 
 // ----------------------------------------------
 // Components
@@ -53,6 +57,9 @@
 @import 'components/button';
 @import 'components/newsletter-social';
 @import 'components/form-components';
+@import 'components/product-carusel';
+@import 'components/accordion';
+@import 'components/customize-popup';
 
 // ----------------------------------------------
 // Layout

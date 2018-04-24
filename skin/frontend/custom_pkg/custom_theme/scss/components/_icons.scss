@@ -1,4 +1,4 @@
-.icon {
+.icon:not(.-svg) {
     & {
         font-size: $icon__font-size-m;
     }
@@ -8,7 +8,12 @@
     }
 }
 .svg-icon {
+    display: inline-block;
     width: 32px;
     height: 32px;
     fill: currentColor;
+}
+
+.svg-icon.arrow-right-lighter.-down {
+    transform: rotate(90deg);
 }

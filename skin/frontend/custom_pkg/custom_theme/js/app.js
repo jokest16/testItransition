@@ -725,7 +725,7 @@ $j(document).ready(function () {
         }
     });
 
-    $j('#header-cart').on('click', '.skip-link-close', function(e) {
+    $j('#header-cart, .js-skip-wrapper').on('click', '.skip-link-close', function(e) {
         var parent = $j(this).parents('.skip-content');
         var link = parent.siblings('.skip-link');
 

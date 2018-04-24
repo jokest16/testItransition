@@ -53,8 +53,7 @@ body.catalogsearch-result-index .page-title h1 {
 h2.product-name,
 h3.product-name,
 h4.product-name,
-h5.product-name,
-p.product-name {
+h5.product-name {
     @include h2;
 
     font-family: $f-stack-sans;
@@ -392,10 +391,6 @@ $productsGridActionHeight: 85px;
  * ============================================ */
 
 .mini-products-list {
-    .product-image {
-        float: left;
-        min-width: 50px;
-    }
     .product-details {
         margin-left: 60px;
     }

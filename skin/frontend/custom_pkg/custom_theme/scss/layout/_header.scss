@@ -45,7 +45,7 @@ $page-header-container__box-shadow: $page-header-container__box-shadow-param $pa
 
 .page-header {
     position: fixed;
-    z-index: 1;
+    z-index: 7;
     width: 100%;
 }
 
@@ -160,16 +160,17 @@ $page-header-container__box-shadow: $page-header-container__box-shadow-param $pa
     border-bottom: 1px solid #ededed;
 }
 
+.skip-links .svg-icon.shopping-cart {
+    stroke-width: 10;
+    stroke: currentColor;
+}
+
 /* -------------------------------------------- *
  * Skip - Link
  */
 
 a.skip-link {
     text-decoration: none;
-}
-
-.skip-link:not(.skip-active):hover {
-    opacity: .8;
 }
 
 /* -------------------------------------------- *
@@ -300,6 +301,11 @@ a.skip-link {
 
     .skip-links {
         border: 0;
+    }
+
+    .skip-links .svg-icon {
+        width: 20px;
+        margin-right: 10px;
     }
 
     .page-header-container {

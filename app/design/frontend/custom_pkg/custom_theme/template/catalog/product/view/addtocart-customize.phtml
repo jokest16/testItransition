@@ -29,28 +29,21 @@
 <?php if($_product->isSaleable()): ?>
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
-        <div class="qty-wrapper">
-            <label for="qty"><?php echo $this->__('Qty:') ?></label>
-            <input type="text" pattern="\d*(\.\d+)?" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>" class="input-text qty" />
-        </div>
+            <div class="qty-wrapper">
+                <label for="qty"><?php echo $this->__('QT.:') ?></label>
+                <input type="number" name="qty" id="qty" maxlength="12" min="0"
+                       value="<?php echo $this->getProductDefaultQty() * 1 ?>"
+                       title="<?php echo Mage::helper('core')->quoteEscape($this->__('Qty')) ?>"
+                       class="input-text qty" />
+            </div>
         <?php endif; ?>
         <div class="add-to-cart-buttons">
-            <button type="button" title="<?php echo $buttonTitle ?>" class="button -primary -medium -cart" onclick="productAddToCartForm.submit(this)">
+            <button type="button" title="<?php echo $buttonTitle ?>" class="button -primary -expanded -cart" onclick="productAddToCartForm.submit(this)">
                 <span><?php echo $buttonTitle ?></span>
                 <svg class="svg-icon arrow-right-lighter">
                     <use xlink:href="#arrow-right-lighter"></use>
                 </svg>
             </button>
-            <?php if($_product->getData('customize')):?>
-            <button type="button" title="<?php echo $this->__('Customizes') ?>" class="button -primary -medium -third btn-cstm skip-link" data-target-element="#customize-popup">
-                <svg class="svg-icon pencil-icon">
-                    <use xlink:href="#pencil-icon"></use>
-                </svg>
-                <span><?php echo $this->__('Customizes') ?></span>
-            </button>
-            <?php endif; ?>
-            <?php echo $this->getChildHtml('', true, true) ?>
         </div>
     </div>
 <?php endif; ?>
-

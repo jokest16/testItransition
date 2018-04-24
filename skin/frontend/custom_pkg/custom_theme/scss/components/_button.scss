@@ -66,6 +66,7 @@ button,
         font-size: $f-size-s;
         text-align: center;
         text-decoration: none;
+        padding: 10px 30px;
     }
 
     &:hover {
@@ -120,5 +121,10 @@ button,
         border: none;
         outline: none;
         background: none;
+    }
+
+    &.-cart .svg-icon {
+        width: 10px;
+        height: 10px;
     }
 }

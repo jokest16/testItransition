@@ -40,7 +40,9 @@
 ?>
 
 <a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link skip-cart link -secondary -navigation <?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
-    <i class="icon icon-cart -small"></i>
+    <svg class="svg-icon shopping-cart">
+        <use xlink:href="#shopping-cart"></use>
+    </svg>
     <span class="label"><?php echo $this->__('Cart'); ?></span>
     <span class="count"><?php echo $_cartQty; ?></span>
 </a>
