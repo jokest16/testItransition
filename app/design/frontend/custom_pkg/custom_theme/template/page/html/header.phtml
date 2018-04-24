@@ -64,22 +64,23 @@
                 <span class="icon"></span>
                 <span class="label"><?php echo $this->__('Menu'); ?></span>
             </a>
-
             <div class="account-cart-wrapper">
-
                 <a href="#header-search" class="skip-link skip-search link -secondary -navigation">
-                    <i class="icon icon-search -small"></i>
-                    <span class="label"><?php echo $this->__('Search'); ?></span>
+                    <svg class="svg-icon search">
+                        <use xlink:href="#search"></use>
+                    </svg>
                 </a>
-
                 <?php if( ! Mage::getSingleton('customer/session')->isLoggedIn()):?>
                     <a href="<?php echo Mage::getUrl('customer/account/login/'); ?>" class="link -secondary -navigation">
-                        <i class="icon icon-account -small"></i>
+                        <svg class="svg-icon user">
+                            <use xlink:href="#user"></use>
+                        </svg>
                     </a>
                 <?php else: ?>
                     <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account link -secondary -navigation">
-                        <i class="icon icon-account -small"></i>
-                        <span class="label"><?php echo $this->__('Account'); ?></span>
+                        <svg class="svg-icon user">
+                            <use xlink:href="#user"></use>
+                        </svg>
                     </a>
                 <?php endif;?>
 
@@ -89,13 +90,12 @@
                     <?php echo $this->getChildHtml('minicart_head'); ?>
                 </div>
             </div>
-
-
         </div>
 
         <!-- Search -->
 
         <div id="header-search" class="skip-content header-search -navigation">
+            <a href="#header-search" class="skip-link"></a>
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>
 

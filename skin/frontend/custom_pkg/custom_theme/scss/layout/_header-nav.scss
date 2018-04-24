@@ -34,10 +34,6 @@ $nav-primary-height: 30px;
 
     &:not(.skip-active):hover {
         text-decoration: none;
-
-        .icon {
-            background-position: -50px+4px ($toolbar-icon-padding-offset/2);
-        }
     }
 }
 
@@ -52,8 +48,7 @@ $nav-primary-height: 30px;
 }
 
 .nav-primary li.menu-active > ul {
-    top: 60px;
-    opacity: 1;
+    display: block;
 }
 
 /* ============================================ *
@@ -230,15 +225,14 @@ $nav-primary-height: 30px;
 
         /* Default styles for 1+ drop-down menus */
         li.level0 ul {
+            display: none;
             position: absolute;
             z-index: 10;
-            top: 120px; /* Height of ".nav-primary a.level0" */
+            top: 60px; /* Height of ".nav-primary a.level0" */
             left: 0;
             width: 250px;
             padding-right: $box-spacing;
             padding-left: $box-spacing;
-            transition: opacity .5s ease, top .6s ease;
-            opacity: 0;
             background-color: $c-white;
         }
 
