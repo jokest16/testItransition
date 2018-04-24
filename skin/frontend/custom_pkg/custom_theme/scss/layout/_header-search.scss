@@ -64,6 +64,20 @@ $header-search--input-text__border-bottom-color: $theme-c-gray;
         background-color: $header-search__background-color;
     }
 
+    .skip-link {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba($c-black,.5);
+        z-index: -1;
+    }
+
+    &.skip-active .skip-link {
+        display: block;
+    }
 
     &.skip-active {
         bottom: -45%;
@@ -72,16 +86,18 @@ $header-search--input-text__border-bottom-color: $theme-c-gray;
 
     .input-text {
         text-align: center;
-        border-color: transparent;
+        border: 1px solid transparent;
         border-bottom-color: $header-search--input-text__border-bottom-color;
+    }
+
+    .input-text:focus::-webkit-input-placeholder {
+        color: transparent;
     }
 
     .button {
         border-color: transparent;
     }
 }
-
-
 
 /* ============================================ *
  * Search Input
